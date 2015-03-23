@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CB03BC71AC0B35D00355B0C /* Mini-Challenge-2.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 8CB03BC61AC0B35D00355B0C /* Mini-Challenge-2.numbers */; };
 		D5D7C1351AC088CD002C8BC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7C1341AC088CD002C8BC6 /* main.m */; };
 		D5D7C1381AC088CD002C8BC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7C1371AC088CD002C8BC6 /* AppDelegate.m */; };
 		D5D7C13B1AC088CD002C8BC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7C13A1AC088CD002C8BC6 /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8CB03BC61AC0B35D00355B0C /* Mini-Challenge-2.numbers */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "Mini-Challenge-2.numbers"; sourceTree = "<group>"; };
 		D5D7C12F1AC088CD002C8BC6 /* RemedioJa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemedioJa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D7C1331AC088CD002C8BC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5D7C1341AC088CD002C8BC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		D5D7C1261AC088CD002C8BC6 = {
 			isa = PBXGroup;
 			children = (
+				8CB03BC61AC0B35D00355B0C /* Mini-Challenge-2.numbers */,
 				D5D7C1311AC088CD002C8BC6 /* RemedioJa */,
 				D5D7C14B1AC088CE002C8BC6 /* RemedioJaTests */,
 				D5D7C1301AC088CD002C8BC6 /* Products */,
@@ -201,6 +204,7 @@
 			files = (
 				D5D7C13E1AC088CE002C8BC6 /* Main.storyboard in Resources */,
 				D5D7C1431AC088CE002C8BC6 /* LaunchScreen.xib in Resources */,
+				8CB03BC71AC0B35D00355B0C /* Mini-Challenge-2.numbers in Resources */,
 				D5D7C1401AC088CE002C8BC6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +416,7 @@
 				D5D7C1541AC088CE002C8BC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5D7C1551AC088CE002C8BC6 /* Build configuration list for PBXNativeTarget "RemedioJaTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +425,7 @@
 				D5D7C1571AC088CE002C8BC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
