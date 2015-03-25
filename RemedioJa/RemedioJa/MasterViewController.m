@@ -27,34 +27,86 @@
 }
 
 - (void)loadSite{
-    termo = @"Cataflam";
-    NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.consultaremedios.com.br/busca?termo=%@", termo]];
+    termo = @"cataflam";
+    NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=cataflam"]];
     NSData *siteHTML = [NSData dataWithContentsOfURL:site];
     
     TFHpple *siteParser = [TFHpple hppleWithHTMLData:siteHTML];
     
-    NSString *queryBase = @"//div[@class='container product-section clearfix']";
+    NSString *queryBase = @"//ul[@class='container product-section clearfix']";
     
     // Query Remédios
-    NSString *RemQueryImg = @"/div[@class='title clearfix']/figure[@class='medicine-thumb']/img"; // Src
-    NSString *RemQueryNome = @"/div[@class='title clearfix']/div[@class='medicine-data']/h3/a"; // FirstChild
-    NSString *RemQueryAp = @"/div[@class='title clearfix']/div[@class='medicine-info clearfix']/div[@class='pull-left']/strong"; // FirstChild
-    NSString *RemQueryComp = @"/div[@class='title clearfix']/p[@class='medicine-active-ingredient clearfix']/a"; // FirstChild
+    NSString *RemQueryImg = @"//li[@class='title clearfix']/figure[@class='medicine-thumb']/img"; // Src
+    NSString *RemQueryNome = @"//li[@class='title clearfix']/div[@class='medicine-data']/h3/a"; // FirstChild
+    NSString *RemQueryAp = @"//li[@class='title clearfix']/div[@class='medicine-data']/div[@class='medicine-info clearfix']/div[@class='pull-left']/strong"; // FirstChild
+    NSString *RemQueryComp = @"//li[@class='title clearfix']/div[@class='medicine-data']/p[@class='medicine-active-ingredient clearfix']/a"; // FirstChild
     
     // Query Farmácias
-    NSString *FarmQueryUrl_Img_Nome = @"/li[@class='item']/div[@class='item-pharmacy']/div[@class='item-pharmacy-logo']/a"; // Img: /img@src | URL: href | Nome: /img@alt
-    NSString *FarmQueryPreco = @"/li[@class='item']/div[@class='item-price']/a/p"; // FirstChild
+    
+    NSString *queryFarmBase = @"//li[@class='item']";
+    
+    NSString *FarmQueryUrl_Img_Nome = @"//div[@class='item-pharmacy']/div[@class='item-pharmacy-logo']/a"; // Img: /img@src | URL: href | Nome: /img@alt
+    NSString *FarmQueryPreco = @"//div[@class='item-price']/a/p"; // FirstChild
     
     
     NSArray *resBase = [siteParser searchWithXPathQuery:queryBase];
     
     
-    NSMutableArray *remedios = [[NSMutableArray alloc] init];
+    NSMutableArray *remedios = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableArray *farmacias = [[NSMutableArray alloc] initWithCapacity:0];
     for (TFHppleElement *elem in resBase) {
-        Remedio *item = [[Remedio alloc] init];
-        [remedios addObject:item];
+        Remedio *itemR = [[Remedio alloc] init];
+        NSArray *resArray = [elem searchWithXPathQuery:RemQueryNome];
+        TFHppleElement *res;
+        if (resArray.count != 0) {
+            // Nome
+            res = resArray[0];
+            itemR.nomeRemedio = [[res firstChild] content];
+            // Imagem
+            res = [[elem searchWithXPathQuery:RemQueryImg]objectAtIndex:0];
+            itemR.imagem = [res objectForKey:@"src"];
+            // Apresentacao
+            res = [[elem searchWithXPathQuery:RemQueryAp]objectAtIndex:0];
+            itemR.apresentacao = [[res firstChild] content];
+            // Composto
+            res = [[elem searchWithXPathQuery:RemQueryComp]objectAtIndex:0];
+            itemR.composto = [[res firstChild] content];
+            
+            NSLog(@"Remedio: %@, %@, %@, %@", itemR.nomeRemedio, itemR.imagem, itemR.apresentacao, itemR.composto);
+            
+            NSArray *resArrayFarm = [elem searchWithXPathQuery:queryFarmBase];
+            TFHppleElement *resFarm;
+            for (TFHppleElement *farm in resArrayFarm) {
+                Farmacia *itemF = [[Farmacia alloc] init];
+                
+                resFarm = [[farm searchWithXPathQuery:FarmQueryUrl_Img_Nome] objectAtIndex:0];
+                itemF.url = [resFarm objectForKey:@"href"];
+                itemF.imagem = [[resFarm firstChild] objectForKey:@"src"];
+                itemF.nomeFarmacia = [[resFarm firstChild] objectForKey:@"alt"];
+                
+                resFarm = [[farm searchWithXPathQuery:FarmQueryPreco]objectAtIndex:0];
+                
+                itemF.preco = [[[[[resFarm firstChild] content] substringFromIndex:2] stringByReplacingOccurrencesOfString:@"," withString:@"."] doubleValue];
+                
+                NSLog(@"Farmacia: %@, %@, %@, %.2f", itemF.nomeFarmacia, itemF.imagem, itemF.url, itemF.preco);
+                [farmacias addObject:itemF];
+            }
+            NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"preco" ascending:YES];
+            NSArray *sa = [NSArray arrayWithObject:sd];
+            NSArray *farmSort = [farmacias sortedArrayUsingDescriptors:sa];
+            Farmacia *ff = farmSort[0];
+            NSLog(@"%.2f", ff.preco);
+        }
+        else{
+            NSLog(@"NULL");
+        }
+//        NSString *nome = [[rem firstChild] content];
+//        NSLog(@"%@", nome);
         
-        item.nomeRemedio = [elem objectForKey:@"href"];
+        //item.nomeRemedio = [elem objectForKey:@"href"];
+        
+        
+        //[remedios addObject:item];
     }
 //    int i = 0;
 //    for (TFHppleElement *elem2 in results2) {
@@ -70,6 +122,7 @@
 //    objs = newItems;
 //    [self.tableView reloadData];
 //}
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,6 +131,8 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    [self loadSite];
 }
 
 - (void)didReceiveMemoryWarning {

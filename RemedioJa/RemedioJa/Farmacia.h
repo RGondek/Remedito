@@ -11,6 +11,7 @@
 @interface Farmacia : NSObject
 
 @property (nonatomic, copy) NSString *nomeFarmacia;
+@property (nonatomic, copy) NSString *url;
 @property (nonatomic) double preco;
 @property (nonatomic, copy) NSString *imagem;
 

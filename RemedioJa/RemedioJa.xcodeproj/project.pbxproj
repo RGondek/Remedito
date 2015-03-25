@@ -19,8 +19,8 @@
 		D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CA1AC31CFE0015BC19 /* TFHpple.m */; };
 		D53852D01AC31CFE0015BC19 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CC1AC31CFE0015BC19 /* TFHppleElement.m */; };
 		D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CE1AC31CFE0015BC19 /* XPathQuery.m */; };
-		D53852D71AC31F0C0015BC19 /* Remedio.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852D61AC31F0C0015BC19 /* Remedio.m */; };
 		D53852DA1AC31F2B0015BC19 /* Farmacia.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852D91AC31F2B0015BC19 /* Farmacia.m */; };
+		D53852DD1AC32FA30015BC19 /* Remedio.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852DC1AC32FA30015BC19 /* Remedio.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +56,10 @@
 		D53852CC1AC31CFE0015BC19 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		D53852CD1AC31CFE0015BC19 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		D53852CE1AC31CFE0015BC19 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		D53852D51AC31F0C0015BC19 /* Remedio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Remedio.h; path = ../../../Remedio.h; sourceTree = "<group>"; };
-		D53852D61AC31F0C0015BC19 /* Remedio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Remedio.m; path = ../../../Remedio.m; sourceTree = "<group>"; };
 		D53852D81AC31F2B0015BC19 /* Farmacia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farmacia.h; sourceTree = "<group>"; };
 		D53852D91AC31F2B0015BC19 /* Farmacia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Farmacia.m; sourceTree = "<group>"; };
+		D53852DB1AC32FA30015BC19 /* Remedio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Remedio.h; sourceTree = "<group>"; };
+		D53852DC1AC32FA30015BC19 /* Remedio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Remedio.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +161,8 @@
 		D53852D31AC31EED0015BC19 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D53852D51AC31F0C0015BC19 /* Remedio.h */,
-				D53852D61AC31F0C0015BC19 /* Remedio.m */,
+				D53852DB1AC32FA30015BC19 /* Remedio.h */,
+				D53852DC1AC32FA30015BC19 /* Remedio.m */,
 				D53852D81AC31F2B0015BC19 /* Farmacia.h */,
 				D53852D91AC31F2B0015BC19 /* Farmacia.m */,
 			);
@@ -271,13 +271,13 @@
 			files = (
 				D53852DA1AC31F2B0015BC19 /* Farmacia.m in Sources */,
 				D53852D01AC31CFE0015BC19 /* TFHppleElement.m in Sources */,
-				D53852D71AC31F0C0015BC19 /* Remedio.m in Sources */,
 				D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */,
 				D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */,
 				D53852A41AC31CD10015BC19 /* AppDelegate.m in Sources */,
 				D53852A71AC31CD10015BC19 /* MasterViewController.m in Sources */,
 				D53852A11AC31CD10015BC19 /* main.m in Sources */,
 				D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */,
+				D53852DD1AC32FA30015BC19 /* Remedio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +478,7 @@
 				D53852C31AC31CD10015BC19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D53852C41AC31CD10015BC19 /* Build configuration list for PBXNativeTarget "RemedioJaTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +487,7 @@
 				D53852C61AC31CD10015BC19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
