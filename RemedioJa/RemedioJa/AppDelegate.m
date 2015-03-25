@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  RemedioJa
 //
-//  Created by Rubens Gondek on 3/23/15.
+//  Created by Rubens Gondek on 3/25/15.
 //  Copyright (c) 2015 Remedito. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "DetailViewController.h"
 
 @interface AppDelegate ()
 
