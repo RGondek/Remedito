@@ -14,27 +14,28 @@
 
 @implementation DetailViewController
 
-#pragma mark - Managing the detail item
+@synthesize apRemedio, compRemedio, imgRemedio, nomeRemedio, pAteRemedio, pDeRemedio, tableViewF, itemR;
 
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-            
-        // Update the view.
-        [self configureView];
-    }
-}
+#pragma mark - Managing the detail item
 
 - (void)configureView {
     // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
+    [nomeRemedio setText:itemR.nomeRemedio];
+    [apRemedio setText:itemR.apresentacao];
+    [compRemedio setText:itemR.composto];
+    Farmacia *itemF = [itemR.farmacias firstObject];
+    [pDeRemedio setText:[NSString stringWithFormat:@"R$ %.2f", itemF.preco]];
+    itemF = [itemR.farmacias lastObject];
+    [pAteRemedio setText:[NSString stringWithFormat:@"R$ %.2f", itemF.preco]];
+    [imgRemedio setImage:itemR.imagem];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
     [self configureView];
 }
 
