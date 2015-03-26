@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
+#import "TableViewCell.h"
+#import "Remedio.h"
 
 @interface MasterViewController : UITableViewController
 

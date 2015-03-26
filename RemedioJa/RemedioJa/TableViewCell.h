@@ -10,4 +10,9 @@
 
 @interface TableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *img;
+@property (weak, nonatomic) IBOutlet UILabel *nome;
+@property (weak, nonatomic) IBOutlet UILabel *comp;
+@property (weak, nonatomic) IBOutlet UILabel *preco;
+
 @end

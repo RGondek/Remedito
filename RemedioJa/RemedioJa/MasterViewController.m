@@ -7,8 +7,6 @@
 //
 
 #import "MasterViewController.h"
-#import "DetailViewController.h"
-#import "Remedio.h"
 #import "TFHpple.h"
 #import "TFHppleElement.h"
 #import "Farmacia.h"
@@ -28,7 +26,7 @@
 
 - (void)loadSite{
     termo = @"cataflam";
-    NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=%@", termo]];
+    NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=cataflam"]];
     NSData *siteHTML = [NSData dataWithContentsOfURL:site];
     
     TFHpple *siteParser = [TFHpple hppleWithHTMLData:siteHTML];
@@ -64,7 +62,12 @@
             itemR.nomeRemedio = [[res firstChild] content];
             // Imagem
             res = [[elem searchWithXPathQuery:RemQueryImg]objectAtIndex:0];
-            itemR.imagem = [res objectForKey:@"src"];
+            if ([[res objectForKey:@"src"] isEqualToString:@"http://images.consultaremedios.com.br/160x160/anvisa"]) {
+                itemR.imagem = @"noImg";
+            }
+            else{
+                itemR.imagem = [res objectForKey:@"src"];
+            }
             // Apresentacao
             res = [[elem searchWithXPathQuery:RemQueryAp]objectAtIndex:0];
             itemR.apresentacao = [[res firstChild] content];
@@ -95,6 +98,7 @@
             NSArray *sa = [NSArray arrayWithObject:sd];
             NSArray *farmSort = [farmacias sortedArrayUsingDescriptors:sa];
             itemR.farmacias = farmSort;
+            [farmacias removeAllObjects];
             [remedios addObject:itemR];
         }
         else{
@@ -152,10 +156,23 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     Remedio *objR = remedios[indexPath.row];
-    cell.textLabel.text = objR.nomeRemedio;
+    Farmacia *objF = objR.farmacias[0];
+    [cell.nome setText:objR.nomeRemedio];
+    [cell.comp setText:objR.composto];
+    [cell.preco setText:[NSString stringWithFormat:@"R$ %.2f", objF.preco]];
+    UIImage *img;
+    if ([objR.imagem isEqualToString:@"noImg"]) {
+        img = [UIImage imageNamed:objR.imagem];
+    }
+    else{
+        img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:objR.imagem]]];
+    }
+    
+    [cell.img setImage:img];
+    
     return cell;
 }
 
