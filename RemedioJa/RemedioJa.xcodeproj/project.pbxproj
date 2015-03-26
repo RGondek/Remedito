@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C9CB2DE1AC47048001FCD84 /* LembreteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */; };
+		8C9CB2E11AC4725D001FCD84 /* HorariosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */; };
 		D509A8781AC46E8A00136CED /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D509A8771AC46E8A00136CED /* TableViewCell.m */; };
 		D53852A11AC31CD10015BC19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A01AC31CD10015BC19 /* main.m */; };
 		D53852A41AC31CD10015BC19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A31AC31CD10015BC19 /* AppDelegate.m */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C9CB2DC1AC47048001FCD84 /* LembreteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LembreteViewController.h; sourceTree = "<group>"; };
+		8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LembreteViewController.m; sourceTree = "<group>"; };
+		8C9CB2DF1AC4725D001FCD84 /* HorariosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorariosViewController.h; sourceTree = "<group>"; };
+		8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorariosViewController.m; sourceTree = "<group>"; };
 		D509A8761AC46E8A00136CED /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		D509A8771AC46E8A00136CED /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		D538529B1AC31CD10015BC19 /* RemedioJa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemedioJa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +122,10 @@
 				D53852A61AC31CD10015BC19 /* MasterViewController.m */,
 				D53852A81AC31CD10015BC19 /* DetailViewController.h */,
 				D53852A91AC31CD10015BC19 /* DetailViewController.m */,
+				8C9CB2DF1AC4725D001FCD84 /* HorariosViewController.h */,
+				8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */,
+				8C9CB2DC1AC47048001FCD84 /* LembreteViewController.h */,
+				8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */,
 				D53852AB1AC31CD10015BC19 /* Main.storyboard */,
 				D53852AE1AC31CD10015BC19 /* Images.xcassets */,
 				D53852B01AC31CD10015BC19 /* LaunchScreen.xib */,
@@ -279,11 +289,13 @@
 				D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */,
 				D509A8781AC46E8A00136CED /* TableViewCell.m in Sources */,
 				D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */,
+				8C9CB2E11AC4725D001FCD84 /* HorariosViewController.m in Sources */,
 				D53852A41AC31CD10015BC19 /* AppDelegate.m in Sources */,
 				D53852A71AC31CD10015BC19 /* MasterViewController.m in Sources */,
 				D53852A11AC31CD10015BC19 /* main.m in Sources */,
 				D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */,
 				D53852DD1AC32FA30015BC19 /* Remedio.m in Sources */,
+				8C9CB2DE1AC47048001FCD84 /* LembreteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
