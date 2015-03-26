@@ -11,7 +11,7 @@
 @interface LembreteViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *dataPicker;
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITextField *campoTexto;
 
 - (IBAction)botaoSalvar:(id)sender;
 

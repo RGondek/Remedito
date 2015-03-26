@@ -118,7 +118,11 @@
                                 <items>
                                     <barButtonItem title="Editar" id="mmI-bw-Kcf"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TfQ-h5-t4y"/>
-                                    <barButtonItem systemItem="add" id="IF1-mP-FFY"/>
+                                    <barButtonItem systemItem="add" id="IF1-mP-FFY">
+                                        <connections>
+                                            <segue destination="V1A-iX-w4J" kind="show" id="DS5-Nl-UAU"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EU9-r4-fgC">
@@ -209,6 +213,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="campoTexto" destination="Vmd-Vd-kpo" id="b1a-fW-1Uz"/>
                         <outlet property="dataPicker" destination="NsB-vo-Wha" id="HV2-iz-9e1"/>
                         <outlet property="textField" destination="Vmd-Vd-kpo" id="8Ju-Tc-gnj"/>
                     </connections>
