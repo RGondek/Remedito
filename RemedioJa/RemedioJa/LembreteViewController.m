@@ -13,12 +13,12 @@
 @end
 
 @implementation LembreteViewController
-@synthesize dataPicker, textField;
+@synthesize dataPicker, campoTexto;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    textField.delegate = self;
-    [textField setReturnKeyType:UIReturnKeyDone];
+    campoTexto.delegate = self;
+    [campoTexto setReturnKeyType:UIReturnKeyDone];
     // Do any additional setup after loading the view.
 }
 
@@ -33,6 +33,11 @@
     
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [campoTexto resignFirstResponder];
+    return YES;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -44,5 +49,27 @@
 */
 
 - (IBAction)botaoSalvar:(id)sender {
+    UIApplication *application = [UIApplication sharedApplication];
+    NSDate *dataP = [dataPicker date];
+    NSTimeInterval time = floor([dataP timeIntervalSinceReferenceDate] / 60.0) * 60.0;
+    NSDate *horario = [NSDate dateWithTimeIntervalSinceReferenceDate:time];
+    
+    if ([campoTexto.text isEqualToString:@""]) {
+        campoTexto.text = @"Padrão";
+    }
+    
+    NSString *campoRemedio = [NSString stringWithFormat:@"Tomar remédio: %@", campoTexto.text];
+    
+    UILocalNotification *notificacao = [[UILocalNotification alloc] init];
+    notificacao.fireDate = horario;
+    notificacao.alertBody = campoRemedio;
+    notificacao.soundName = UILocalNotificationDefaultSoundName;
+    notificacao.timeZone = [NSTimeZone defaultTimeZone];
+    
+    notificacao.repeatInterval = NSCalendarUnitMinute;
+    
+    notificacao.applicationIconBadgeNumber = 1;
+    
+    [application scheduleLocalNotification:notificacao];
 }
 @end
