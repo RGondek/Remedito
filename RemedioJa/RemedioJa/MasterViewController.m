@@ -16,7 +16,6 @@
 @end
 
 @implementation MasterViewController{
-    NSString *termo;
     NSMutableArray *remedios;
 }
 
@@ -24,9 +23,8 @@
     [super awakeFromNib];
 }
 
-- (void)loadSite{
-    termo = @"cataflam";
-    NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=cataflam"]];
+- (void)loadSite:(NSString*)termo{
+    NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=%@", termo]];
     NSData *siteHTML = [NSData dataWithContentsOfURL:site];
     
     TFHpple *siteParser = [TFHpple hppleWithHTMLData:siteHTML];
@@ -60,22 +58,23 @@
             // Nome
             res = resArray[0];
             itemR.nomeRemedio = [[res firstChild] content];
-            // Imagem
-            res = [[elem searchWithXPathQuery:RemQueryImg]objectAtIndex:0];
-            if ([[res objectForKey:@"src"] isEqualToString:@"http://images.consultaremedios.com.br/160x160/anvisa"]) {
-                itemR.imagem = @"noImg";
-            }
-            else{
-                itemR.imagem = [res objectForKey:@"src"];
-            }
             // Apresentacao
             res = [[elem searchWithXPathQuery:RemQueryAp]objectAtIndex:0];
             itemR.apresentacao = [[res firstChild] content];
             // Composto
             res = [[elem searchWithXPathQuery:RemQueryComp]objectAtIndex:0];
             itemR.composto = [[res firstChild] content];
+            // Imagem
+            res = [[elem searchWithXPathQuery:RemQueryImg]objectAtIndex:0];
+            NSData *imgData = UIImageJPEGRepresentation([UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[res objectForKey:@"src"]]]], 1.0);
+            if ([[res objectForKey:@"src"] isEqualToString:@"http://images.consultaremedios.com.br/160x160/anvisa"] || (imgData.length) == 10607) {
+                itemR.imagem = [UIImage imageNamed:@"noImg"];
+            }
+            else{
+                itemR.imagem = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[res objectForKey:@"src"]]]];
+            }
             
-            NSLog(@"Remedio: %@, %@, %@, %@", itemR.nomeRemedio, itemR.imagem, itemR.apresentacao, itemR.composto);
+            NSLog(@"Remedio: %@, %@, %@, %@", itemR.nomeRemedio, [res objectForKey:@"src"], itemR.apresentacao, itemR.composto);
             
             NSArray *resArrayFarm = [elem searchWithXPathQuery:queryFarmBase];
             TFHppleElement *resFarm;
@@ -91,7 +90,7 @@
                 
                 itemF.preco = [[[[[resFarm firstChild] content] substringFromIndex:2] stringByReplacingOccurrencesOfString:@"," withString:@"."] doubleValue];
                 
-                NSLog(@"Farmacia: %@, %@, %@, %.2f", itemF.nomeFarmacia, itemF.imagem, itemF.url, itemF.preco);
+                //NSLog(@"Farmacia: %@, %@, %@, %.2f", itemF.nomeFarmacia, itemF.imagem, itemF.url, itemF.preco);
                 [farmacias addObject:itemF];
             }
             NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"preco" ascending:YES];
@@ -102,7 +101,7 @@
             [remedios addObject:itemR];
         }
         else{
-            NSLog(@"NULL");
+            //NSLog(@"NULL");
         }
     }
 //    
@@ -112,13 +111,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.pesquisa setDelegate:self];
     // Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
 //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
     
-    [self loadSite];
+    [self loadSite:@""];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,7 +142,7 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Remedio *objRemedio = remedios[indexPath.row];
-        [[segue destinationViewController] setDetailItem:objRemedio];
+        [[segue destinationViewController] setItemR:objRemedio];
     }
 }
 
@@ -161,17 +162,9 @@
     Remedio *objR = remedios[indexPath.row];
     Farmacia *objF = objR.farmacias[0];
     [cell.nome setText:objR.nomeRemedio];
-    [cell.comp setText:objR.composto];
+    [cell.ap setText:objR.apresentacao];
     [cell.preco setText:[NSString stringWithFormat:@"R$ %.2f", objF.preco]];
-    UIImage *img;
-    if ([objR.imagem isEqualToString:@"noImg"]) {
-        img = [UIImage imageNamed:objR.imagem];
-    }
-    else{
-        img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:objR.imagem]]];
-    }
-    
-    [cell.img setImage:img];
+    [cell.img setImage:objR.imagem];
     
     return cell;
 }
@@ -179,6 +172,13 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
+}
+
+#pragma mark Search bar
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self loadSite:searchBar.text];
+    [searchBar resignFirstResponder];
 }
 
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Remedio : NSObject
 
+@property UIImage *imagem;
 @property (nonatomic, copy) NSString *nomeRemedio;
-@property (nonatomic, copy) NSString *imagem;
 @property (nonatomic, copy) NSString *apresentacao;
 @property (nonatomic, copy) NSString *composto;
 @property (nonatomic, copy) NSString *lab;

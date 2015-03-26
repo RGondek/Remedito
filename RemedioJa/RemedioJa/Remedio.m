@@ -10,6 +10,6 @@
 
 @implementation Remedio
 
-@synthesize nomeRemedio, farmacias, composto, imagem, lab, apresentacao, bulaUrl;
+@synthesize nomeRemedio, farmacias, composto, lab, apresentacao, bulaUrl;
 
 @end

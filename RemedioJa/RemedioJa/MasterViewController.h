@@ -11,8 +11,9 @@
 #import "TableViewCell.h"
 #import "Remedio.h"
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController <UISearchBarDelegate>
 
+@property (weak, nonatomic) IBOutlet UISearchBar *pesquisa;
 
 @end
 

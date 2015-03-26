@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Remedio.h"
+#import "Farmacia.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Remedio *itemR;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imgRemedio;
 @property (weak, nonatomic) IBOutlet UILabel *nomeRemedio;
 @property (weak, nonatomic) IBOutlet UILabel *apRemedio;
