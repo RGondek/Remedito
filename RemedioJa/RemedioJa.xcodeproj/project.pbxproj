@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D509A8781AC46E8A00136CED /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D509A8771AC46E8A00136CED /* TableViewCell.m */; };
 		D53852A11AC31CD10015BC19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A01AC31CD10015BC19 /* main.m */; };
 		D53852A41AC31CD10015BC19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A31AC31CD10015BC19 /* AppDelegate.m */; };
 		D53852A71AC31CD10015BC19 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A61AC31CD10015BC19 /* MasterViewController.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D509A8761AC46E8A00136CED /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		D509A8771AC46E8A00136CED /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		D538529B1AC31CD10015BC19 /* RemedioJa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemedioJa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D538529F1AC31CD10015BC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D53852A01AC31CD10015BC19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				D53852D31AC31EED0015BC19 /* Classes */,
 				D53852A21AC31CD10015BC19 /* AppDelegate.h */,
 				D53852A31AC31CD10015BC19 /* AppDelegate.m */,
+				D509A8761AC46E8A00136CED /* TableViewCell.h */,
+				D509A8771AC46E8A00136CED /* TableViewCell.m */,
 				D53852A51AC31CD10015BC19 /* MasterViewController.h */,
 				D53852A61AC31CD10015BC19 /* MasterViewController.m */,
 				D53852A81AC31CD10015BC19 /* DetailViewController.h */,
@@ -272,6 +277,7 @@
 				D53852DA1AC31F2B0015BC19 /* Farmacia.m in Sources */,
 				D53852D01AC31CFE0015BC19 /* TFHppleElement.m in Sources */,
 				D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */,
+				D509A8781AC46E8A00136CED /* TableViewCell.m in Sources */,
 				D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */,
 				D53852A41AC31CD10015BC19 /* AppDelegate.m in Sources */,
 				D53852A71AC31CD10015BC19 /* MasterViewController.m in Sources */,

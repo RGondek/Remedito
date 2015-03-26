@@ -28,7 +28,7 @@
 
 - (void)loadSite{
     termo = @"cataflam";
-    NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=cataflam"]];
+    NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=%@", termo]];
     NSData *siteHTML = [NSData dataWithContentsOfURL:site];
     
     TFHpple *siteParser = [TFHpple hppleWithHTMLData:siteHTML];
