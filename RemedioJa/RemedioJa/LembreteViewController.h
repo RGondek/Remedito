@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *campoTexto;
 
 - (IBAction)botaoSalvar:(id)sender;
+- (IBAction)botaoCancelar:(id)sender;
 
 @end
