@@ -71,5 +71,10 @@
     notificacao.applicationIconBadgeNumber = 1;
     
     [application scheduleLocalNotification:notificacao];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)botaoCancelar:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
