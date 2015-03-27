@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface HorarioTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *horario;
 @property (weak, nonatomic) IBOutlet UILabel *nomedoRemedio;
+@property (strong, nonatomic) IBOutlet UISwitch *btnAtivo;
 
 @end

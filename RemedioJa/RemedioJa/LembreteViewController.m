@@ -7,16 +7,21 @@
 //
 
 #import "LembreteViewController.h"
+#import "SingletonLemb.h"
+#import "Lembrete.h"
 
 @interface LembreteViewController ()
 
 @end
 
-@implementation LembreteViewController
+@implementation LembreteViewController {
+    SingletonLemb *sL;
+}
 @synthesize dataPicker, campoTexto;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    sL = [SingletonLemb instance];
     campoTexto.delegate = self;
     [campoTexto setReturnKeyType:UIReturnKeyDone];
     // Do any additional setup after loading the view.
@@ -49,32 +54,47 @@
 */
 
 - (IBAction)botaoSalvar:(id)sender {
+    if ([campoTexto.text isEqualToString:@""]) {
+        float valor = 15;
+        CABasicAnimation *shake = [CABasicAnimation animationWithKeyPath:@"position.x"];
+        [shake setDuration:0.075];
+        [shake setRepeatCount:2];
+        [shake setAutoreverses:YES];
+        [shake setFromValue:[NSNumber numberWithFloat:campoTexto.center.x - valor]];
+        [shake setFromValue:[NSNumber numberWithFloat:campoTexto.center.x + valor]];
+        [campoTexto.layer addAnimation:shake forKey:@"shake"];
+        [campoTexto setPlaceholder: @"Digite o nome do remédio"];
+    }
+    else {
+        [self salvar];
+    }
+}
+
+- (IBAction)botaoCancelar:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)salvar{
     UIApplication *application = [UIApplication sharedApplication];
     NSDate *dataP = [dataPicker date];
     NSTimeInterval time = floor([dataP timeIntervalSinceReferenceDate] / 60.0) * 60.0;
     NSDate *horario = [NSDate dateWithTimeIntervalSinceReferenceDate:time];
     
-    if ([campoTexto.text isEqualToString:@""]) {
-        campoTexto.text = @"Padrão";
-    }
-    
-    NSString *campoRemedio = [NSString stringWithFormat:@"Tomar remédio: %@", campoTexto.text];
+    Lembrete *lemb = [[Lembrete alloc]initWithNome:campoTexto.text andData:horario];
+    [sL.lembretes addObject:lemb];
     
     UILocalNotification *notificacao = [[UILocalNotification alloc] init];
     notificacao.fireDate = horario;
-    notificacao.alertBody = campoRemedio;
+    notificacao.alertBody = campoTexto.text;
     notificacao.soundName = UILocalNotificationDefaultSoundName;
     notificacao.timeZone = [NSTimeZone defaultTimeZone];
     
-    notificacao.repeatInterval = NSCalendarUnitMinute;
+    notificacao.repeatInterval = NSCalendarUnitHour;
     
     notificacao.applicationIconBadgeNumber = 1;
     
     [application scheduleLocalNotification:notificacao];
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)botaoCancelar:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 @end

@@ -118,8 +118,6 @@
 
 //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
-    
-    [self loadSite:@""];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -177,8 +175,20 @@
 #pragma mark Search bar
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    [self loadSite:searchBar.text];
-    [searchBar resignFirstResponder];
+    if (![self conectado]) {
+        UIAlertView *alertaNet = [[UIAlertView alloc] initWithTitle:@"Aviso!" message:@"Sem conexão com a internet" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertaNet show];
+    }
+    else{
+        [self loadSite:[searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
+        [searchBar resignFirstResponder];
+    }
+}
+
+-(BOOL)conectado{
+    Reachability *reach = [Reachability reachabilityForInternetConnection];
+    NetworkStatus net = [reach currentReachabilityStatus];
+    return (net != NotReachable);
 }
 
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

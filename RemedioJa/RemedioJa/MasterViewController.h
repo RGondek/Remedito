@@ -10,10 +10,14 @@
 #import "DetailViewController.h"
 #import "TableViewCell.h"
 #import "Remedio.h"
+#import "Reachability.h"
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @interface MasterViewController : UITableViewController <UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *pesquisa;
+
+-(BOOL) conectado;
 
 @end
 

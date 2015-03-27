@@ -7,9 +7,10 @@
 //
 
 #import "HorarioTableViewCell.h"
+#import "Lembrete.h"
 
 @implementation HorarioTableViewCell
-@synthesize horario, nomedoRemedio;
+@synthesize horario, nomedoRemedio, btnAtivo;
 
 - (void)awakeFromNib {
     // Initialization code
@@ -20,5 +21,6 @@
 
     // Configure the view for the selected state
 }
+
 
 @end
