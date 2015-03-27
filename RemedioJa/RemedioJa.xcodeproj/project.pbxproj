@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C83FC6E1AC4B17200853A77 /* HorarioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C83FC6D1AC4B17200853A77 /* HorarioTableViewCell.m */; };
 		8C9CB2DE1AC47048001FCD84 /* LembreteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */; };
 		8C9CB2E11AC4725D001FCD84 /* HorariosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */; };
 		D509A8781AC46E8A00136CED /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D509A8771AC46E8A00136CED /* TableViewCell.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C83FC6C1AC4B17200853A77 /* HorarioTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorarioTableViewCell.h; sourceTree = "<group>"; };
+		8C83FC6D1AC4B17200853A77 /* HorarioTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorarioTableViewCell.m; sourceTree = "<group>"; };
 		8C9CB2DC1AC47048001FCD84 /* LembreteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LembreteViewController.h; sourceTree = "<group>"; };
 		8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LembreteViewController.m; sourceTree = "<group>"; };
 		8C9CB2DF1AC4725D001FCD84 /* HorariosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorariosViewController.h; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				D5C112A21AC4E7A200BB8A0F /* WebViewController.m */,
 				8C9CB2DF1AC4725D001FCD84 /* HorariosViewController.h */,
 				8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */,
+				8C83FC6C1AC4B17200853A77 /* HorarioTableViewCell.h */,
+				8C83FC6D1AC4B17200853A77 /* HorarioTableViewCell.m */,
 				8C9CB2DC1AC47048001FCD84 /* LembreteViewController.h */,
 				8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */,
 				D53852AB1AC31CD10015BC19 /* Main.storyboard */,
@@ -297,6 +302,7 @@
 				D53852DA1AC31F2B0015BC19 /* Farmacia.m in Sources */,
 				D5C112A31AC4E7A200BB8A0F /* WebViewController.m in Sources */,
 				D53852D01AC31CFE0015BC19 /* TFHppleElement.m in Sources */,
+				8C83FC6E1AC4B17200853A77 /* HorarioTableViewCell.m in Sources */,
 				D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */,
 				D509A8781AC46E8A00136CED /* TableViewCell.m in Sources */,
 				D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */,
