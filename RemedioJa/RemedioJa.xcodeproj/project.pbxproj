@@ -25,6 +25,8 @@
 		D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CE1AC31CFE0015BC19 /* XPathQuery.m */; };
 		D53852DA1AC31F2B0015BC19 /* Farmacia.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852D91AC31F2B0015BC19 /* Farmacia.m */; };
 		D53852DD1AC32FA30015BC19 /* Remedio.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852DC1AC32FA30015BC19 /* Remedio.m */; };
+		D5C112A01AC4D01100BB8A0F /* FamaciaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C1129F1AC4D01100BB8A0F /* FamaciaCell.m */; };
+		D5C112A31AC4E7A200BB8A0F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C112A21AC4E7A200BB8A0F /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,10 @@
 		D53852D91AC31F2B0015BC19 /* Farmacia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Farmacia.m; sourceTree = "<group>"; };
 		D53852DB1AC32FA30015BC19 /* Remedio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Remedio.h; sourceTree = "<group>"; };
 		D53852DC1AC32FA30015BC19 /* Remedio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Remedio.m; sourceTree = "<group>"; };
+		D5C1129E1AC4D01100BB8A0F /* FamaciaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamaciaCell.h; sourceTree = "<group>"; };
+		D5C1129F1AC4D01100BB8A0F /* FamaciaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamaciaCell.m; sourceTree = "<group>"; };
+		D5C112A11AC4E7A200BB8A0F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		D5C112A21AC4E7A200BB8A0F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +127,14 @@
 				D53852A31AC31CD10015BC19 /* AppDelegate.m */,
 				D509A8761AC46E8A00136CED /* TableViewCell.h */,
 				D509A8771AC46E8A00136CED /* TableViewCell.m */,
+				D5C1129E1AC4D01100BB8A0F /* FamaciaCell.h */,
+				D5C1129F1AC4D01100BB8A0F /* FamaciaCell.m */,
 				D53852A51AC31CD10015BC19 /* MasterViewController.h */,
 				D53852A61AC31CD10015BC19 /* MasterViewController.m */,
 				D53852A81AC31CD10015BC19 /* DetailViewController.h */,
 				D53852A91AC31CD10015BC19 /* DetailViewController.m */,
+				D5C112A11AC4E7A200BB8A0F /* WebViewController.h */,
+				D5C112A21AC4E7A200BB8A0F /* WebViewController.m */,
 				8C9CB2DF1AC4725D001FCD84 /* HorariosViewController.h */,
 				8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */,
 				8C83FC6C1AC4B17200853A77 /* HorarioTableViewCell.h */,
@@ -290,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D53852DA1AC31F2B0015BC19 /* Farmacia.m in Sources */,
+				D5C112A31AC4E7A200BB8A0F /* WebViewController.m in Sources */,
 				D53852D01AC31CFE0015BC19 /* TFHppleElement.m in Sources */,
 				8C83FC6E1AC4B17200853A77 /* HorarioTableViewCell.m in Sources */,
 				D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */,
@@ -302,6 +313,7 @@
 				D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */,
 				D53852DD1AC32FA30015BC19 /* Remedio.m in Sources */,
 				8C9CB2DE1AC47048001FCD84 /* LembreteViewController.m in Sources */,
+				D5C112A01AC4D01100BB8A0F /* FamaciaCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

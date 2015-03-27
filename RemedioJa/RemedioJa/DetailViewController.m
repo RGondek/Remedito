@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "FamaciaCell.h"
 
 @interface DetailViewController ()
 
@@ -32,6 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [tableViewF setDelegate:self];
+    [tableViewF setDataSource:self];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -42,6 +45,36 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark Table View
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return itemR.farmacias.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    FamaciaCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellF" forIndexPath:indexPath];
+    
+    Farmacia *itemF = itemR.farmacias[indexPath.row];
+    
+    [cell.img setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:itemF.imagem]]]];
+    [cell.nome setText:itemF.nomeFarmacia];
+    [cell.preco setText:[NSString stringWithFormat:@"R$ %.2f", itemF.preco]];
+    
+    return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"showWeb"]) {
+        NSIndexPath *indexPath = [self.tableViewF indexPathForSelectedRow];
+        Farmacia *itemF = itemR.farmacias[indexPath.row];
+        [[segue destinationViewController] setURL:[NSURL URLWithString:itemF.url]];
+    }
 }
 
 @end
