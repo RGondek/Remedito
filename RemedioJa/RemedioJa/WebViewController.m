@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [_webView loadRequest:[NSURLRequest requestWithURL:_url]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +29,6 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [_webView loadRequest:[NSURLRequest requestWithURL:_url]];
 }
 
 -(void)webViewDidStartLoad:(UIWebView *)webView{

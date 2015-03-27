@@ -73,6 +73,7 @@
     if ([[segue identifier] isEqualToString:@"showWeb"]) {
         NSIndexPath *indexPath = [self.tableViewF indexPathForSelectedRow];
         Farmacia *itemF = itemR.farmacias[indexPath.row];
+        NSLog(@"%@", itemF.url);
         [[segue destinationViewController] setURL:[NSURL URLWithString:itemF.url]];
     }
 }

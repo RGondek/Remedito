@@ -339,7 +339,7 @@
                                             <outlet property="img" destination="7Ds-7L-Ovw" id="90U-hx-TKa"/>
                                             <outlet property="nome" destination="d93-mv-b9V" id="3PE-zK-yn6"/>
                                             <outlet property="preco" destination="KiF-dO-TSE" id="5S4-a8-cgv"/>
-                                            <segue destination="afV-9P-xQg" kind="show" id="GKe-Nd-aLz"/>
+                                            <segue destination="afV-9P-xQg" kind="show" identifier="showWeb" id="GKe-Nd-aLz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
