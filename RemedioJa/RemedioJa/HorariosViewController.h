@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HorariosViewController : UIViewController
+@interface HorariosViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tb;
 
 @end
