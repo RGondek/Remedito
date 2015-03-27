@@ -74,7 +74,7 @@
                 itemR.imagem = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[res objectForKey:@"src"]]]];
             }
             
-            NSLog(@"Remedio: %@, %@, %@, %@", itemR.nomeRemedio, [res objectForKey:@"src"], itemR.apresentacao, itemR.composto);
+            //NSLog(@"Remedio: %@, %@, %@, %@", itemR.nomeRemedio, [res objectForKey:@"src"], itemR.apresentacao, itemR.composto);
             
             NSArray *resArrayFarm = [elem searchWithXPathQuery:queryFarmBase];
             TFHppleElement *resFarm;

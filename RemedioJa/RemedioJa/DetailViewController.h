@@ -10,7 +10,7 @@
 #import "Remedio.h"
 #import "Farmacia.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) Remedio *itemR;
 
