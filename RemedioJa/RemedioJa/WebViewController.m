@@ -14,13 +14,13 @@
 
 @implementation WebViewController
 
-@synthesize progress;
+@synthesize progress, urlSite;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [_webView loadRequest:[NSURLRequest requestWithURL:_url]];
+    [_webView loadRequest:[NSURLRequest requestWithURL:urlSite]];
 }
 
 - (void)didReceiveMemoryWarning {

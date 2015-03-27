@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "WebViewController.h"
 #import "FamaciaCell.h"
 
 @interface DetailViewController ()
@@ -74,7 +75,7 @@
         NSIndexPath *indexPath = [self.tableViewF indexPathForSelectedRow];
         Farmacia *itemF = itemR.farmacias[indexPath.row];
         NSLog(@"%@", itemF.url);
-        [[segue destinationViewController] setURL:[NSURL URLWithString:itemF.url]];
+        [[segue destinationViewController] setUrlSite:[NSURL URLWithString:itemF.url]];
     }
 }
 

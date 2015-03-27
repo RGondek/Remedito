@@ -10,8 +10,9 @@
 
 @interface WebViewController : UIViewController <UIWebViewDelegate>
 
+@property (nonatomic, strong) NSURL *urlSite;
+
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property NSURL *url;
 @property (weak, nonatomic) IBOutlet UIProgressView *progress;
 
 @end
