@@ -10,6 +10,15 @@
 		8C83FC6E1AC4B17200853A77 /* HorarioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C83FC6D1AC4B17200853A77 /* HorarioTableViewCell.m */; };
 		8C9CB2DE1AC47048001FCD84 /* LembreteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */; };
 		8C9CB2E11AC4725D001FCD84 /* HorariosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */; };
+		D4C395991AC7746D008D1327 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C395981AC7746D008D1327 /* CoreLocation.framework */; };
+		D4C3959B1AC7747D008D1327 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3959A1AC7747D008D1327 /* AddressBook.framework */; };
+		D4C3959D1AC7748A008D1327 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3959C1AC7748A008D1327 /* MapKit.framework */; };
+		D4D9D2C81AC75242002C7252 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2C71AC75242002C7252 /* MapViewController.m */; };
+		D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2CA1AC75309002C7252 /* Farm.m */; };
+		D4D9D2CE1AC75703002C7252 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2CD1AC75703002C7252 /* Annotation.m */; };
+		D4D9D2D11AC75C0F002C7252 /* ListaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D01AC75C0F002C7252 /* ListaViewController.m */; };
+		D4D9D2D41AC75F9E002C7252 /* DescricaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */; };
+		D4D9D2D71AC764C9002C7252 /* ListaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */; };
 		D509A8781AC46E8A00136CED /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D509A8771AC46E8A00136CED /* TableViewCell.m */; };
 		D53852A11AC31CD10015BC19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A01AC31CD10015BC19 /* main.m */; };
 		D53852A41AC31CD10015BC19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A31AC31CD10015BC19 /* AppDelegate.m */; };
@@ -46,6 +55,21 @@
 		8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LembreteViewController.m; sourceTree = "<group>"; };
 		8C9CB2DF1AC4725D001FCD84 /* HorariosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorariosViewController.h; sourceTree = "<group>"; };
 		8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorariosViewController.m; sourceTree = "<group>"; };
+		D4C395981AC7746D008D1327 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D4C3959A1AC7747D008D1327 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		D4C3959C1AC7748A008D1327 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D4D9D2C61AC75242002C7252 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		D4D9D2C71AC75242002C7252 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		D4D9D2C91AC75309002C7252 /* Farm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farm.h; sourceTree = "<group>"; };
+		D4D9D2CA1AC75309002C7252 /* Farm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Farm.m; sourceTree = "<group>"; };
+		D4D9D2CC1AC75703002C7252 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		D4D9D2CD1AC75703002C7252 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
+		D4D9D2CF1AC75C0F002C7252 /* ListaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaViewController.h; sourceTree = "<group>"; };
+		D4D9D2D01AC75C0F002C7252 /* ListaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaViewController.m; sourceTree = "<group>"; };
+		D4D9D2D21AC75F9E002C7252 /* DescricaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescricaoViewController.h; sourceTree = "<group>"; };
+		D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescricaoViewController.m; sourceTree = "<group>"; };
+		D4D9D2D51AC764C9002C7252 /* ListaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaTableViewCell.h; sourceTree = "<group>"; };
+		D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaTableViewCell.m; sourceTree = "<group>"; };
 		D509A8761AC46E8A00136CED /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		D509A8771AC46E8A00136CED /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		D538529B1AC31CD10015BC19 /* RemedioJa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemedioJa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +109,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C3959D1AC7748A008D1327 /* MapKit.framework in Frameworks */,
+				D4C3959B1AC7747D008D1327 /* AddressBook.framework in Frameworks */,
+				D4C395991AC7746D008D1327 /* CoreLocation.framework in Frameworks */,
 				D53852C81AC31CE90015BC19 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +129,9 @@
 		D53852921AC31CD10015BC19 = {
 			isa = PBXGroup;
 			children = (
+				D4C3959C1AC7748A008D1327 /* MapKit.framework */,
+				D4C3959A1AC7747D008D1327 /* AddressBook.framework */,
+				D4C395981AC7746D008D1327 /* CoreLocation.framework */,
 				D53852C71AC31CE90015BC19 /* libxml2.dylib */,
 				D53852D21AC31D030015BC19 /* Hpple */,
 				D538529D1AC31CD10015BC19 /* RemedioJa */,
@@ -141,6 +171,14 @@
 				8C83FC6D1AC4B17200853A77 /* HorarioTableViewCell.m */,
 				8C9CB2DC1AC47048001FCD84 /* LembreteViewController.h */,
 				8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */,
+				D4D9D2C61AC75242002C7252 /* MapViewController.h */,
+				D4D9D2C71AC75242002C7252 /* MapViewController.m */,
+				D4D9D2CF1AC75C0F002C7252 /* ListaViewController.h */,
+				D4D9D2D01AC75C0F002C7252 /* ListaViewController.m */,
+				D4D9D2D51AC764C9002C7252 /* ListaTableViewCell.h */,
+				D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */,
+				D4D9D2D21AC75F9E002C7252 /* DescricaoViewController.h */,
+				D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */,
 				D53852AB1AC31CD10015BC19 /* Main.storyboard */,
 				D53852AE1AC31CD10015BC19 /* Images.xcassets */,
 				D53852B01AC31CD10015BC19 /* LaunchScreen.xib */,
@@ -195,6 +233,10 @@
 				D53852DC1AC32FA30015BC19 /* Remedio.m */,
 				D53852D81AC31F2B0015BC19 /* Farmacia.h */,
 				D53852D91AC31F2B0015BC19 /* Farmacia.m */,
+				D4D9D2C91AC75309002C7252 /* Farm.h */,
+				D4D9D2CA1AC75309002C7252 /* Farm.m */,
+				D4D9D2CC1AC75703002C7252 /* Annotation.h */,
+				D4D9D2CD1AC75703002C7252 /* Annotation.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -299,21 +341,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D9D2D41AC75F9E002C7252 /* DescricaoViewController.m in Sources */,
 				D53852DA1AC31F2B0015BC19 /* Farmacia.m in Sources */,
+				D4D9D2D71AC764C9002C7252 /* ListaTableViewCell.m in Sources */,
 				D5C112A31AC4E7A200BB8A0F /* WebViewController.m in Sources */,
 				D53852D01AC31CFE0015BC19 /* TFHppleElement.m in Sources */,
 				8C83FC6E1AC4B17200853A77 /* HorarioTableViewCell.m in Sources */,
 				D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */,
 				D509A8781AC46E8A00136CED /* TableViewCell.m in Sources */,
 				D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */,
+				D4D9D2D11AC75C0F002C7252 /* ListaViewController.m in Sources */,
 				8C9CB2E11AC4725D001FCD84 /* HorariosViewController.m in Sources */,
 				D53852A41AC31CD10015BC19 /* AppDelegate.m in Sources */,
 				D53852A71AC31CD10015BC19 /* MasterViewController.m in Sources */,
 				D53852A11AC31CD10015BC19 /* main.m in Sources */,
+				D4D9D2C81AC75242002C7252 /* MapViewController.m in Sources */,
+				D4D9D2CE1AC75703002C7252 /* Annotation.m in Sources */,
 				D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */,
 				D53852DD1AC32FA30015BC19 /* Remedio.m in Sources */,
 				8C9CB2DE1AC47048001FCD84 /* LembreteViewController.m in Sources */,
 				D5C112A01AC4D01100BB8A0F /* FamaciaCell.m in Sources */,
+				D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
