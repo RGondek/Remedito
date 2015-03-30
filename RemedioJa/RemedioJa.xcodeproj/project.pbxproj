@@ -135,6 +135,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D534840D1AC9BC9B00440AA6 /* Reachability (Verifica internet) */ = {
+			isa = PBXGroup;
+			children = (
+				D4A8326F1AC9B89D00FA5BBE /* Reachability.h */,
+				D4A832701AC9B89D00FA5BBE /* Reachability.m */,
+			);
+			name = "Reachability (Verifica internet)";
+			path = RemedioJa;
+			sourceTree = "<group>";
+		};
+		D534840E1AC9BCF800440AA6 /* Pesquisa */ = {
+			isa = PBXGroup;
+			children = (
+				D4A832691AC9B84C00FA5BBE /* MasterViewController.h */,
+				D4A8326A1AC9B84C00FA5BBE /* MasterViewController.m */,
+				D4A832741AC9B8D600FA5BBE /* TableViewCell.h */,
+				D4A832751AC9B8D600FA5BBE /* TableViewCell.m */,
+				D53484131AC9BE2F00440AA6 /* Detalhes */,
+			);
+			name = Pesquisa;
+			sourceTree = "<group>";
+		};
+		D534840F1AC9BD2500440AA6 /* Lembrete */ = {
+			isa = PBXGroup;
+			children = (
+				D4A8325D1AC9B7F000FA5BBE /* HorariosViewController.h */,
+				D4A8325E1AC9B7F000FA5BBE /* HorariosViewController.m */,
+				D4A8325F1AC9B7F000FA5BBE /* HorarioTableViewCell.h */,
+				D4A832601AC9B7F000FA5BBE /* HorarioTableViewCell.m */,
+				D4A832661AC9B82900FA5BBE /* LembreteViewController.h */,
+				D4A832671AC9B82900FA5BBE /* LembreteViewController.m */,
+			);
+			name = Lembrete;
+			sourceTree = "<group>";
+		};
+		D53484101AC9BD3500440AA6 /* Mapa */ = {
+			isa = PBXGroup;
+			children = (
+				D4D9D2C61AC75242002C7252 /* MapViewController.h */,
+				D4D9D2C71AC75242002C7252 /* MapViewController.m */,
+				D4D9D2CF1AC75C0F002C7252 /* ListaViewController.h */,
+				D4D9D2D01AC75C0F002C7252 /* ListaViewController.m */,
+				D4D9D2D51AC764C9002C7252 /* ListaTableViewCell.h */,
+				D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */,
+				D4D9D2D21AC75F9E002C7252 /* DescricaoViewController.h */,
+				D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */,
+			);
+			name = Mapa;
+			sourceTree = "<group>";
+		};
+		D53484111AC9BD8200440AA6 /* Mapa */ = {
+			isa = PBXGroup;
+			children = (
+				D4D9D2C91AC75309002C7252 /* Farm.h */,
+				D4D9D2CA1AC75309002C7252 /* Farm.m */,
+				D4D9D2CC1AC75703002C7252 /* Annotation.h */,
+				D4D9D2CD1AC75703002C7252 /* Annotation.m */,
+			);
+			name = Mapa;
+			sourceTree = "<group>";
+		};
+		D53484121AC9BD9700440AA6 /* Pesquisa */ = {
+			isa = PBXGroup;
+			children = (
+				D4A8325A1AC9B7D800FA5BBE /* Farmacia.h */,
+				D4A8325B1AC9B7D800FA5BBE /* Farmacia.m */,
+				D4A8326C1AC9B85C00FA5BBE /* Remedio.h */,
+				D4A8326D1AC9B85C00FA5BBE /* Remedio.m */,
+			);
+			name = Pesquisa;
+			sourceTree = "<group>";
+		};
+		D53484131AC9BE2F00440AA6 /* Detalhes */ = {
+			isa = PBXGroup;
+			children = (
+				D53852A81AC31CD10015BC19 /* DetailViewController.h */,
+				D53852A91AC31CD10015BC19 /* DetailViewController.m */,
+				D534840A1AC9BB8B00440AA6 /* FamaciaCell.h */,
+				D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */,
+				D4A832761AC9B8D600FA5BBE /* WebViewController.h */,
+				D4A832771AC9B8D600FA5BBE /* WebViewController.m */,
+			);
+			name = Detalhes;
+			sourceTree = "<group>";
+		};
 		D53852921AC31CD10015BC19 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +227,7 @@
 				D4C3959A1AC7747D008D1327 /* AddressBook.framework */,
 				D4C395981AC7746D008D1327 /* CoreLocation.framework */,
 				D53852C71AC31CE90015BC19 /* libxml2.dylib */,
+				D534840D1AC9BC9B00440AA6 /* Reachability (Verifica internet) */,
 				D53852D21AC31D030015BC19 /* Hpple */,
 				D538529D1AC31CD10015BC19 /* RemedioJa */,
 				D53852BA1AC31CD10015BC19 /* RemedioJaTests */,
@@ -161,40 +247,17 @@
 		D538529D1AC31CD10015BC19 /* RemedioJa */ = {
 			isa = PBXGroup;
 			children = (
-				D53852D31AC31EED0015BC19 /* Classes */,
 				D53852A21AC31CD10015BC19 /* AppDelegate.h */,
 				D53852A31AC31CD10015BC19 /* AppDelegate.m */,
-				D4A832691AC9B84C00FA5BBE /* MasterViewController.h */,
-				D4A8326A1AC9B84C00FA5BBE /* MasterViewController.m */,
-				D4A8326F1AC9B89D00FA5BBE /* Reachability.h */,
-				D4A832701AC9B89D00FA5BBE /* Reachability.m */,
 				D4A832721AC9B8D600FA5BBE /* SingletonLemb.h */,
 				D4A832731AC9B8D600FA5BBE /* SingletonLemb.m */,
-				D4A832741AC9B8D600FA5BBE /* TableViewCell.h */,
-				D4A832751AC9B8D600FA5BBE /* TableViewCell.m */,
-				D4A832761AC9B8D600FA5BBE /* WebViewController.h */,
-				D4A832771AC9B8D600FA5BBE /* WebViewController.m */,
-				D534840A1AC9BB8B00440AA6 /* FamaciaCell.h */,
-				D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */,
-				D53852A81AC31CD10015BC19 /* DetailViewController.h */,
-				D53852A91AC31CD10015BC19 /* DetailViewController.m */,
-				D4A8325D1AC9B7F000FA5BBE /* HorariosViewController.h */,
-				D4A8325E1AC9B7F000FA5BBE /* HorariosViewController.m */,
-				D4A8325F1AC9B7F000FA5BBE /* HorarioTableViewCell.h */,
-				D4A832601AC9B7F000FA5BBE /* HorarioTableViewCell.m */,
-				D4A832661AC9B82900FA5BBE /* LembreteViewController.h */,
-				D4A832671AC9B82900FA5BBE /* LembreteViewController.m */,
-				D4D9D2C61AC75242002C7252 /* MapViewController.h */,
-				D4D9D2C71AC75242002C7252 /* MapViewController.m */,
-				D4D9D2CF1AC75C0F002C7252 /* ListaViewController.h */,
-				D4D9D2D01AC75C0F002C7252 /* ListaViewController.m */,
-				D4D9D2D51AC764C9002C7252 /* ListaTableViewCell.h */,
-				D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */,
-				D4D9D2D21AC75F9E002C7252 /* DescricaoViewController.h */,
-				D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */,
+				D53852D31AC31EED0015BC19 /* Classes */,
+				D534840E1AC9BCF800440AA6 /* Pesquisa */,
+				D534840F1AC9BD2500440AA6 /* Lembrete */,
+				D53484101AC9BD3500440AA6 /* Mapa */,
 				D4A8327B1AC9B92A00FA5BBE /* Main.storyboard */,
-				D53852AE1AC31CD10015BC19 /* Images.xcassets */,
 				D53852B01AC31CD10015BC19 /* LaunchScreen.xib */,
+				D53852AE1AC31CD10015BC19 /* Images.xcassets */,
 				D538529E1AC31CD10015BC19 /* Supporting Files */,
 			);
 			path = RemedioJa;
@@ -244,14 +307,8 @@
 			children = (
 				D4A832631AC9B80700FA5BBE /* Lembrete.h */,
 				D4A832641AC9B80700FA5BBE /* Lembrete.m */,
-				D4D9D2C91AC75309002C7252 /* Farm.h */,
-				D4D9D2CA1AC75309002C7252 /* Farm.m */,
-				D4A8325A1AC9B7D800FA5BBE /* Farmacia.h */,
-				D4A8325B1AC9B7D800FA5BBE /* Farmacia.m */,
-				D4D9D2CC1AC75703002C7252 /* Annotation.h */,
-				D4D9D2CD1AC75703002C7252 /* Annotation.m */,
-				D4A8326C1AC9B85C00FA5BBE /* Remedio.h */,
-				D4A8326D1AC9B85C00FA5BBE /* Remedio.m */,
+				D53484111AC9BD8200440AA6 /* Mapa */,
+				D53484121AC9BD9700440AA6 /* Pesquisa */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
