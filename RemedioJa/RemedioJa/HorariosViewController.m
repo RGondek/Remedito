@@ -10,6 +10,7 @@
 #import "HorarioTableViewCell.h"
 #import "SingletonLemb.h"
 #import "Lembrete.h"
+#import "LembreteViewController.h"
 
 @interface HorariosViewController ()
 
@@ -33,7 +34,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated {
     [tb reloadData];
     
 }
@@ -94,5 +95,16 @@
     CGRect frame = [s convertRect:s.bounds toView:tb];
     return [tb indexPathForRowAtPoint:frame.origin];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"mostrarLembrete"]) {
+        NSIndexPath *indexPath = [self.tb indexPathForSelectedRow];
+        lemb = [sL.lembretes objectAtIndex:indexPath.row];
+        LembreteViewController *destViewController = segue.destinationViewController;
+        destViewController.lemb = lemb;
+        destViewController.index = (int)indexPath.row;
+    }
+}
+
 
 @end

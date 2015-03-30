@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qwp-Vp-ZaP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -161,7 +162,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TfQ-h5-t4y"/>
                                     <barButtonItem systemItem="add" id="IF1-mP-FFY">
                                         <connections>
-                                            <segue destination="V1A-iX-w4J" kind="presentation" id="d3s-i6-j3g"/>
+                                            <segue destination="V1A-iX-w4J" kind="popoverPresentation" popoverAnchorBarButtonItem="IF1-mP-FFY" id="3B8-pH-8fJ">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -197,6 +200,7 @@
                                             <outlet property="btnAtivo" destination="pAX-cJ-V19" id="iqp-KO-fdD"/>
                                             <outlet property="horario" destination="Abt-AV-Azt" id="wjB-aY-vw9"/>
                                             <outlet property="nomedoRemedio" destination="6VN-0u-hsi" id="52y-LT-zz6"/>
+                                            <segue destination="V1A-iX-w4J" kind="show" identifier="mostrarLembrete" id="Okf-vC-TYC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -624,4 +628,7 @@
             <point key="canvasLocation" x="1489.5" y="63.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3B8-pH-8fJ"/>
+    </inferredMetricsTieBreakers>
 </document>

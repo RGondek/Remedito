@@ -17,7 +17,7 @@
 @implementation LembreteViewController {
     SingletonLemb *sL;
 }
-@synthesize dataPicker, campoTexto;
+@synthesize dataPicker, campoTexto, lemb, index;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,9 +33,10 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    
+    if (lemb != nil) {
+        [campoTexto setText:lemb.nome];
+        [dataPicker setDate:lemb.data];
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -75,14 +76,34 @@
 }
 
 -(void)salvar{
+    
     UIApplication *application = [UIApplication sharedApplication];
     NSDate *dataP = [dataPicker date];
     NSTimeInterval time = floor([dataP timeIntervalSinceReferenceDate] / 60.0) * 60.0;
     NSDate *horario = [NSDate dateWithTimeIntervalSinceReferenceDate:time];
     
-    Lembrete *lemb = [[Lembrete alloc]initWithNome:campoTexto.text andData:horario];
-    [sL.lembretes addObject:lemb];
-    
+    if (lemb == nil) {
+        Lembrete *lembrete = [[Lembrete alloc]initWithNome:campoTexto.text andData:horario];
+        [sL.lembretes addObject:lembrete];
+    }
+    else {
+        // Apagar notificacao
+        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
+        notificacao.fireDate = lemb.data;
+        notificacao.alertBody = lemb.nome;
+        notificacao.soundName = UILocalNotificationDefaultSoundName;
+        notificacao.timeZone = [NSTimeZone defaultTimeZone];
+        
+        notificacao.repeatInterval = NSCalendarUnitHour;
+        
+        notificacao.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
+
+        lemb.nome = campoTexto.text;
+        lemb.data = horario;
+        [sL.lembretes replaceObjectAtIndex:index withObject:lemb];
+        
+    }
     UILocalNotification *notificacao = [[UILocalNotification alloc] init];
     notificacao.fireDate = horario;
     notificacao.alertBody = campoTexto.text;
