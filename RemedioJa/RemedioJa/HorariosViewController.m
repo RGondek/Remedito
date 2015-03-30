@@ -73,7 +73,9 @@
     
     
     // Display notification info
+    [cell.btnAtivo setTag:indexPath.row];
     [cell.btnAtivo addTarget:self action:@selector(mudarEstado:) forControlEvents:UIControlEventValueChanged];
+     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     [cell.btnAtivo setTag:indexPath.row];
     [cell.nomedoRemedio setText:lemb.nome];
@@ -83,12 +85,25 @@
     return cell;
 }
 
--(void)mudarEstado:(id)sender{
-    UISwitch *btn = sender;
-    NSIndexPath *ind = [self getButtonIndexPath:sender];
-    lemb = [sL.lembretes objectAtIndex:ind.row];
-    lemb.ativo = btn.isOn;
+-(IBAction)mudarEstado:(id)sender{
+    theSwitch = sender;
+    NSLog(@"%lu", theSwitch.tag);
+    if(theSwitch.on){
+        NSLog (@"foi?");
+    }
+    else {
+        NSLog(@"foi mas ta desligado :( " );
+        
+    }
 }
+
+//-(void)mudarEstado:(id)sender{
+//   
+//    UISwitch *btn = sender;
+//    NSIndexPath *ind = [self getButtonIndexPath:sender];
+//    lemb = [sL.lembretes objectAtIndex:ind.row];
+//    lemb.ativo = btn.isOn;
+//}
 
 -(NSIndexPath *) getButtonIndexPath:(UISwitch*)s{
     CGRect frame = [s convertRect:s.bounds toView:tb];

@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface HorariosViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    UISwitch    *theSwitch;
+}
+
+
 @property (weak, nonatomic) IBOutlet UITableView *tb;
+
+
+-(IBAction)mudarEstado:(id)sender;
 
 @end
