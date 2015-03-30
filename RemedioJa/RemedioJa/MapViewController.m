@@ -7,8 +7,7 @@
 //
 
 #import "MapViewController.h"
-#import "ListaViewController.h"
-#import "DescricaoViewController.h"
+#import "ListaTableViewCell.h"
 #import "Annotation.h"
 
 @interface MapViewController ()
@@ -19,6 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    [_tableView setDelegate:self];
+    [_tableView setDataSource:self];
     [_mapView setDelegate:self];
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
@@ -36,6 +39,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Map View
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     NSLog(@"%@", [locations lastObject]);
     CLLocationCoordinate2D loc = [[locations lastObject] coordinate];
@@ -44,13 +50,16 @@
     _mapView.showsUserLocation=YES;
     [locationManager stopUpdatingLocation];
 }
+
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"Não foi possível encontrar sua localização.");
 }
+
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     self.mapView.frame = self.view.bounds;
 }
+
 - (IBAction)recarregar:(id)sender {
     [_mapView setCenterCoordinate:_mapView.userLocation.coordinate animated:YES];
     [_matchingItems removeAllObjects];
@@ -102,20 +111,7 @@
         }
     }];
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([[segue identifier] isEqualToString:@"listaViewSegue"]){
-        ListaViewController *listaTableController = [segue destinationViewController];
-        MapViewController *mapViewController = [segue sourceViewController];
-        listaTableController.delegate = mapViewController;
-        listaTableController.matchingItems = [[NSMutableArray alloc] initWithArray:_matchingItems];
-    }
-    if([[segue identifier] isEqualToString:@"descricaoViewSegue"]){
-        DescricaoViewController *descricaoViewController = [segue destinationViewController];
-        MapViewController *firstViewController = [segue sourceViewController];
-        descricaoViewController.delegate = firstViewController;
-        descricaoViewController.farm = _farm;
-    }
-}
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     MKAnnotationView *pinView = nil;
     if(annotation != mapView.userLocation) {
@@ -191,5 +187,37 @@
     return renderer;
 }
 
+#pragma mark - Table View
+
+#pragma mark ARRUMA ISSO AQUI BROTHER \/
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 0;
+}
+
+// Comentar pra não esquecer
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ListaTableViewCell *cell = [tv dequeueReusableCellWithIdentifier:@"ListaTableCell" forIndexPath:indexPath];
+//    Farm *farm = _matchingItems[[indexPath row]];
+//    cell.nome.text = farm.nome;
+//    UIButton *rota = [[UIButton alloc] init];
+//    rota.frame = CGRectMake(20, 12, 30, 25);
+//    rota.tag = indexPath.row;
+//    [rota setImage:[UIImage imageNamed:@"carro.png"] forState:UIControlStateNormal];
+//    [rota addTarget:self action:@selector(tracarRota:) forControlEvents:UIControlEventTouchUpInside];
+//    [cell.contentView addSubview:rota];
+    return cell;
+}
+
+- (IBAction)voltar:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 @end

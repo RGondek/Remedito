@@ -18,10 +18,11 @@
 
 @end
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, MapViewDelegate>{
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, MapViewDelegate, UITableViewDelegate, UITableViewDataSource>{
     CLLocationManager *locationManager;
 }
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property Farm *farm;
 @property NSMutableArray* matchingItems;
 @property NSMutableArray* foundItems;

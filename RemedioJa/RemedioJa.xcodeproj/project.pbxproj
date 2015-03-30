@@ -25,8 +25,6 @@
 		D4D9D2C81AC75242002C7252 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2C71AC75242002C7252 /* MapViewController.m */; };
 		D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2CA1AC75309002C7252 /* Farm.m */; };
 		D4D9D2CE1AC75703002C7252 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2CD1AC75703002C7252 /* Annotation.m */; };
-		D4D9D2D11AC75C0F002C7252 /* ListaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D01AC75C0F002C7252 /* ListaViewController.m */; };
-		D4D9D2D41AC75F9E002C7252 /* DescricaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */; };
 		D4D9D2D71AC764C9002C7252 /* ListaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */; };
 		D534840C1AC9BB8B00440AA6 /* FamaciaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */; };
 		D53852A11AC31CD10015BC19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A01AC31CD10015BC19 /* main.m */; };
@@ -84,10 +82,6 @@
 		D4D9D2CA1AC75309002C7252 /* Farm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Farm.m; sourceTree = "<group>"; };
 		D4D9D2CC1AC75703002C7252 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		D4D9D2CD1AC75703002C7252 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
-		D4D9D2CF1AC75C0F002C7252 /* ListaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaViewController.h; sourceTree = "<group>"; };
-		D4D9D2D01AC75C0F002C7252 /* ListaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaViewController.m; sourceTree = "<group>"; };
-		D4D9D2D21AC75F9E002C7252 /* DescricaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescricaoViewController.h; sourceTree = "<group>"; };
-		D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescricaoViewController.m; sourceTree = "<group>"; };
 		D4D9D2D51AC764C9002C7252 /* ListaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaTableViewCell.h; sourceTree = "<group>"; };
 		D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaTableViewCell.m; sourceTree = "<group>"; };
 		D534840A1AC9BB8B00440AA6 /* FamaciaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamaciaCell.h; sourceTree = "<group>"; };
@@ -175,12 +169,8 @@
 			children = (
 				D4D9D2C61AC75242002C7252 /* MapViewController.h */,
 				D4D9D2C71AC75242002C7252 /* MapViewController.m */,
-				D4D9D2CF1AC75C0F002C7252 /* ListaViewController.h */,
-				D4D9D2D01AC75C0F002C7252 /* ListaViewController.m */,
 				D4D9D2D51AC764C9002C7252 /* ListaTableViewCell.h */,
 				D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */,
-				D4D9D2D21AC75F9E002C7252 /* DescricaoViewController.h */,
-				D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */,
 			);
 			name = Mapa;
 			sourceTree = "<group>";
@@ -413,7 +403,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4D9D2D41AC75F9E002C7252 /* DescricaoViewController.m in Sources */,
 				D4A832651AC9B80700FA5BBE /* Lembrete.m in Sources */,
 				D4D9D2D71AC764C9002C7252 /* ListaTableViewCell.m in Sources */,
 				D4A832791AC9B8D600FA5BBE /* TableViewCell.m in Sources */,
@@ -421,7 +410,6 @@
 				D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */,
 				D4A8326B1AC9B84C00FA5BBE /* MasterViewController.m in Sources */,
 				D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */,
-				D4D9D2D11AC75C0F002C7252 /* ListaViewController.m in Sources */,
 				D4A8325C1AC9B7D800FA5BBE /* Farmacia.m in Sources */,
 				D4A832681AC9B82900FA5BBE /* LembreteViewController.m in Sources */,
 				D4A832611AC9B7F000FA5BBE /* HorariosViewController.m in Sources */,
