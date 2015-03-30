@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C83FC6E1AC4B17200853A77 /* HorarioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C83FC6D1AC4B17200853A77 /* HorarioTableViewCell.m */; };
-		8C9CB2DE1AC47048001FCD84 /* LembreteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */; };
-		8C9CB2E11AC4725D001FCD84 /* HorariosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */; };
+		D4A8325C1AC9B7D800FA5BBE /* Farmacia.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8325B1AC9B7D800FA5BBE /* Farmacia.m */; };
+		D4A832611AC9B7F000FA5BBE /* HorariosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8325E1AC9B7F000FA5BBE /* HorariosViewController.m */; };
+		D4A832621AC9B7F000FA5BBE /* HorarioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832601AC9B7F000FA5BBE /* HorarioTableViewCell.m */; };
+		D4A832651AC9B80700FA5BBE /* Lembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832641AC9B80700FA5BBE /* Lembrete.m */; };
+		D4A832681AC9B82900FA5BBE /* LembreteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832671AC9B82900FA5BBE /* LembreteViewController.m */; };
+		D4A8326B1AC9B84C00FA5BBE /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8326A1AC9B84C00FA5BBE /* MasterViewController.m */; };
+		D4A8326E1AC9B85C00FA5BBE /* Remedio.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8326D1AC9B85C00FA5BBE /* Remedio.m */; };
+		D4A832711AC9B89D00FA5BBE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832701AC9B89D00FA5BBE /* Reachability.m */; };
+		D4A832781AC9B8D600FA5BBE /* SingletonLemb.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832731AC9B8D600FA5BBE /* SingletonLemb.m */; };
+		D4A832791AC9B8D600FA5BBE /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832751AC9B8D600FA5BBE /* TableViewCell.m */; };
+		D4A8327A1AC9B8D600FA5BBE /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832771AC9B8D600FA5BBE /* WebViewController.m */; };
+		D4A8327C1AC9B92A00FA5BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A8327B1AC9B92A00FA5BBE /* Main.storyboard */; };
 		D4C395991AC7746D008D1327 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C395981AC7746D008D1327 /* CoreLocation.framework */; };
 		D4C3959B1AC7747D008D1327 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3959A1AC7747D008D1327 /* AddressBook.framework */; };
 		D4C3959D1AC7748A008D1327 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3959C1AC7748A008D1327 /* MapKit.framework */; };
@@ -19,12 +28,10 @@
 		D4D9D2D11AC75C0F002C7252 /* ListaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D01AC75C0F002C7252 /* ListaViewController.m */; };
 		D4D9D2D41AC75F9E002C7252 /* DescricaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */; };
 		D4D9D2D71AC764C9002C7252 /* ListaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */; };
-		D509A8781AC46E8A00136CED /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D509A8771AC46E8A00136CED /* TableViewCell.m */; };
+		D534840C1AC9BB8B00440AA6 /* FamaciaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */; };
 		D53852A11AC31CD10015BC19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A01AC31CD10015BC19 /* main.m */; };
 		D53852A41AC31CD10015BC19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A31AC31CD10015BC19 /* AppDelegate.m */; };
-		D53852A71AC31CD10015BC19 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A61AC31CD10015BC19 /* MasterViewController.m */; };
 		D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A91AC31CD10015BC19 /* DetailViewController.m */; };
-		D53852AD1AC31CD10015BC19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D53852AB1AC31CD10015BC19 /* Main.storyboard */; };
 		D53852AF1AC31CD10015BC19 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53852AE1AC31CD10015BC19 /* Images.xcassets */; };
 		D53852B21AC31CD10015BC19 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53852B01AC31CD10015BC19 /* LaunchScreen.xib */; };
 		D53852BE1AC31CD10015BC19 /* RemedioJaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852BD1AC31CD10015BC19 /* RemedioJaTests.m */; };
@@ -32,13 +39,6 @@
 		D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CA1AC31CFE0015BC19 /* TFHpple.m */; };
 		D53852D01AC31CFE0015BC19 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CC1AC31CFE0015BC19 /* TFHppleElement.m */; };
 		D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CE1AC31CFE0015BC19 /* XPathQuery.m */; };
-		D53852DA1AC31F2B0015BC19 /* Farmacia.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852D91AC31F2B0015BC19 /* Farmacia.m */; };
-		D53852DD1AC32FA30015BC19 /* Remedio.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852DC1AC32FA30015BC19 /* Remedio.m */; };
-		D5C112A01AC4D01100BB8A0F /* FamaciaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C1129F1AC4D01100BB8A0F /* FamaciaCell.m */; };
-		D5C112A31AC4E7A200BB8A0F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C112A21AC4E7A200BB8A0F /* WebViewController.m */; };
-		D5E637AF1AC5C552009F454C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E637AE1AC5C552009F454C /* Reachability.m */; };
-		D5E637B91AC5CC62009F454C /* Lembrete.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E637B81AC5CC62009F454C /* Lembrete.m */; };
-		D5E637BC1AC5CCE0009F454C /* SingletonLemb.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E637BB1AC5CCE0009F454C /* SingletonLemb.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,12 +52,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C83FC6C1AC4B17200853A77 /* HorarioTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorarioTableViewCell.h; sourceTree = "<group>"; };
-		8C83FC6D1AC4B17200853A77 /* HorarioTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorarioTableViewCell.m; sourceTree = "<group>"; };
-		8C9CB2DC1AC47048001FCD84 /* LembreteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LembreteViewController.h; sourceTree = "<group>"; };
-		8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LembreteViewController.m; sourceTree = "<group>"; };
-		8C9CB2DF1AC4725D001FCD84 /* HorariosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorariosViewController.h; sourceTree = "<group>"; };
-		8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorariosViewController.m; sourceTree = "<group>"; };
+		D4A8325A1AC9B7D800FA5BBE /* Farmacia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farmacia.h; sourceTree = "<group>"; };
+		D4A8325B1AC9B7D800FA5BBE /* Farmacia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Farmacia.m; sourceTree = "<group>"; };
+		D4A8325D1AC9B7F000FA5BBE /* HorariosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorariosViewController.h; sourceTree = "<group>"; };
+		D4A8325E1AC9B7F000FA5BBE /* HorariosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorariosViewController.m; sourceTree = "<group>"; };
+		D4A8325F1AC9B7F000FA5BBE /* HorarioTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorarioTableViewCell.h; sourceTree = "<group>"; };
+		D4A832601AC9B7F000FA5BBE /* HorarioTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorarioTableViewCell.m; sourceTree = "<group>"; };
+		D4A832631AC9B80700FA5BBE /* Lembrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lembrete.h; sourceTree = "<group>"; };
+		D4A832641AC9B80700FA5BBE /* Lembrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lembrete.m; sourceTree = "<group>"; };
+		D4A832661AC9B82900FA5BBE /* LembreteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LembreteViewController.h; sourceTree = "<group>"; };
+		D4A832671AC9B82900FA5BBE /* LembreteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LembreteViewController.m; sourceTree = "<group>"; };
+		D4A832691AC9B84C00FA5BBE /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		D4A8326A1AC9B84C00FA5BBE /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		D4A8326C1AC9B85C00FA5BBE /* Remedio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Remedio.h; sourceTree = "<group>"; };
+		D4A8326D1AC9B85C00FA5BBE /* Remedio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Remedio.m; sourceTree = "<group>"; };
+		D4A8326F1AC9B89D00FA5BBE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D4A832701AC9B89D00FA5BBE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D4A832721AC9B8D600FA5BBE /* SingletonLemb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonLemb.h; sourceTree = "<group>"; };
+		D4A832731AC9B8D600FA5BBE /* SingletonLemb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonLemb.m; sourceTree = "<group>"; };
+		D4A832741AC9B8D600FA5BBE /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		D4A832751AC9B8D600FA5BBE /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		D4A832761AC9B8D600FA5BBE /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		D4A832771AC9B8D600FA5BBE /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		D4A8327B1AC9B92A00FA5BBE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D4C395981AC7746D008D1327 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D4C3959A1AC7747D008D1327 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		D4C3959C1AC7748A008D1327 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -73,18 +90,15 @@
 		D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescricaoViewController.m; sourceTree = "<group>"; };
 		D4D9D2D51AC764C9002C7252 /* ListaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaTableViewCell.h; sourceTree = "<group>"; };
 		D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaTableViewCell.m; sourceTree = "<group>"; };
-		D509A8761AC46E8A00136CED /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		D509A8771AC46E8A00136CED /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		D534840A1AC9BB8B00440AA6 /* FamaciaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamaciaCell.h; sourceTree = "<group>"; };
+		D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamaciaCell.m; sourceTree = "<group>"; };
 		D538529B1AC31CD10015BC19 /* RemedioJa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemedioJa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D538529F1AC31CD10015BC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D53852A01AC31CD10015BC19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D53852A21AC31CD10015BC19 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D53852A31AC31CD10015BC19 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D53852A51AC31CD10015BC19 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		D53852A61AC31CD10015BC19 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		D53852A81AC31CD10015BC19 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D53852A91AC31CD10015BC19 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		D53852AC1AC31CD10015BC19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D53852AE1AC31CD10015BC19 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D53852B11AC31CD10015BC19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D53852B71AC31CD10015BC19 /* RemedioJaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemedioJaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,20 +111,6 @@
 		D53852CC1AC31CFE0015BC19 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		D53852CD1AC31CFE0015BC19 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		D53852CE1AC31CFE0015BC19 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		D53852D81AC31F2B0015BC19 /* Farmacia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farmacia.h; sourceTree = "<group>"; };
-		D53852D91AC31F2B0015BC19 /* Farmacia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Farmacia.m; sourceTree = "<group>"; };
-		D53852DB1AC32FA30015BC19 /* Remedio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Remedio.h; sourceTree = "<group>"; };
-		D53852DC1AC32FA30015BC19 /* Remedio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Remedio.m; sourceTree = "<group>"; };
-		D5C1129E1AC4D01100BB8A0F /* FamaciaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamaciaCell.h; sourceTree = "<group>"; };
-		D5C1129F1AC4D01100BB8A0F /* FamaciaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamaciaCell.m; sourceTree = "<group>"; };
-		D5C112A11AC4E7A200BB8A0F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		D5C112A21AC4E7A200BB8A0F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		D5E637AD1AC5C552009F454C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = RemedioJa/Reachability.h; sourceTree = "<group>"; };
-		D5E637AE1AC5C552009F454C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = RemedioJa/Reachability.m; sourceTree = "<group>"; };
-		D5E637B71AC5CC62009F454C /* Lembrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lembrete.h; sourceTree = "<group>"; };
-		D5E637B81AC5CC62009F454C /* Lembrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lembrete.m; sourceTree = "<group>"; };
-		D5E637BA1AC5CCE0009F454C /* SingletonLemb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonLemb.h; sourceTree = "<group>"; };
-		D5E637BB1AC5CCE0009F454C /* SingletonLemb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonLemb.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,6 @@
 				D4C3959A1AC7747D008D1327 /* AddressBook.framework */,
 				D4C395981AC7746D008D1327 /* CoreLocation.framework */,
 				D53852C71AC31CE90015BC19 /* libxml2.dylib */,
-				D5E637B01AC5C560009F454C /* Reachability */,
 				D53852D21AC31D030015BC19 /* Hpple */,
 				D538529D1AC31CD10015BC19 /* RemedioJa */,
 				D53852BA1AC31CD10015BC19 /* RemedioJaTests */,
@@ -162,13 +161,38 @@
 		D538529D1AC31CD10015BC19 /* RemedioJa */ = {
 			isa = PBXGroup;
 			children = (
+				D53852D31AC31EED0015BC19 /* Classes */,
 				D53852A21AC31CD10015BC19 /* AppDelegate.h */,
 				D53852A31AC31CD10015BC19 /* AppDelegate.m */,
-				D53852D31AC31EED0015BC19 /* Classes */,
-				D5E637B31AC5CAE0009F454C /* Pesquisa */,
-				D5E637B21AC5CAB4009F454C /* Detalhes */,
-				D5E637B41AC5CB0A009F454C /* Lembretes */,
-				D53852AB1AC31CD10015BC19 /* Main.storyboard */,
+				D4A832691AC9B84C00FA5BBE /* MasterViewController.h */,
+				D4A8326A1AC9B84C00FA5BBE /* MasterViewController.m */,
+				D4A8326F1AC9B89D00FA5BBE /* Reachability.h */,
+				D4A832701AC9B89D00FA5BBE /* Reachability.m */,
+				D4A832721AC9B8D600FA5BBE /* SingletonLemb.h */,
+				D4A832731AC9B8D600FA5BBE /* SingletonLemb.m */,
+				D4A832741AC9B8D600FA5BBE /* TableViewCell.h */,
+				D4A832751AC9B8D600FA5BBE /* TableViewCell.m */,
+				D4A832761AC9B8D600FA5BBE /* WebViewController.h */,
+				D4A832771AC9B8D600FA5BBE /* WebViewController.m */,
+				D534840A1AC9BB8B00440AA6 /* FamaciaCell.h */,
+				D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */,
+				D53852A81AC31CD10015BC19 /* DetailViewController.h */,
+				D53852A91AC31CD10015BC19 /* DetailViewController.m */,
+				D4A8325D1AC9B7F000FA5BBE /* HorariosViewController.h */,
+				D4A8325E1AC9B7F000FA5BBE /* HorariosViewController.m */,
+				D4A8325F1AC9B7F000FA5BBE /* HorarioTableViewCell.h */,
+				D4A832601AC9B7F000FA5BBE /* HorarioTableViewCell.m */,
+				D4A832661AC9B82900FA5BBE /* LembreteViewController.h */,
+				D4A832671AC9B82900FA5BBE /* LembreteViewController.m */,
+				D4D9D2C61AC75242002C7252 /* MapViewController.h */,
+				D4D9D2C71AC75242002C7252 /* MapViewController.m */,
+				D4D9D2CF1AC75C0F002C7252 /* ListaViewController.h */,
+				D4D9D2D01AC75C0F002C7252 /* ListaViewController.m */,
+				D4D9D2D51AC764C9002C7252 /* ListaTableViewCell.h */,
+				D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */,
+				D4D9D2D21AC75F9E002C7252 /* DescricaoViewController.h */,
+				D4D9D2D31AC75F9E002C7252 /* DescricaoViewController.m */,
+				D4A8327B1AC9B92A00FA5BBE /* Main.storyboard */,
 				D53852AE1AC31CD10015BC19 /* Images.xcassets */,
 				D53852B01AC31CD10015BC19 /* LaunchScreen.xib */,
 				D538529E1AC31CD10015BC19 /* Supporting Files */,
@@ -218,62 +242,18 @@
 		D53852D31AC31EED0015BC19 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D53852DB1AC32FA30015BC19 /* Remedio.h */,
-				D53852DC1AC32FA30015BC19 /* Remedio.m */,
-				D53852D81AC31F2B0015BC19 /* Farmacia.h */,
-				D53852D91AC31F2B0015BC19 /* Farmacia.m */,
-				D5E637B71AC5CC62009F454C /* Lembrete.h */,
-				D5E637B81AC5CC62009F454C /* Lembrete.m */,
-				D5E637BA1AC5CCE0009F454C /* SingletonLemb.h */,
-				D5E637BB1AC5CCE0009F454C /* SingletonLemb.m */,
+				D4A832631AC9B80700FA5BBE /* Lembrete.h */,
+				D4A832641AC9B80700FA5BBE /* Lembrete.m */,
+				D4D9D2C91AC75309002C7252 /* Farm.h */,
+				D4D9D2CA1AC75309002C7252 /* Farm.m */,
+				D4A8325A1AC9B7D800FA5BBE /* Farmacia.h */,
+				D4A8325B1AC9B7D800FA5BBE /* Farmacia.m */,
+				D4D9D2CC1AC75703002C7252 /* Annotation.h */,
+				D4D9D2CD1AC75703002C7252 /* Annotation.m */,
+				D4A8326C1AC9B85C00FA5BBE /* Remedio.h */,
+				D4A8326D1AC9B85C00FA5BBE /* Remedio.m */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		D5E637B01AC5C560009F454C /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				D5E637AD1AC5C552009F454C /* Reachability.h */,
-				D5E637AE1AC5C552009F454C /* Reachability.m */,
-			);
-			name = Reachability;
-			sourceTree = "<group>";
-		};
-		D5E637B21AC5CAB4009F454C /* Detalhes */ = {
-			isa = PBXGroup;
-			children = (
-				D5C1129E1AC4D01100BB8A0F /* FamaciaCell.h */,
-				D5C1129F1AC4D01100BB8A0F /* FamaciaCell.m */,
-				D53852A81AC31CD10015BC19 /* DetailViewController.h */,
-				D53852A91AC31CD10015BC19 /* DetailViewController.m */,
-				D5C112A11AC4E7A200BB8A0F /* WebViewController.h */,
-				D5C112A21AC4E7A200BB8A0F /* WebViewController.m */,
-			);
-			name = Detalhes;
-			sourceTree = "<group>";
-		};
-		D5E637B31AC5CAE0009F454C /* Pesquisa */ = {
-			isa = PBXGroup;
-			children = (
-				D509A8761AC46E8A00136CED /* TableViewCell.h */,
-				D509A8771AC46E8A00136CED /* TableViewCell.m */,
-				D53852A51AC31CD10015BC19 /* MasterViewController.h */,
-				D53852A61AC31CD10015BC19 /* MasterViewController.m */,
-			);
-			name = Pesquisa;
-			sourceTree = "<group>";
-		};
-		D5E637B41AC5CB0A009F454C /* Lembretes */ = {
-			isa = PBXGroup;
-			children = (
-				8C83FC6C1AC4B17200853A77 /* HorarioTableViewCell.h */,
-				8C83FC6D1AC4B17200853A77 /* HorarioTableViewCell.m */,
-				8C9CB2DF1AC4725D001FCD84 /* HorariosViewController.h */,
-				8C9CB2E01AC4725D001FCD84 /* HorariosViewController.m */,
-				8C9CB2DC1AC47048001FCD84 /* LembreteViewController.h */,
-				8C9CB2DD1AC47048001FCD84 /* LembreteViewController.m */,
-			);
-			name = Lembretes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +305,6 @@
 				TargetAttributes = {
 					D538529A1AC31CD10015BC19 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 7YCYVAN8PU;
 					};
 					D53852B61AC31CD10015BC19 = {
 						CreatedOnToolsVersion = 6.2;
@@ -357,7 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D53852AD1AC31CD10015BC19 /* Main.storyboard in Resources */,
+				D4A8327C1AC9B92A00FA5BBE /* Main.storyboard in Resources */,
 				D53852B21AC31CD10015BC19 /* LaunchScreen.xib in Resources */,
 				D53852AF1AC31CD10015BC19 /* Images.xcassets in Resources */,
 			);
@@ -378,26 +357,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4D9D2D41AC75F9E002C7252 /* DescricaoViewController.m in Sources */,
-				D53852DA1AC31F2B0015BC19 /* Farmacia.m in Sources */,
-				D5E637BC1AC5CCE0009F454C /* SingletonLemb.m in Sources */,
-				D5C112A31AC4E7A200BB8A0F /* WebViewController.m in Sources */,
+				D4A832651AC9B80700FA5BBE /* Lembrete.m in Sources */,
+				D4D9D2D71AC764C9002C7252 /* ListaTableViewCell.m in Sources */,
+				D4A832791AC9B8D600FA5BBE /* TableViewCell.m in Sources */,
 				D53852D01AC31CFE0015BC19 /* TFHppleElement.m in Sources */,
-				8C83FC6E1AC4B17200853A77 /* HorarioTableViewCell.m in Sources */,
 				D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */,
-				D509A8781AC46E8A00136CED /* TableViewCell.m in Sources */,
+				D4A8326B1AC9B84C00FA5BBE /* MasterViewController.m in Sources */,
 				D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */,
 				D4D9D2D11AC75C0F002C7252 /* ListaViewController.m in Sources */,
-				8C9CB2E11AC4725D001FCD84 /* HorariosViewController.m in Sources */,
+				D4A8325C1AC9B7D800FA5BBE /* Farmacia.m in Sources */,
+				D4A832681AC9B82900FA5BBE /* LembreteViewController.m in Sources */,
+				D4A832611AC9B7F000FA5BBE /* HorariosViewController.m in Sources */,
 				D53852A41AC31CD10015BC19 /* AppDelegate.m in Sources */,
-				D53852A71AC31CD10015BC19 /* MasterViewController.m in Sources */,
-				D5E637AF1AC5C552009F454C /* Reachability.m in Sources */,
 				D53852A11AC31CD10015BC19 /* main.m in Sources */,
-				D5E637B91AC5CC62009F454C /* Lembrete.m in Sources */,
+				D4A8326E1AC9B85C00FA5BBE /* Remedio.m in Sources */,
+				D4D9D2C81AC75242002C7252 /* MapViewController.m in Sources */,
+				D4A832711AC9B89D00FA5BBE /* Reachability.m in Sources */,
+				D4D9D2CE1AC75703002C7252 /* Annotation.m in Sources */,
+				D4A832781AC9B8D600FA5BBE /* SingletonLemb.m in Sources */,
+				D4A8327A1AC9B8D600FA5BBE /* WebViewController.m in Sources */,
 				D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */,
-				D53852DD1AC32FA30015BC19 /* Remedio.m in Sources */,
-				8C9CB2DE1AC47048001FCD84 /* LembreteViewController.m in Sources */,
-				D5C112A01AC4D01100BB8A0F /* FamaciaCell.m in Sources */,
 				D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */,
+				D4A832621AC9B7F000FA5BBE /* HorarioTableViewCell.m in Sources */,
+				D534840C1AC9BB8B00440AA6 /* FamaciaCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,14 +402,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D53852AB1AC31CD10015BC19 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D53852AC1AC31CD10015BC19 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D53852B01AC31CD10015BC19 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -529,7 +503,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RemedioJa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,7 +513,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RemedioJa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
