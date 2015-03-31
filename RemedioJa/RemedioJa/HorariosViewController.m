@@ -19,6 +19,7 @@
 @implementation HorariosViewController{
     Lembrete *lemb;
     SingletonLemb *sL;
+    NSArray *itens;
 }
 
 @synthesize tb;
@@ -26,7 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     sL = [SingletonLemb instance];
-    // Do any additional setup after loading the view.
+    
+    itens=[sL obterTodosLembretes];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +38,9 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    itens=[sL obterTodosLembretes];
     [tb reloadData];
+    
     
 }
 #pragma mark - Table View
@@ -49,13 +54,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [sL.lembretes count];
+    return [itens count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HorarioTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    lemb = [sL.lembretes objectAtIndex:indexPath.row];
+    lemb = [itens objectAtIndex:indexPath.row];
     
     NSDateFormatter *dtForm = [[NSDateFormatter alloc] init];
     [dtForm setDateFormat:@"HH:mm"];
@@ -75,7 +80,7 @@
 -(IBAction)mudarEstado:(id)sender{
     theSwitch = sender;
     NSLog(@"%lu", theSwitch.tag);
-    lemb = [sL.lembretes objectAtIndex:theSwitch.tag];
+    lemb = [itens objectAtIndex:theSwitch.tag];
     lemb.ativo = theSwitch.on;
     if(theSwitch.on){
         UILocalNotification *notificacao = [[UILocalNotification alloc] init];
@@ -106,7 +111,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"mostrarLembrete"]) {
         NSIndexPath *indexPath = [self.tb indexPathForSelectedRow];
-        lemb = [sL.lembretes objectAtIndex:indexPath.row];
+        lemb = [itens objectAtIndex:indexPath.row];
         LembreteViewController *destViewController = segue.destinationViewController;
         destViewController.lemb = lemb;
         destViewController.index = (int)indexPath.row;

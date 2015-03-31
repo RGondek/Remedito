@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
 
-@interface Lembrete : NSObject
+@interface Lembrete : RLMObject
 
-@property NSString *nome;
-@property NSDate *data;
-@property BOOL ativo;
+
+@property (nonatomic,strong) NSString *nome;
+@property (nonatomic,strong) NSDate *data;
+@property (nonatomic) BOOL ativo;
+@property int index;
 
 -(instancetype)initWithNome:(NSString*)n andData:(NSDate*)d;
 

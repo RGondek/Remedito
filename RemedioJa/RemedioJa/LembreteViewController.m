@@ -83,8 +83,10 @@
     NSDate *horario = [NSDate dateWithTimeIntervalSinceReferenceDate:time];
     
     if (lemb == nil) {
-        Lembrete *lembrete = [[Lembrete alloc]initWithNome:campoTexto.text andData:horario];
-        [sL.lembretes addObject:lembrete];
+//       Lembrete *lembrete = [[Lembrete alloc]init];
+        [sL salvarLembrete:campoTexto.text andData:horario];
+//        [sL.lembretes addObject:lembrete];
+        
     }
     else {
         // Apagar notificacao

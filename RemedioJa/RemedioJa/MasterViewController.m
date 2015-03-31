@@ -124,7 +124,7 @@
     spinner.center = CGPointMake(self.view.bounds.size.width /2, self.view.bounds.size.height / 2 - 50);
     spinner.hidesWhenStopped = YES;
     [self.view addSubview:spinner];
-
+    
 
 
     // Do any additional setup after loading the view, typically from a nib.

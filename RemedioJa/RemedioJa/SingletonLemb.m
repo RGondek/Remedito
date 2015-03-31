@@ -10,6 +10,8 @@
 
 @implementation SingletonLemb
 
+@synthesize meuRealm;
+
 static SingletonLemb *inst = nil;
 
 #pragma mark - Public Method
@@ -17,6 +19,7 @@ static SingletonLemb *inst = nil;
 +(SingletonLemb*) instance{
     if (inst == nil) {
         inst = [[SingletonLemb alloc] init];
+        
     }
     return inst;
 }
@@ -25,8 +28,44 @@ static SingletonLemb *inst = nil;
     self = [super init];
     if (self) {
         _lembretes = [[NSMutableArray alloc] init];
+        meuRealm=[RLMRealm defaultRealm];
+        
+        
     }
     return self;
 }
+
+-(void) salvarLembrete:(NSString *)nome andData:(NSDate *)data{
+    Lembrete *l=[[Lembrete alloc]initWithNome:nome andData:data];
+    [meuRealm beginWriteTransaction];
+    [meuRealm addObject:l];
+    [meuRealm commitWriteTransaction];
+    
+}
+
+-(NSArray *) obterTodosLembretes{
+    RLMResults *resultado=[Lembrete allObjects];
+    NSMutableArray *itens=[[NSMutableArray alloc]init];
+    for(Lembrete *l in resultado){
+        [itens addObject:l];
+    }
+    return itens;
+}
+
+-(Lembrete *) obterObjIndex:(int)i{
+    RLMResults  *resultado=[Lembrete objectsWhere:[NSString stringWithFormat:@"index=%d", i]];
+    for(Lembrete *l in resultado){
+        if(l.index ==i){
+            return l;
+        }
+    }
+    return nil;
+}
+
+
+
+
+
+
 
 @end

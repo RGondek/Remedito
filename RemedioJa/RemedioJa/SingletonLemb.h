@@ -7,11 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
+#import "Lembrete.h"
 
 @interface SingletonLemb : NSObject
 
+@property RLMRealm *meuRealm;
 @property NSMutableArray *lembretes;
 
-+(SingletonLemb*) instance;
 
++(SingletonLemb*) instance;
+-(void) salvarLembrete:(NSString *)nome andData:(NSDate *)data;
+-(NSArray *) obterTodosLembretes;
+-(Lembrete *) obterObjIndex:(int)i;
 @end

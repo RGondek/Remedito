@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Lembrete.h"
+#import "SingletonLemb.h"
 
 @interface LembreteViewController : UIViewController <UITextFieldDelegate>
 
