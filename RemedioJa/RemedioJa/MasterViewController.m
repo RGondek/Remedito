@@ -19,18 +19,15 @@
     NSMutableArray *remedios;
     UIActivityIndicatorView *spinner;
 }
-
+@synthesize pesquisa;
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
 
 - (void)loadSite:(NSString*)termo{
-
     NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=%@", termo]];
     NSData *siteHTML = [NSData dataWithContentsOfURL:site];
-    
     TFHpple *siteParser = [TFHpple hppleWithHTMLData:siteHTML];
-    
     NSString *queryBase = @"//ul[@class='container product-section clearfix']";
     
     // Query Remédios
@@ -40,15 +37,12 @@
     NSString *RemQueryComp = @"//li[@class='title clearfix']/div[@class='medicine-data']/p[@class='medicine-active-ingredient clearfix']/a"; // FirstChild
     
     // Query Farmácias
-    
     NSString *queryFarmBase = @"//li[@class='item']";
     
     NSString *FarmQueryUrl_Img_Nome = @"//div[@class='item-pharmacy']/div[@class='item-pharmacy-logo']/a"; // Img: /img@src | URL: href | Nome: /img@alt
     NSString *FarmQueryPreco = @"//div[@class='item-price']/a/p"; // FirstChild
     
-    
     NSArray *resBase = [siteParser searchWithXPathQuery:queryBase];
-    
     
     remedios = [[NSMutableArray alloc] initWithCapacity:0];
     NSMutableArray *farmacias = [[NSMutableArray alloc] initWithCapacity:0];
@@ -106,17 +100,11 @@
             //NSLog(@"NULL");
         }
     }
-//    
-//    objs = newItems;
-
     [self.tableView reloadData];
-    [spinner stopAnimating];
-
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.pesquisa setDelegate:self];
     
     spinner = [[UIActivityIndicatorView alloc]
@@ -134,19 +122,11 @@
 //    self.navigationItem.rightBarButtonItem = addButton;
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//- (void)insertNewObject:(id)sender {
-//    if (!self.objects) {
-//        self.objects = [[NSMutableArray alloc] init];
-//    }
-//    [self.objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
 
 #pragma mark - Segues
 
@@ -160,7 +140,35 @@
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+//    if ([pesquisa.text isEqualToString:@""]) {
+//        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        return 0;
+//    }
+//    else{
+//        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+//        
+//        messageLabel.textColor = [UIColor blackColor];
+//        messageLabel.numberOfLines = 0;
+//        messageLabel.textAlignment = NSTextAlignmentCenter;
+//        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+//        [messageLabel sizeToFit];
+//        // Return the number of sections.
+//        if ([remedios count] != 0) {
+//            messageLabel.text = @"";
+//            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//            return 1;
+//            
+//        } else {
+//            messageLabel.text = @"Nenhum remédio encontrado";
+//            // Display a message when the table is empty
+//            self.tableView.backgroundView = messageLabel;
+//            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        }
+//        
+//        return 0;
+//    }
     return 1;
 }
 
@@ -186,19 +194,40 @@
     return YES;
 }
 
-#pragma mark Search bar
+#pragma mark - Search bar
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+
     if (![self conectado]) {
         UIAlertView *alertaNet = [[UIAlertView alloc] initWithTitle:@"Aviso!" message:@"Sem conexão com a internet" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertaNet show];
     }
     else{
-
-        [self loadSite:[searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
+        [remedios removeAllObjects];
+        [self.tableView reloadData];
+        
+        spinner = [[UIActivityIndicatorView alloc]
+                   initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        spinner.center = CGPointMake(self.view.bounds.size.width /2, self.view.bounds.size.height / 2 - 50);
+        spinner.hidesWhenStopped = YES;
+        [self.view addSubview:spinner];
+        [spinner startAnimating];
+        
+        // how we stop refresh from freezing the main UI thread
+        dispatch_queue_t downloadQueue = dispatch_queue_create("downloader", NULL);
+        dispatch_async(downloadQueue, ^{
+            
+            [self loadSite:[searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
+            
+            // do any UI stuff on the main UI thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [spinner stopAnimating];
+                [self.tableView reloadData];
+            });
+        });
+        
         [searchBar resignFirstResponder];
     }
-
 }
 
 -(BOOL)conectado{
@@ -206,14 +235,5 @@
     NetworkStatus net = [reach currentReachabilityStatus];
     return (net != NotReachable);
 }
-
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [self.objects removeObjectAtIndex:indexPath.row];
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
-//}
 
 @end
