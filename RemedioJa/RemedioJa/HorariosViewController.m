@@ -84,7 +84,7 @@
         notificacao.soundName = UILocalNotificationDefaultSoundName;
         notificacao.timeZone = [NSTimeZone defaultTimeZone];
         
-        notificacao.repeatInterval = NSCalendarUnitHour;
+        notificacao.repeatInterval = NSCalendarUnitDay;
         
         notificacao.applicationIconBadgeNumber = 1;
         [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
@@ -96,7 +96,7 @@
         notificacao.soundName = UILocalNotificationDefaultSoundName;
         notificacao.timeZone = [NSTimeZone defaultTimeZone];
         
-        notificacao.repeatInterval = NSCalendarUnitHour;
+        notificacao.repeatInterval = NSCalendarUnitDay;
         
         notificacao.applicationIconBadgeNumber = 1;
         [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
