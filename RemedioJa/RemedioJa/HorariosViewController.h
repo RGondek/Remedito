@@ -13,9 +13,7 @@
     UISwitch    *theSwitch;
 }
 
-
 @property (weak, nonatomic) IBOutlet UITableView *tb;
-
 
 -(IBAction)mudarEstado:(id)sender;
 

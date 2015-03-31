@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
+#import "MasterViewController.h"
 
 @interface AppDelegate ()
 
@@ -30,6 +31,10 @@
     // Set icon badge number to zero
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
+
+    
+
+    
     return YES;
 }
 

@@ -19,6 +19,7 @@
 @implementation HorariosViewController{
     Lembrete *lemb;
     SingletonLemb *sL;
+    NSArray *itens;
 }
 
 @synthesize tb;
@@ -26,7 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     sL = [SingletonLemb instance];
-    // Do any additional setup after loading the view.
+    
+    itens=[sL obterTodosLembretes];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,16 +38,11 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    itens=[sL obterTodosLembretes];
     [tb reloadData];
     
+    
 }
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
-//}
-
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -56,24 +54,17 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [sL.lembretes count];
+    return [itens count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HorarioTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    NSLog(@"%li",(long)indexPath.row);
-    NSLog(@"%@", [[UIApplication sharedApplication] scheduledLocalNotifications]);
-    // Get list of local notifications
-    lemb = [sL.lembretes objectAtIndex:indexPath.row];
-//    NSArray *localNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
-//    UILocalNotification *localNotification = [localNotifications objectAtIndex:indexPath.row];
+    lemb = [itens objectAtIndex:indexPath.row];
     
     NSDateFormatter *dtForm = [[NSDateFormatter alloc] init];
     [dtForm setDateFormat:@"HH:mm"];
     
-    
-    // Display notification info
     [cell.btnAtivo setTag:indexPath.row];
     [cell.btnAtivo addTarget:self action:@selector(mudarEstado:) forControlEvents:UIControlEventValueChanged];
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -89,32 +80,38 @@
 -(IBAction)mudarEstado:(id)sender{
     theSwitch = sender;
     NSLog(@"%lu", theSwitch.tag);
+    lemb = [itens objectAtIndex:theSwitch.tag];
+    lemb.ativo = theSwitch.on;
     if(theSwitch.on){
-        NSLog (@"foi?");
+        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
+        notificacao.fireDate = lemb.data;
+        notificacao.alertBody = lemb.nome;
+        notificacao.soundName = UILocalNotificationDefaultSoundName;
+        notificacao.timeZone = [NSTimeZone defaultTimeZone];
+        
+        notificacao.repeatInterval = NSCalendarUnitDay;
+        
+        notificacao.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
     }
     else {
-        NSLog(@"foi mas ta desligado :( " );
+        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
+        notificacao.fireDate = lemb.data;
+        notificacao.alertBody = lemb.nome;
+        notificacao.soundName = UILocalNotificationDefaultSoundName;
+        notificacao.timeZone = [NSTimeZone defaultTimeZone];
         
+        notificacao.repeatInterval = NSCalendarUnitDay;
+        
+        notificacao.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
     }
-}
-
-//-(void)mudarEstado:(id)sender{
-//   
-//    UISwitch *btn = sender;
-//    NSIndexPath *ind = [self getButtonIndexPath:sender];
-//    lemb = [sL.lembretes objectAtIndex:ind.row];
-//    lemb.ativo = btn.isOn;
-//}
-
--(NSIndexPath *) getButtonIndexPath:(UISwitch*)s{
-    CGRect frame = [s convertRect:s.bounds toView:tb];
-    return [tb indexPathForRowAtPoint:frame.origin];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"mostrarLembrete"]) {
         NSIndexPath *indexPath = [self.tb indexPathForSelectedRow];
-        lemb = [sL.lembretes objectAtIndex:indexPath.row];
+        lemb = [itens objectAtIndex:indexPath.row];
         LembreteViewController *destViewController = segue.destinationViewController;
         destViewController.lemb = lemb;
         destViewController.index = (int)indexPath.row;
