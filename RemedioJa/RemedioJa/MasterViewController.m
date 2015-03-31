@@ -17,6 +17,7 @@
 
 @implementation MasterViewController{
     NSMutableArray *remedios;
+    UIActivityIndicatorView *spinner;
 }
 
 - (void)awakeFromNib {
@@ -24,6 +25,7 @@
 }
 
 - (void)loadSite:(NSString*)termo{
+
     NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=%@", termo]];
     NSData *siteHTML = [NSData dataWithContentsOfURL:site];
     
@@ -106,13 +108,25 @@
     }
 //    
 //    objs = newItems;
+
     [self.tableView reloadData];
+    [spinner stopAnimating];
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.pesquisa setDelegate:self];
+    
+    spinner = [[UIActivityIndicatorView alloc]
+                                        initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(self.view.bounds.size.width /2, self.view.bounds.size.height / 2 - 50);
+    spinner.hidesWhenStopped = YES;
+    [self.view addSubview:spinner];
+
+
+
     // Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -180,9 +194,11 @@
         [alertaNet show];
     }
     else{
+
         [self loadSite:[searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
         [searchBar resignFirstResponder];
     }
+
 }
 
 -(BOOL)conectado{
