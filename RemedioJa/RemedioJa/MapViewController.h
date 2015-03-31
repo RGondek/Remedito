@@ -10,24 +10,22 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import <AddressBook/AddressBook.h>
-#import "Farm.h"
+//#import "Farm.h"
 
-@protocol MapViewDelegate <NSObject>
+//@protocol MapViewDelegate <NSObject>
+//
+//-(void)tracarRota:(Farm *)f;
+//
+//@end
 
--(void)tracarRota:(Farm *)f;
-
-@end
-
-@interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, MapViewDelegate, UITableViewDelegate, UITableViewDataSource>{
-    CLLocationManager *locationManager;
-}
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property Farm *farm;
-@property NSMutableArray* matchingItems;
+//@property Farm *farm;
+@property (strong, nonatomic) NSMutableArray *matchingItems;
 @property NSMutableArray* foundItems;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
--(IBAction)recarregar:(id)sender;
+@property (strong, retain) CLLocationManager *locationManager;
 
 
 @end

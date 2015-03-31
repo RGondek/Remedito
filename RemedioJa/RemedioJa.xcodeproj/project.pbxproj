@@ -24,7 +24,6 @@
 		D4C3959D1AC7748A008D1327 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3959C1AC7748A008D1327 /* MapKit.framework */; };
 		D4D9D2C81AC75242002C7252 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2C71AC75242002C7252 /* MapViewController.m */; };
 		D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2CA1AC75309002C7252 /* Farm.m */; };
-		D4D9D2CE1AC75703002C7252 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2CD1AC75703002C7252 /* Annotation.m */; };
 		D4D9D2D71AC764C9002C7252 /* ListaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */; };
 		D534840C1AC9BB8B00440AA6 /* FamaciaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */; };
 		D53852A11AC31CD10015BC19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A01AC31CD10015BC19 /* main.m */; };
@@ -37,6 +36,7 @@
 		D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CA1AC31CFE0015BC19 /* TFHpple.m */; };
 		D53852D01AC31CFE0015BC19 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CC1AC31CFE0015BC19 /* TFHppleElement.m */; };
 		D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CE1AC31CFE0015BC19 /* XPathQuery.m */; };
+		D56CF78F1ACB150C00723B4E /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D56CF78E1ACB150C00723B4E /* Annotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +80,6 @@
 		D4D9D2C71AC75242002C7252 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		D4D9D2C91AC75309002C7252 /* Farm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farm.h; sourceTree = "<group>"; };
 		D4D9D2CA1AC75309002C7252 /* Farm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Farm.m; sourceTree = "<group>"; };
-		D4D9D2CC1AC75703002C7252 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
-		D4D9D2CD1AC75703002C7252 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		D4D9D2D51AC764C9002C7252 /* ListaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaTableViewCell.h; sourceTree = "<group>"; };
 		D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaTableViewCell.m; sourceTree = "<group>"; };
 		D534840A1AC9BB8B00440AA6 /* FamaciaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamaciaCell.h; sourceTree = "<group>"; };
@@ -105,6 +103,8 @@
 		D53852CC1AC31CFE0015BC19 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		D53852CD1AC31CFE0015BC19 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		D53852CE1AC31CFE0015BC19 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		D56CF78D1ACB150C00723B4E /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		D56CF78E1ACB150C00723B4E /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +180,8 @@
 			children = (
 				D4D9D2C91AC75309002C7252 /* Farm.h */,
 				D4D9D2CA1AC75309002C7252 /* Farm.m */,
-				D4D9D2CC1AC75703002C7252 /* Annotation.h */,
-				D4D9D2CD1AC75703002C7252 /* Annotation.m */,
+				D56CF78D1ACB150C00723B4E /* Annotation.h */,
+				D56CF78E1ACB150C00723B4E /* Annotation.m */,
 			);
 			name = Mapa;
 			sourceTree = "<group>";
@@ -418,10 +418,10 @@
 				D4A8326E1AC9B85C00FA5BBE /* Remedio.m in Sources */,
 				D4D9D2C81AC75242002C7252 /* MapViewController.m in Sources */,
 				D4A832711AC9B89D00FA5BBE /* Reachability.m in Sources */,
-				D4D9D2CE1AC75703002C7252 /* Annotation.m in Sources */,
 				D4A832781AC9B8D600FA5BBE /* SingletonLemb.m in Sources */,
 				D4A8327A1AC9B8D600FA5BBE /* WebViewController.m in Sources */,
 				D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */,
+				D56CF78F1ACB150C00723B4E /* Annotation.m in Sources */,
 				D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */,
 				D4A832621AC9B7F000FA5BBE /* HorarioTableViewCell.m in Sources */,
 				D534840C1AC9BB8B00440AA6 /* FamaciaCell.m in Sources */,
