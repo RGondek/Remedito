@@ -195,7 +195,8 @@
         
         spinner = [[UIActivityIndicatorView alloc]
                    initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        spinner.center = CGPointMake(self.view.bounds.size.width /2, self.view.bounds.size.height / 2 - 50);
+        spinner.center = CGPointMake(self.view.bounds.size.width /2, self.view.bounds.size.height / 2 - 45);
+        spinner.transform = CGAffineTransformMakeScale(2.0, 2.0);
         spinner.hidesWhenStopped = YES;
         [self.view addSubview:spinner];
         [spinner startAnimating];
