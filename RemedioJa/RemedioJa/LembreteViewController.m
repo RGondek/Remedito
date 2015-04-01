@@ -83,10 +83,7 @@
     NSDate *horario = [NSDate dateWithTimeIntervalSinceReferenceDate:time];
     
     if (lemb == nil) {
-//       Lembrete *lembrete = [[Lembrete alloc]init];
-        [sL salvarLembrete:campoTexto.text andData:horario];
-//        [sL.lembretes addObject:lembrete];
-        
+        [sL salvarLembrete:campoTexto.text andData:horario];        
     }
     else {
         // Apagar notificacao
@@ -101,9 +98,7 @@
         notificacao.applicationIconBadgeNumber = 1;
         [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
 
-        lemb.nome = campoTexto.text;
-        lemb.data = horario;
-        [sL alterarObj:lemb Index:lemb.index];
+        [sL alterarLembreteNome:campoTexto.text eData:horario Index:lemb.index];
         
     }
     UILocalNotification *notificacao = [[UILocalNotification alloc] init];
