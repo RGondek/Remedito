@@ -36,7 +36,8 @@
 		D53852CF1AC31CFE0015BC19 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CA1AC31CFE0015BC19 /* TFHpple.m */; };
 		D53852D01AC31CFE0015BC19 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CC1AC31CFE0015BC19 /* TFHppleElement.m */; };
 		D53852D11AC31CFE0015BC19 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852CE1AC31CFE0015BC19 /* XPathQuery.m */; };
-		D56CF78F1ACB150C00723B4E /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D56CF78E1ACB150C00723B4E /* Annotation.m */; };
+		E8E29FDC1ACB27A5008FAA46 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E29FDB1ACB27A5008FAA46 /* Realm.framework */; };
+		E8E29FDE1ACB3275008FAA46 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E29FDD1ACB3275008FAA46 /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +104,8 @@
 		D53852CC1AC31CFE0015BC19 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		D53852CD1AC31CFE0015BC19 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		D53852CE1AC31CFE0015BC19 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		D56CF78D1ACB150C00723B4E /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
-		D56CF78E1ACB150C00723B4E /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
+		E8E29FDB1ACB27A5008FAA46 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		E8E29FDD1ACB3275008FAA46 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

@@ -62,10 +62,19 @@ static SingletonLemb *inst = nil;
     return nil;
 }
 
+-(void)alterarObj:(Lembrete *)lemb Index:(int)i{
+    Lembrete *l = [self obterObjIndex:i];
+    [meuRealm beginWriteTransaction];
+    l.nome = lemb.nome;
+    l.data = lemb.data;
+    [meuRealm commitWriteTransaction];
+}
 
-
-
-
-
+-(void)alterarEstado:(BOOL)status Index:(int)i{
+    Lembrete *l = [self obterObjIndex:i];
+    [meuRealm beginWriteTransaction];
+    l.ativo = status;
+    [meuRealm commitWriteTransaction];
+}
 
 @end

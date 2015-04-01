@@ -27,9 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     sL = [SingletonLemb instance];
-    
-    itens=[sL obterTodosLembretes];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,7 +78,7 @@
     theSwitch = sender;
     NSLog(@"%lu", theSwitch.tag);
     lemb = [itens objectAtIndex:theSwitch.tag];
-    lemb.ativo = theSwitch.on;
+    [sL alterarEstado:theSwitch.on Index:lemb.index];
     if(theSwitch.on){
         UILocalNotification *notificacao = [[UILocalNotification alloc] init];
         notificacao.fireDate = lemb.data;

@@ -103,7 +103,7 @@
 
         lemb.nome = campoTexto.text;
         lemb.data = horario;
-        [sL.lembretes replaceObjectAtIndex:index withObject:lemb];
+        [sL alterarObj:lemb Index:lemb.index];
         
     }
     UILocalNotification *notificacao = [[UILocalNotification alloc] init];

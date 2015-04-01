@@ -20,4 +20,7 @@
 -(void) salvarLembrete:(NSString *)nome andData:(NSDate *)data;
 -(NSArray *) obterTodosLembretes;
 -(Lembrete *) obterObjIndex:(int)i;
+-(void) alterarObj:(Lembrete*)lemb Index:(int)i;
+-(void)alterarEstado:(BOOL)status Index:(int)i;
+
 @end
