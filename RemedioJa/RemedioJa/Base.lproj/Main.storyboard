@@ -160,7 +160,6 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.13725490870000001" green="0.72156864399999998" blue="0.97647058959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <barButtonItem title="Editar" id="mmI-bw-Kcf"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TfQ-h5-t4y"/>
                                     <barButtonItem systemItem="add" id="IF1-mP-FFY">
                                         <connections>
