@@ -15,15 +15,13 @@
 @end
 
 @implementation MapViewController{
-    NSArray *arai;
+    NSMutableArray *itens;
 }
 
 @synthesize locationManager;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_tableView setDelegate:self];
-    [_tableView setDataSource:self];
     [_mapView setDelegate:self];
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
@@ -31,9 +29,12 @@
     if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [locationManager requestWhenInUseAuthorization];
     }
+    [locationManager startUpdatingLocation];
     [_mapView.userLocation setTitle:@"Você"];
     [_mapView userTrackingMode];
-    [locationManager startUpdatingLocation];
+    [_tableView setDelegate:self];
+    [_tableView setDataSource:self];
+    [self recarregar];
     [_tableView reloadData];
 }
 
@@ -50,7 +51,6 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
     [_mapView setRegion:region animated:YES];
     [locationManager stopUpdatingLocation];
-    [self recarregar:region];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -62,13 +62,13 @@
 //    self.mapView.frame = self.view.bounds;
 //}
 
-- (void) recarregar:(MKCoordinateRegion)reg {
+- (void) recarregar {
     [_mapView removeAnnotations:[_mapView annotations]];
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
-    request.naturalLanguageQuery = @"Farmacia";
-    request.region = reg;
+    request.naturalLanguageQuery = @"Drugstore";
+    request.region = _mapView.region;
     
-    _matchingItems = [[NSMutableArray alloc] init];
+    itens = [[NSMutableArray alloc] init];
     
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     
@@ -78,7 +78,7 @@
         else
             for (MKMapItem *item in response.mapItems)
             {
-                [_matchingItems addObject:item];
+                [itens addObject:item];
                 MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
                 annotation.coordinate = item.placemark.coordinate;
                 annotation.title = item.name;
@@ -126,18 +126,19 @@
 #pragma mark ARRUMA ISSO AQUI BROTHER \/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 0;
+    return itens.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ListaTableViewCell *cell = [tv dequeueReusableCellWithIdentifier:@"MapaCell" forIndexPath:indexPath];
-    MKPointAnnotation *ann = [arai objectAtIndex:indexPath.row];
-    [cell.nome setText:ann.title];
+    MKMapItem *it = [itens objectAtIndex:indexPath.row];
+    [cell.nome setText:it.name];
+    
 //    cell.nome.text = farm.nome;
 //    UIButton *rota = [[UIButton alloc] init];
 //    rota.frame = CGRectMake(20, 12, 30, 25);
@@ -146,11 +147,6 @@
 //    [rota addTarget:self action:@selector(tracarRota:) forControlEvents:UIControlEventTouchUpInside];
 //    [cell.contentView addSubview:rota];
     return cell;
-}
-
-- (IBAction)voltar:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 @end
