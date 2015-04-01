@@ -1,0 +1,93 @@
+
+/* Class = "UITabBarItem"; title = "Lembrete"; ObjectID = "1V0-4C-UEm"; */
+"1V0-4C-UEm.title" = "Lembrete";
+
+/* Class = "UILabel"; text = "Nome do alarme"; ObjectID = "6VN-0u-hsi"; */
+"6VN-0u-hsi.text" = "Nome do alarme";
+
+/* Class = "UILabel"; text = "R$ 99,99"; ObjectID = "9Ej-7y-pho"; */
+"9Ej-7y-pho.text" = "R$ 99,99";
+
+/* Class = "UILabel"; text = "Nome"; ObjectID = "9oY-HR-KhY"; */
+"9oY-HR-KhY.text" = "Nome";
+
+/* Class = "UILabel"; text = "Horario"; ObjectID = "Abt-AV-Azt"; */
+"Abt-AV-Azt.text" = "Horario";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "Ah7-4n-0Wa"; */
+"Ah7-4n-0Wa.title" = "Detail";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Bek-TM-rON"; */
+"Bek-TM-rON.text" = "Label";
+
+/* Class = "UILabel"; text = "Composto"; ObjectID = "C9F-Rw-3fl"; */
+"C9F-Rw-3fl.text" = "Composto";
+
+/* Class = "UILabel"; text = "De:"; ObjectID = "EXl-Zg-SM3"; */
+"EXl-Zg-SM3.text" = "De:";
+
+/* Class = "UILabel"; text = "Apresentacao"; ObjectID = "EfV-wy-c9l"; */
+"EfV-wy-c9l.text" = "Apresentacao";
+
+/* Class = "UILabel"; text = "R$ 99,99"; ObjectID = "I11-xQ-6I7"; */
+"I11-xQ-6I7.text" = "R$ 99,99";
+
+/* Class = "UILabel"; text = "R$ 99,99"; ObjectID = "KiF-dO-TSE"; */
+"KiF-dO-TSE.text" = "R$ 99,99";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "LYz-RA-S9j"; */
+"LYz-RA-S9j.title" = "Title";
+
+/* Class = "UILabel"; text = "Farmacias"; ObjectID = "Lei-5M-9Gs"; */
+"Lei-5M-9Gs.text" = "Farmácias";
+
+/* Class = "UITextField"; placeholder = "Nome do Remédio"; ObjectID = "Vmd-Vd-kpo"; */
+"Vmd-Vd-kpo.placeholder" = "Nome do Remédio";
+
+/* Class = "UILabel"; text = "preco"; ObjectID = "VnT-2h-BH1"; */
+"VnT-2h-BH1.text" = "Preço";
+
+/* Class = "UITabBarItem"; title = "Pesquisa"; ObjectID = "XUj-bF-GDe"; */
+"XUj-bF-GDe.title" = "Pesquisa";
+
+/* Class = "UILabel"; text = "Nome"; ObjectID = "Zgg-tp-Uq5"; */
+"Zgg-tp-Uq5.text" = "Nome";
+
+/* Class = "UINavigationItem"; title = "Detalhes"; ObjectID = "cra-N8-TIN"; */
+"cra-N8-TIN.title" = "Detalhes";
+
+/* Class = "UILabel"; text = "Farmacia"; ObjectID = "d93-mv-b9V"; */
+"d93-mv-b9V.text" = "Farmacia";
+
+/* Class = "UIBarButtonItem"; title = "Salvar"; ObjectID = "hAe-ZN-N5P"; */
+"hAe-ZN-N5P.title" = "Salvar";
+
+/* Class = "UILabel"; text = "Farmácia"; ObjectID = "iuM-1U-IBU"; */
+"iuM-1U-IBU.text" = "Farmácia";
+
+/* Class = "UIBarButtonItem"; title = "Editar"; ObjectID = "mmI-bw-Kcf"; */
+"mmI-bw-Kcf.title" = "Editar";
+
+/* Class = "UITableViewController"; title = "Pesquisa"; ObjectID = "pGg-6v-bdr"; */
+"pGg-6v-bdr.title" = "Pesquisa";
+
+/* Class = "UINavigationController"; title = "Master"; ObjectID = "rS3-R9-Ivy"; */
+"rS3-R9-Ivy.title" = "Master";
+
+/* Class = "UIButton"; normalTitle = "tracarRota"; ObjectID = "rhD-er-ML2"; */
+"rhD-er-ML2.normalTitle" = "tracarRota";
+
+/* Class = "UINavigationItem"; title = "Pesquisa"; ObjectID = "tQt-TN-PWz"; */
+"tQt-TN-PWz.title" = "Pesquisa";
+
+/* Class = "UILabel"; text = "Até:"; ObjectID = "tUy-Cu-jv5"; */
+"tUy-Cu-jv5.text" = "Até:";
+
+/* Class = "UITabBarItem"; title = "Mapa"; ObjectID = "uiC-EY-Zw5"; */
+"uiC-EY-Zw5.title" = "Mapa";
+
+/* Class = "UISearchBar"; placeholder = "Digite o medicamento"; ObjectID = "x2c-Iq-g1s"; */
+"x2c-Iq-g1s.placeholder" = "Digite o medicamento";
+
+/* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "y3T-Nk-Vn9"; */
+"y3T-Nk-Vn9.title" = "Cancelar";

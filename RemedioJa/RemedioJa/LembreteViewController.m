@@ -64,7 +64,7 @@
         [shake setFromValue:[NSNumber numberWithFloat:campoTexto.center.x - valor]];
         [shake setFromValue:[NSNumber numberWithFloat:campoTexto.center.x + valor]];
         [campoTexto.layer addAnimation:shake forKey:@"shake"];
-        [campoTexto setPlaceholder: @"Digite o nome do remédio"];
+        [campoTexto setPlaceholder: NSLocalizedString(@"Digite o nome do remédio", nil)];
     }
     else {
         [self salvar];

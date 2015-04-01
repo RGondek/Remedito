@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C26EC1C1ACC6DAB00320BB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C26EC1E1ACC6DAB00320BB8 /* Localizable.strings */; };
+		8C70601A1ACC6714006BB85A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C70601C1ACC6714006BB85A /* Main.storyboard */; };
 		D4A8325C1AC9B7D800FA5BBE /* Farmacia.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8325B1AC9B7D800FA5BBE /* Farmacia.m */; };
 		D4A832611AC9B7F000FA5BBE /* HorariosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8325E1AC9B7F000FA5BBE /* HorariosViewController.m */; };
 		D4A832621AC9B7F000FA5BBE /* HorarioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832601AC9B7F000FA5BBE /* HorarioTableViewCell.m */; };
@@ -18,7 +20,6 @@
 		D4A832781AC9B8D600FA5BBE /* SingletonLemb.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832731AC9B8D600FA5BBE /* SingletonLemb.m */; };
 		D4A832791AC9B8D600FA5BBE /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832751AC9B8D600FA5BBE /* TableViewCell.m */; };
 		D4A8327A1AC9B8D600FA5BBE /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832771AC9B8D600FA5BBE /* WebViewController.m */; };
-		D4A8327C1AC9B92A00FA5BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A8327B1AC9B92A00FA5BBE /* Main.storyboard */; };
 		D4C395991AC7746D008D1327 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C395981AC7746D008D1327 /* CoreLocation.framework */; };
 		D4C3959B1AC7747D008D1327 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3959A1AC7747D008D1327 /* AddressBook.framework */; };
 		D4C3959D1AC7748A008D1327 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3959C1AC7748A008D1327 /* MapKit.framework */; };
@@ -51,6 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C26EC1D1ACC6DAB00320BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C26EC1F1ACC6DAD00320BB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C26EC201ACC6DAE00320BB8 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C7060191ACC66F7006BB85A /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8C70601B1ACC6714006BB85A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C70601E1ACC6718006BB85A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		8C7060201ACC67B6006BB85A /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
 		D4A8325A1AC9B7D800FA5BBE /* Farmacia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Farmacia.h; sourceTree = "<group>"; };
 		D4A8325B1AC9B7D800FA5BBE /* Farmacia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Farmacia.m; sourceTree = "<group>"; };
 		D4A8325D1AC9B7F000FA5BBE /* HorariosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorariosViewController.h; sourceTree = "<group>"; };
@@ -73,7 +81,6 @@
 		D4A832751AC9B8D600FA5BBE /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		D4A832761AC9B8D600FA5BBE /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		D4A832771AC9B8D600FA5BBE /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		D4A8327B1AC9B92A00FA5BBE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D4C395981AC7746D008D1327 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D4C3959A1AC7747D008D1327 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		D4C3959C1AC7748A008D1327 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -183,8 +190,6 @@
 			children = (
 				D4D9D2C91AC75309002C7252 /* Farm.h */,
 				D4D9D2CA1AC75309002C7252 /* Farm.m */,
-				D56CF78D1ACB150C00723B4E /* Annotation.h */,
-				D56CF78E1ACB150C00723B4E /* Annotation.m */,
 			);
 			name = Mapa;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 		D53852921AC31CD10015BC19 = {
 			isa = PBXGroup;
 			children = (
+				8C26EC1E1ACC6DAB00320BB8 /* Localizable.strings */,
 				E8E29FDD1ACB3275008FAA46 /* libc++.dylib */,
 				E8E29FDB1ACB27A5008FAA46 /* Realm.framework */,
 				D4C3959C1AC7748A008D1327 /* MapKit.framework */,
@@ -250,7 +256,7 @@
 				D534840E1AC9BCF800440AA6 /* Pesquisa */,
 				D534840F1AC9BD2500440AA6 /* Lembrete */,
 				D53484101AC9BD3500440AA6 /* Mapa */,
-				D4A8327B1AC9B92A00FA5BBE /* Main.storyboard */,
+				8C70601C1ACC6714006BB85A /* Main.storyboard */,
 				D53852B01AC31CD10015BC19 /* LaunchScreen.xib */,
 				D53852AE1AC31CD10015BC19 /* Images.xcassets */,
 				D538529E1AC31CD10015BC19 /* Supporting Files */,
@@ -371,6 +377,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pt,
 			);
 			mainGroup = D53852921AC31CD10015BC19;
 			productRefGroup = D538529C1AC31CD10015BC19 /* Products */;
@@ -388,7 +395,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4A8327C1AC9B92A00FA5BBE /* Main.storyboard in Resources */,
+				8C70601A1ACC6714006BB85A /* Main.storyboard in Resources */,
+				8C26EC1C1ACC6DAB00320BB8 /* Localizable.strings in Resources */,
 				D53852B21AC31CD10015BC19 /* LaunchScreen.xib in Resources */,
 				D53852AF1AC31CD10015BC19 /* Images.xcassets in Resources */,
 			);
@@ -426,7 +434,6 @@
 				D4A832781AC9B8D600FA5BBE /* SingletonLemb.m in Sources */,
 				D4A8327A1AC9B8D600FA5BBE /* WebViewController.m in Sources */,
 				D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */,
-				D56CF78F1ACB150C00723B4E /* Annotation.m in Sources */,
 				D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */,
 				D4A832621AC9B7F000FA5BBE /* HorarioTableViewCell.m in Sources */,
 				D534840C1AC9BB8B00440AA6 /* FamaciaCell.m in Sources */,
@@ -452,10 +459,32 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8C26EC1E1ACC6DAB00320BB8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C26EC1D1ACC6DAB00320BB8 /* Base */,
+				8C26EC1F1ACC6DAD00320BB8 /* en */,
+				8C26EC201ACC6DAE00320BB8 /* pt */,
+			);
+			name = Localizable.strings;
+			path = RemedioJa;
+			sourceTree = "<group>";
+		};
+		8C70601C1ACC6714006BB85A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C70601B1ACC6714006BB85A /* Base */,
+				8C70601E1ACC6718006BB85A /* en */,
+				8C7060201ACC67B6006BB85A /* pt */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		D53852B01AC31CD10015BC19 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D53852B11AC31CD10015BC19 /* Base */,
+				8C7060191ACC66F7006BB85A /* pt */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

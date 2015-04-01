@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  RemedioJa
+
+  Created by Ricardo Hochman on 01/04/15.
+  Copyright (c) 2015 Remedito. All rights reserved.
+*/
+
+"Aviso" = "Aviso";
+"Sem conexão com a internet" = "Sem conexão com a internet";
+"Digite o nome do remédio" = "Digite o nome do remédio";

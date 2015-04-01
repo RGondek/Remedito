@@ -186,7 +186,7 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
 
     if (![self conectado]) {
-        UIAlertView *alertaNet = [[UIAlertView alloc] initWithTitle:@"Aviso!" message:@"Sem conexão com a internet" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertaNet = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Aviso", nil) message:NSLocalizedString(@"Sem conexão com a internet", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertaNet show];
     }
     else{
