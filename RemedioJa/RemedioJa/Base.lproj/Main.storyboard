@@ -182,15 +182,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bi1-jq-Zsi" id="Qkg-hl-TAA">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Horario" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abt-AV-Azt">
-                                                    <rect key="frame" x="32" y="8" width="262" height="34"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do alarme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VN-0u-hsi">
-                                                    <rect key="frame" x="32" y="35" width="262" height="26"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="32" y="9" width="262" height="26"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -200,6 +194,12 @@
                                                         <action selector="mudarEstado:" destination="uXg-Cj-yhI" eventType="valueChanged" id="vA5-jY-iPn"/>
                                                     </connections>
                                                 </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Horario" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abt-AV-Azt">
+                                                    <rect key="frame" x="32" y="30" width="262" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -305,7 +305,9 @@
                                 <rect key="frame" x="0.0" y="30" width="375" height="44"/>
                                 <color key="barTintColor" red="0.13725490870000001" green="0.72156864399999998" blue="0.97647058959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Title" id="LYz-RA-S9j"/>
+                                    <navigationItem title="Title" id="LYz-RA-S9j">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="SL8-se-VF1"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ELH-ek-WBa">
@@ -318,14 +320,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jvU-zq-A2n" id="dg0-E2-tkS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhD-er-ML2">
-                                                    <rect key="frame" x="8" y="17" width="73" height="30"/>
-                                                    <state key="normal" title="tracarRota">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distância" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyD-HG-ew0">
+                                                    <rect key="frame" x="26" y="22" width="80" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farmácia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuM-1U-IBU">
-                                                    <rect key="frame" x="104" y="8" width="469" height="49"/>
+                                                    <rect key="frame" x="146" y="8" width="412" height="49"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -588,10 +590,6 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000014" translatesAutoresizingMaskIntoConstraints="NO" id="IZv-8z-ITm">
-                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
-                                <color key="progressTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -599,14 +597,10 @@
                             <constraint firstAttribute="bottomMargin" secondItem="6fD-Xi-JUw" secondAttribute="bottom" id="3EO-zd-vim"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6fD-Xi-JUw" secondAttribute="trailing" constant="-16" id="DAX-y3-Vvq"/>
                             <constraint firstItem="6fD-Xi-JUw" firstAttribute="top" secondItem="vMi-Q2-ctd" secondAttribute="bottom" id="Dwu-uI-L6h"/>
-                            <constraint firstItem="IZv-8z-ITm" firstAttribute="top" secondItem="vMi-Q2-ctd" secondAttribute="bottom" id="XyF-KG-f10"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IZv-8z-ITm" secondAttribute="trailing" constant="-16" id="vcs-zj-J4a"/>
-                            <constraint firstItem="IZv-8z-ITm" firstAttribute="leading" secondItem="j7T-ro-f0G" secondAttribute="leadingMargin" constant="-16" id="zM8-8z-q4t"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="progress" destination="IZv-8z-ITm" id="74t-OI-WP0"/>
                         <outlet property="webView" destination="6fD-Xi-JUw" id="cgD-YO-NIK"/>
                     </connections>
                 </viewController>
