@@ -309,7 +309,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Mapa" id="LYz-RA-S9j">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="SL8-se-VF1"/>
+                                        <barButtonItem key="rightBarButtonItem" image="refresh" id="SL8-se-VF1"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -368,7 +368,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="ELH-ek-WBa" secondAttribute="bottom" id="ufz-DO-ylx"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="5" title="Mapa" image="map1" id="uiC-EY-Zw5"/>
+                    <tabBarItem key="tabBarItem" tag="5" title="Mapa" image="map3" id="uiC-EY-Zw5"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="PZU-UT-v5w" id="NHH-Ns-fjK"/>
@@ -614,7 +614,8 @@
     </scenes>
     <resources>
         <image name="clock1" width="32" height="32"/>
-        <image name="map1" width="32" height="32"/>
+        <image name="map3" width="64" height="64"/>
+        <image name="refresh" width="64" height="64"/>
         <image name="search" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
