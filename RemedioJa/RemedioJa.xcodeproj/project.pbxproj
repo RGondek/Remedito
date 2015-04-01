@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C26EC1C1ACC6DAB00320BB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C26EC1E1ACC6DAB00320BB8 /* Localizable.strings */; };
+		8C26EC221ACC830400320BB8 /* BackgroundViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C26EC211ACC830400320BB8 /* BackgroundViewExtension.swift */; };
 		8C70601A1ACC6714006BB85A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C70601C1ACC6714006BB85A /* Main.storyboard */; };
 		D4A8325C1AC9B7D800FA5BBE /* Farmacia.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8325B1AC9B7D800FA5BBE /* Farmacia.m */; };
 		D4A832611AC9B7F000FA5BBE /* HorariosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A8325E1AC9B7F000FA5BBE /* HorariosViewController.m */; };
@@ -55,6 +56,7 @@
 		8C26EC1D1ACC6DAB00320BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C26EC1F1ACC6DAD00320BB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C26EC201ACC6DAE00320BB8 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C26EC211ACC830400320BB8 /* BackgroundViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewExtension.swift; sourceTree = "<group>"; };
 		8C7060191ACC66F7006BB85A /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8C70601B1ACC6714006BB85A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C70601E1ACC6718006BB85A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				D53852B01AC31CD10015BC19 /* LaunchScreen.xib */,
 				D53852AE1AC31CD10015BC19 /* Images.xcassets */,
 				D538529E1AC31CD10015BC19 /* Supporting Files */,
+				8C26EC211ACC830400320BB8 /* BackgroundViewExtension.swift */,
 			);
 			path = RemedioJa;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				D4D9D2C81AC75242002C7252 /* MapViewController.m in Sources */,
 				D4A832711AC9B89D00FA5BBE /* Reachability.m in Sources */,
 				D4A832781AC9B8D600FA5BBE /* SingletonLemb.m in Sources */,
+				8C26EC221ACC830400320BB8 /* BackgroundViewExtension.swift in Sources */,
 				D4A8327A1AC9B8D600FA5BBE /* WebViewController.m in Sources */,
 				D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */,
 				D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */,
@@ -582,6 +586,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -589,6 +594,7 @@
 				INFOPLIST_FILE = RemedioJa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -596,6 +602,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

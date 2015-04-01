@@ -32,9 +32,7 @@
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
 
-    UITabBarController *tc=(UITabBarController *) self.window.rootViewController;
-    self.window.tintColor=[UIColor colorWithRed:67.0/225.0 green:219.0/225.0  blue:186.0/225.0 alpha:1];
-    [tc setSelectedIndex:2];
+    self.window.tintColor=[UIColor colorWithRed:20/225.0 green:154/225.0  blue:113/225.0 alpha:1];
     
     return YES;
 }
