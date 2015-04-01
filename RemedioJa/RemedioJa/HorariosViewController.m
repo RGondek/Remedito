@@ -19,7 +19,7 @@
 @implementation HorariosViewController{
     Lembrete *lemb;
     SingletonLemb *sL;
-    NSArray *itens;
+    NSMutableArray *itens;
 }
 
 @synthesize tb;
@@ -35,10 +35,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    itens=[sL obterTodosLembretes];
+    itens = [[NSMutableArray alloc] initWithArray:[sL obterTodosLembretes]];
     [tb reloadData];
-    
-    
 }
 #pragma mark - Table View
 
@@ -102,6 +100,19 @@
         
         notificacao.applicationIconBadgeNumber = 1;
         [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        lemb = [itens objectAtIndex:indexPath.row];
+        [sL removeLembreteIndex:lemb.index];
+        [itens removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 

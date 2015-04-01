@@ -53,7 +53,7 @@ static SingletonLemb *inst = nil;
 }
 
 -(Lembrete *) obterObjIndex:(int)i{
-    RLMResults  *resultado=[Lembrete objectsWhere:[NSString stringWithFormat:@"index=%d", i]];
+    RLMResults *resultado=[Lembrete objectsWhere:[NSString stringWithFormat:@"index=%d", i]];
     for(Lembrete *l in resultado){
         if(l.index ==i){
             return l;
@@ -62,11 +62,11 @@ static SingletonLemb *inst = nil;
     return nil;
 }
 
--(void)alterarObj:(Lembrete *)lemb Index:(int)i{
+-(void)alterarLembreteNome:(NSString *)n eData:(NSDate*)d Index:(int)i{
     Lembrete *l = [self obterObjIndex:i];
     [meuRealm beginWriteTransaction];
-    l.nome = lemb.nome;
-    l.data = lemb.data;
+    l.nome = n;
+    l.data = d;
     [meuRealm commitWriteTransaction];
 }
 
@@ -74,6 +74,13 @@ static SingletonLemb *inst = nil;
     Lembrete *l = [self obterObjIndex:i];
     [meuRealm beginWriteTransaction];
     l.ativo = status;
+    [meuRealm commitWriteTransaction];
+}
+
+-(void) removeLembreteIndex:(int)i{
+    Lembrete *l = [self obterObjIndex:i];
+    [meuRealm beginWriteTransaction];
+    [meuRealm deleteObject:l];
     [meuRealm commitWriteTransaction];
 }
 
