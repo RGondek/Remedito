@@ -107,19 +107,6 @@
     [super viewDidLoad];
     [self.pesquisa setDelegate:self];
     
-    spinner = [[UIActivityIndicatorView alloc]
-                                        initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    spinner.center = CGPointMake(self.view.bounds.size.width /2, self.view.bounds.size.height / 2 - 50);
-    spinner.hidesWhenStopped = YES;
-    [self.view addSubview:spinner];
-    
-
-
-    // Do any additional setup after loading the view, typically from a nib.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-//    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 
