@@ -45,6 +45,7 @@ static SingletonLemb *inst = nil;
 
 -(NSArray *) obterTodosLembretes{
     RLMResults *resultado=[Lembrete allObjects];
+    resultado = [resultado sortedResultsUsingProperty:@"data" ascending:YES];
     NSMutableArray *itens=[[NSMutableArray alloc]init];
     for(Lembrete *l in resultado){
         [itens addObject:l];
