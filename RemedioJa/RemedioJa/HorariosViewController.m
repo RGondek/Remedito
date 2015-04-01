@@ -110,9 +110,23 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         lemb = [itens objectAtIndex:indexPath.row];
+        
+        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
+        notificacao.fireDate = lemb.data;
+        notificacao.alertBody = lemb.nome;
+        notificacao.soundName = UILocalNotificationDefaultSoundName;
+        notificacao.timeZone = [NSTimeZone defaultTimeZone];
+        
+        notificacao.repeatInterval = NSCalendarUnitDay;
+        
+        notificacao.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
+
         [sL removeLembreteIndex:lemb.index];
         [itens removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        
     }
 }
 
