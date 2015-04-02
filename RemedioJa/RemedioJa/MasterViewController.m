@@ -18,11 +18,16 @@
 @implementation MasterViewController{
     NSMutableArray *remedios;
     UIActivityIndicatorView *spinner;
+    NSUserDefaults *userDef;
+    NSMutableArray *palavras;
+    BOOL clicou;
 }
 @synthesize pesquisa;
+
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
+
 
 - (void)loadSite:(NSString*)termo{
     NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=%@", termo]];
@@ -106,10 +111,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.pesquisa setDelegate:self];
+    pesquisa.delegate = self;
+    userDef = [NSUserDefaults standardUserDefaults];
+    palavras = [[NSMutableArray alloc] init];
+    clicou = NO;
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -117,10 +124,17 @@
 }
 
 #pragma mark - Segues
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (clicou) {
+        pesquisa.text = palavras[indexPath.row];
+        [self searchBarSearchButtonClicked:pesquisa];
+    }
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Remedio *objRemedio = remedios[indexPath.row];
         [[segue destinationViewController] setItemR:objRemedio];
     }
@@ -128,53 +142,47 @@
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-//    if ([pesquisa.text isEqualToString:@""]) {
-//        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//        return 0;
-//    }
-//    else{
-//        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-//        
-//        messageLabel.textColor = [UIColor blackColor];
-//        messageLabel.numberOfLines = 0;
-//        messageLabel.textAlignment = NSTextAlignmentCenter;
-//        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
-//        [messageLabel sizeToFit];
-//        // Return the number of sections.
-//        if ([remedios count] != 0) {
-//            messageLabel.text = @"";
-//            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-//            return 1;
-//            
-//        } else {
-//            messageLabel.text = @"Nenhum remédio encontrado";
-//            // Display a message when the table is empty
-//            self.tableView.backgroundView = messageLabel;
-//            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//        }
-//        
-//        return 0;
-//    }
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return remedios.count;
+    if (clicou) {
+        palavras  = [NSMutableArray arrayWithArray:[userDef arrayForKey:@"salvando"]];
+        return palavras.count;
+    }
+    else
+        return remedios.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    palavras  = [NSMutableArray arrayWithArray:[userDef arrayForKey:@"salvando"]];
+    if (clicou) {
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Celula"];
 
-    Remedio *objR = remedios[indexPath.row];
-    Farmacia *objF = objR.farmacias[0];
-    [cell.nome setText:objR.nomeRemedio];
-    [cell.ap setText:objR.apresentacao];
-    [cell.preco setText:[NSString stringWithFormat:@"R$ %.2f", objF.preco]];
-    [cell.img setImage:objR.imagem];
-    
-    return cell;
+        [cell.textLabel setText:[palavras objectAtIndex:indexPath.row]];
+        [cell setFrame:CGRectMake(0, 0, self.view.bounds.size.width, 20)];
+        return cell;
+    }
+    else {
+        TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+        Remedio *objR = remedios[indexPath.row];
+        Farmacia *objF = objR.farmacias[0];
+        [cell.nome setText:objR.nomeRemedio];
+        [cell.ap setText:objR.apresentacao];
+        [cell.preco setText:[NSString stringWithFormat:@"R$ %.2f", objF.preco]];
+        [cell.img setImage:objR.imagem];
+        return cell;
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (clicou) {
+    return 40;
+    }
+    else {
+        return 70;
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -188,34 +196,55 @@
     if (![self conectado]) {
         UIAlertView *alertaNet = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Aviso", nil) message:NSLocalizedString(@"Sem conexão com a internet", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertaNet show];
+        [searchBar setUserInteractionEnabled:YES];
     }
     else{
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         [remedios removeAllObjects];
         [self.tableView reloadData];
         
-        spinner = [[UIActivityIndicatorView alloc]
-                   initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        spinner.center = CGPointMake(self.view.bounds.size.width /2, self.view.bounds.size.height / 2 - 45);
-        spinner.transform = CGAffineTransformMakeScale(2.0, 2.0);
-        spinner.hidesWhenStopped = YES;
-        [self.view addSubview:spinner];
-        [spinner startAnimating];
+        if (!match) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Termo inválido" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+            [searchBar setUserInteractionEnabled:YES];
+        }
         
-        // how we stop refresh from freezing the main UI thread
-        dispatch_queue_t downloadQueue = dispatch_queue_create("downloader", NULL);
-        dispatch_async(downloadQueue, ^{
+        else {
+            [remedios removeAllObjects];
+            [self.tableView reloadData];
             
-            [self loadSite:[searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
+            spinner = [[UIActivityIndicatorView alloc]
+                       initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            spinner.center = CGPointMake(self.view.bounds.size.width /2, self.view.bounds.size.height / 2 + 15);
+            spinner.transform = CGAffineTransformMakeScale(2.0, 2.0);
+            spinner.hidesWhenStopped = YES;
+            [self.view addSubview:spinner];
+            [spinner startAnimating];
             
-            // do any UI stuff on the main UI thread
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [spinner stopAnimating];
-                [self.tableView reloadData];
+            dispatch_queue_t downloadQueue = dispatch_queue_create("downloader", NULL);
+            dispatch_async(downloadQueue, ^{
+                [self loadSite:[searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [spinner stopAnimating];
+                    [self.tableView reloadData];
+                    if ([remedios count] == 0) {
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Remédio não encontrado" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                        [alert show];
+                    }
+                    else {
+                        palavras  = [NSMutableArray arrayWithArray:[userDef arrayForKey:@"salvando"]];
+                        if(![palavras containsObject:pesquisa.text]){
+                            [palavras addObject:searchBar.text];
+                            [userDef setObject:palavras forKey:@"salvando"];
+                            [userDef synchronize];
+                        }
+                    }
+                    [searchBar setUserInteractionEnabled:YES];
+
+                });
             });
-        });
-        
-        [searchBar resignFirstResponder];
+            [searchBar resignFirstResponder];
+        }
     }
 }
 
@@ -224,5 +253,6 @@
     NetworkStatus net = [reach currentReachabilityStatus];
     return (net != NotReachable);
 }
+
 
 @end

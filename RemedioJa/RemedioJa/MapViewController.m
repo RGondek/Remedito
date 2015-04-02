@@ -134,8 +134,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ListaTableViewCell *cell = [tv dequeueReusableCellWithIdentifier:@"MapaCell" forIndexPath:indexPath];
     MKMapItem *it = [itens objectAtIndex:indexPath.row];
-    [cell.nome setText:it.name];
+    CLLocation *ini = [[CLLocation alloc] initWithLatitude:_mapView.userLocation.location.coordinate.latitude longitude:_mapView.userLocation.location.coordinate.longitude];
+    CLLocation *fim = [[CLLocation alloc] initWithLatitude:it.placemark.location.coordinate.latitude longitude:it.placemark.location.coordinate.longitude];
+    CLLocationDistance dist = [fim distanceFromLocation:ini];
     
+    [cell.nome setText:it.name];
+    [cell.distancia setText:[NSString stringWithFormat:@"%.2f Km", dist/1000]];
 //    cell.nome.text = farm.nome;
 //    UIButton *rota = [[UIButton alloc] init];
 //    rota.frame = CGRectMake(20, 12, 30, 25);
@@ -151,6 +155,7 @@
     [self recarregar];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
+
 
 
 @end

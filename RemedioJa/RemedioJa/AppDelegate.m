@@ -20,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
     {
+        
         UIUserNotificationSettings *settings =
         [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert |
          UIUserNotificationTypeBadge |
@@ -27,12 +28,23 @@
                                           categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
+        
     }
     // Set icon badge number to zero
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
-
+    
     self.window.tintColor=[UIColor colorWithRed:20/225.0 green:154/225.0  blue:113/225.0 alpha:1];
+    
+
+//    [[UIApplication sharedApplication] statusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    
+    
+    
     
     return YES;
 }
@@ -48,6 +60,7 @@
         [alert show];
     }
 }
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
