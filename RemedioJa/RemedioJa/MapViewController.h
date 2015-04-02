@@ -18,6 +18,7 @@
 @property NSMutableArray* foundItems;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, retain) CLLocationManager *locationManager;
+- (IBAction)btnAtualiza:(id)sender;
 
 
 @end

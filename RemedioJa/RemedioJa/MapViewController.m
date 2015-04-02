@@ -34,8 +34,6 @@
     [_mapView userTrackingMode];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
-    [self recarregar];
-    [_tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -123,7 +121,6 @@
 
 #pragma mark - Table View
 
-#pragma mark ARRUMA ISSO AQUI BROTHER \/
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
@@ -148,5 +145,10 @@
 //    [cell.contentView addSubview:rota];
     return cell;
 }
+
+- (IBAction)btnAtualiza:(id)sender {
+    [self recarregar];
+}
+
 
 @end

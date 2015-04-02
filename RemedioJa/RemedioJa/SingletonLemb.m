@@ -19,7 +19,6 @@ static SingletonLemb *inst = nil;
 +(SingletonLemb*) instance{
     if (inst == nil) {
         inst = [[SingletonLemb alloc] init];
-        
     }
     return inst;
 }
@@ -29,8 +28,6 @@ static SingletonLemb *inst = nil;
     if (self) {
         _lembretes = [[NSMutableArray alloc] init];
         meuRealm=[RLMRealm defaultRealm];
-        
-        
     }
     return self;
 }

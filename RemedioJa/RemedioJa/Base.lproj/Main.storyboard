@@ -315,7 +315,7 @@
         <!--Mapa-->
         <scene sceneID="5az-tU-oRz">
             <objects>
-                <viewController id="KGd-Fm-P0V" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController title="Mapa" id="KGd-Fm-P0V" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ON0-AW-2gq"/>
                         <viewControllerLayoutGuide type="bottom" id="Z00-bp-fuP"/>
@@ -332,7 +332,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Mapa" id="LYz-RA-S9j">
-                                        <barButtonItem key="rightBarButtonItem" image="refresh" id="SL8-se-VF1"/>
+                                        <barButtonItem key="rightBarButtonItem" image="refresh" id="SL8-se-VF1">
+                                            <connections>
+                                                <action selector="btnAtualiza:" destination="KGd-Fm-P0V" id="z9m-yn-ePe"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -575,10 +579,10 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Rie-Mm-H9F"/>
                                 <exclude reference="62x-JV-TTJ"/>
                                 <exclude reference="JzS-HC-Rnl"/>
                                 <exclude reference="pXB-RP-Zz6"/>
+                                <exclude reference="Rie-Mm-H9F"/>
                                 <exclude reference="JQZ-zw-sj0"/>
                                 <exclude reference="YpN-II-fAm"/>
                                 <exclude reference="uPe-c2-qMT"/>
