@@ -127,8 +127,6 @@
     if (clicou) {
         pesquisa.text = palavras[indexPath.row];
         [self searchBarSearchButtonClicked:pesquisa];
-    } else {
-        [self performSegueWithIdentifier:@"showDetail" sender:nil];
     }
 }
 
@@ -203,10 +201,12 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     clicou = NO;
+    [searchBar setUserInteractionEnabled:NO];
     
     if (![self conectado]) {
         UIAlertView *alertaNet = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Aviso", nil) message:NSLocalizedString(@"Sem conexão com a internet", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertaNet show];
+        [searchBar setUserInteractionEnabled:YES];
     }
     
     NSError *error;
@@ -218,6 +218,7 @@
         if (!match) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Termo inválido" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
+            [searchBar setUserInteractionEnabled:YES];
         }
         
         else {
@@ -250,6 +251,8 @@
                             [userDef synchronize];
                         }
                     }
+                    [searchBar setUserInteractionEnabled:YES];
+
                 });
             });
             [searchBar resignFirstResponder];

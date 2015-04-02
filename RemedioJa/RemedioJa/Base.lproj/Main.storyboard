@@ -86,7 +86,7 @@
                                     <outlet property="ap" destination="Bek-TM-rON" id="BBm-4X-8sW"/>
                                     <outlet property="img" destination="tyu-Uf-s38" id="EJH-AI-cNA"/>
                                     <outlet property="nome" destination="Zgg-tp-Uq5" id="sQJ-xZ-p9q"/>
-                                    <outlet property="preco" destination="VnT-2h-BH1" id="UUo-e4-DVX"/>
+                                    <segue destination="Ah7-4n-0Wa" kind="show" identifier="showDetail" id="q0c-SB-ljv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -659,6 +659,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Okf-vC-TYC"/>
+        <segue reference="q0c-SB-ljv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
