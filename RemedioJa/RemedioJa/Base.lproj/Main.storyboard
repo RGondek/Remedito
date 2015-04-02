@@ -40,7 +40,7 @@
                             <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="KCQ-2E-O0U" customClass="TableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="KCQ-2E-O0U" customClass="TableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KCQ-2E-O0U" id="2ag-Ff-yjT">
@@ -52,51 +52,33 @@
                                                 <constraint firstAttribute="width" constant="54" id="VVh-hu-AH9"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bek-TM-rON">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bek-TM-rON">
                                             <rect key="frame" x="82" y="44" width="285" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgg-tp-Uq5">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgg-tp-Uq5">
                                             <rect key="frame" x="82" y="15" width="198" height="24"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="preco" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnT-2h-BH1">
-                                            <rect key="frame" x="290" y="18" width="77" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="77" id="BsD-sF-tjy"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                            <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="VnT-2h-BH1" firstAttribute="centerY" secondItem="Zgg-tp-Uq5" secondAttribute="centerY" id="345-F2-M5p"/>
-                                        <constraint firstItem="VnT-2h-BH1" firstAttribute="leading" secondItem="Bek-TM-rON" secondAttribute="trailing" constant="10" id="6TD-tT-CCj"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Bek-TM-rON" secondAttribute="trailing" id="8eq-Ag-y0e"/>
-                                        <constraint firstItem="VnT-2h-BH1" firstAttribute="top" secondItem="2ag-Ff-yjT" secondAttribute="topMargin" id="CK7-TX-IeG"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="VnT-2h-BH1" secondAttribute="bottom" id="E7W-Gx-z5e"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Bek-TM-rON" secondAttribute="bottom" constant="3" id="IWo-Hq-6Ah"/>
                                         <constraint firstItem="Bek-TM-rON" firstAttribute="leading" secondItem="tyu-Uf-s38" secondAttribute="trailing" constant="20" id="J2W-6r-Drd"/>
                                         <constraint firstItem="Zgg-tp-Uq5" firstAttribute="leading" secondItem="tyu-Uf-s38" secondAttribute="trailing" constant="20" id="Jcr-Bv-loI"/>
                                         <constraint firstItem="Zgg-tp-Uq5" firstAttribute="centerX" secondItem="Bek-TM-rON" secondAttribute="centerX" id="M6o-JC-3z4"/>
                                         <constraint firstItem="tyu-Uf-s38" firstAttribute="top" secondItem="2ag-Ff-yjT" secondAttribute="topMargin" id="ODy-ru-9hY"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="VnT-2h-BH1" secondAttribute="trailing" id="Sqe-Ie-ymG"/>
                                         <constraint firstItem="tyu-Uf-s38" firstAttribute="leading" secondItem="2ag-Ff-yjT" secondAttribute="leadingMargin" id="Y1O-8f-Jw7"/>
                                         <constraint firstItem="Bek-TM-rON" firstAttribute="top" secondItem="Zgg-tp-Uq5" secondAttribute="bottom" constant="5" id="Yzy-wg-bhw"/>
-                                        <constraint firstItem="VnT-2h-BH1" firstAttribute="leading" secondItem="Zgg-tp-Uq5" secondAttribute="trailing" constant="10" id="hJk-Gj-yNd"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="tyu-Uf-s38" secondAttribute="bottom" id="tzn-uY-0Qs"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="M6o-JC-3z4"/>
-                                            <exclude reference="6TD-tT-CCj"/>
-                                            <exclude reference="CK7-TX-IeG"/>
-                                            <exclude reference="E7W-Gx-z5e"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -104,7 +86,6 @@
                                     <outlet property="ap" destination="Bek-TM-rON" id="BBm-4X-8sW"/>
                                     <outlet property="img" destination="tyu-Uf-s38" id="EJH-AI-cNA"/>
                                     <outlet property="nome" destination="Zgg-tp-Uq5" id="sQJ-xZ-p9q"/>
-                                    <outlet property="preco" destination="VnT-2h-BH1" id="UUo-e4-DVX"/>
                                     <segue destination="Ah7-4n-0Wa" kind="show" identifier="showDetail" id="q0c-SB-ljv"/>
                                 </connections>
                             </tableViewCell>
