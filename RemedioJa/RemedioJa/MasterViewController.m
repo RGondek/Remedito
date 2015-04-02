@@ -101,6 +101,7 @@
         }
     }
     [self.tableView reloadData];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 - (void)viewDidLoad {
@@ -184,12 +185,12 @@
 #pragma mark - Search bar
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-
     if (![self conectado]) {
         UIAlertView *alertaNet = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Aviso", nil) message:NSLocalizedString(@"Sem conexão com a internet", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertaNet show];
     }
     else{
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         [remedios removeAllObjects];
         [self.tableView reloadData];
         

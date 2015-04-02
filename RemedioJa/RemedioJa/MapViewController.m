@@ -147,7 +147,9 @@
 }
 
 - (IBAction)btnAtualiza:(id)sender {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [self recarregar];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 
