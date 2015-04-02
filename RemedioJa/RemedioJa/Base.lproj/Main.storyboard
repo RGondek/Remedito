@@ -399,6 +399,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="distancia" destination="TyD-HG-ew0" id="cx4-Do-wUi"/>
                                             <outlet property="nome" destination="iuM-1U-IBU" id="HfK-pd-WS5"/>
                                         </connections>
                                     </tableViewCell>
