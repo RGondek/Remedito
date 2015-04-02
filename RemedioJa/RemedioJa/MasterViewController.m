@@ -192,16 +192,29 @@
 
 #pragma mark - Search bar
 
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    clicou = YES;
+    [self.tableView reloadData];
+    
+    return YES;
+}
+
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    clicou = NO;
+    [searchBar setUserInteractionEnabled:NO];
+    
     if (![self conectado]) {
         UIAlertView *alertaNet = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Aviso", nil) message:NSLocalizedString(@"Sem conexão com a internet", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertaNet show];
         [searchBar setUserInteractionEnabled:YES];
     }
-    else{
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-        [remedios removeAllObjects];
-        [self.tableView reloadData];
+    
+    NSError *error;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^[ A-Z0-9a-z._%+-]{2,100}$" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    NSTextCheckingResult *match = [regex firstMatchInString:pesquisa.text options:0 range:NSMakeRange(0, [pesquisa.text length])];
+    if (![pesquisa.text  isEqual: @""]) {
         
         if (!match) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Termo inválido" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -210,6 +223,7 @@
         }
         
         else {
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
             [remedios removeAllObjects];
             [self.tableView reloadData];
             
