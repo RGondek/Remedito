@@ -73,7 +73,8 @@
         else{
             for (MKMapItem *item in response.mapItems)
             {
-                [itens addObject:item];
+                Farm *f = [[Farm alloc]initWithMapItem:item eUserLocation:_mapView.userLocation];
+                [itens addObject:f];
                 MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
                 annotation.coordinate = item.placemark.coordinate;
                 annotation.title = item.name;
@@ -131,13 +132,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ListaTableViewCell *cell = [tv dequeueReusableCellWithIdentifier:@"MapaCell" forIndexPath:indexPath];
-    MKMapItem *it = [itens objectAtIndex:indexPath.row];
-    CLLocation *ini = [[CLLocation alloc] initWithLatitude:_mapView.userLocation.location.coordinate.latitude longitude:_mapView.userLocation.location.coordinate.longitude];
-    CLLocation *fim = [[CLLocation alloc] initWithLatitude:it.placemark.location.coordinate.latitude longitude:it.placemark.location.coordinate.longitude];
-    CLLocationDistance dist = [fim distanceFromLocation:ini];
+    Farm *f = [itens objectAtIndex:indexPath.row];
     
-    [cell.nome setText:it.name];
-    [cell.distancia setText:[NSString stringWithFormat:@"%.2f Km", dist/1000]];
+    [cell.nome setText:f.nome];
+    [cell.distancia setText:[NSString stringWithFormat:@"%.2f Km", f.distancia/1000]];
     
     return cell;
 }
@@ -145,9 +143,10 @@
 - (IBAction)btnAtualiza:(id)sender {
     [self recarregar];
 }
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    Farm *f = [itens objectAtIndex:indexPath.row];
-//    NSString *urlRota = [NSString stringWithFormat:@"http://maps.apple.com/maps?saddr=Current+Location&daddr=%f,%f", f.coordenadas.latitude,f.coordenadas.longitude];
-//    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:urlRota]];
-//}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Farm *f = [itens objectAtIndex:indexPath.row];
+    NSString *urlRota = [NSString stringWithFormat:@"http://maps.apple.com/maps?saddr=Current+Location&daddr=%f,%f", f.coordenada.latitude,f.coordenada.longitude];
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:urlRota]];
+}
 @end
