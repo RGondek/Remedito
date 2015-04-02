@@ -54,13 +54,9 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"Não foi possível encontrar sua localização.");
 }
-//
-//- (void)viewWillLayoutSubviews {
-//    [super viewWillLayoutSubviews];
-//    self.mapView.frame = self.view.bounds;
-//}
 
 - (void) recarregar {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [_mapView removeAnnotations:[_mapView annotations]];
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     request.naturalLanguageQuery = @"Drugstore";
@@ -70,10 +66,10 @@
     
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     
-    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error){
         if (response.mapItems.count == 0)
             NSLog(@"No Matches");
-        else
+        else{
             for (MKMapItem *item in response.mapItems)
             {
                 [itens addObject:item];
@@ -81,10 +77,11 @@
                 annotation.coordinate = item.placemark.coordinate;
                 annotation.title = item.name;
                 annotation.subtitle = [item.placemark.addressDictionary objectForKeyedSubscript:@"Street"];
-                NSLog(@"%@" , item.name);
                 [_mapView addAnnotation:annotation];
                 [_mapView setNeedsDisplay];
             }
+        }
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     }];
     [_tableView reloadData];
 }
@@ -140,22 +137,12 @@
     
     [cell.nome setText:it.name];
     [cell.distancia setText:[NSString stringWithFormat:@"%.2f Km", dist/1000]];
-//    cell.nome.text = farm.nome;
-//    UIButton *rota = [[UIButton alloc] init];
-//    rota.frame = CGRectMake(20, 12, 30, 25);
-//    rota.tag = indexPath.row;
-//    [rota setImage:[UIImage imageNamed:@"carro.png"] forState:UIControlStateNormal];
-//    [rota addTarget:self action:@selector(tracarRota:) forControlEvents:UIControlEventTouchUpInside];
-//    [cell.contentView addSubview:rota];
+    
     return cell;
 }
 
 - (IBAction)btnAtualiza:(id)sender {
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [self recarregar];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
-
-
 
 @end

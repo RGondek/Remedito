@@ -100,7 +100,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="pesquisa" destination="x2c-Iq-g1s" id="XUB-Oj-eZH"/>
-                        <segue destination="Ah7-4n-0Wa" kind="show" identifier="showDetail" id="LEH-xr-pCf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
@@ -659,7 +658,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Okf-vC-TYC"/>
-        <segue reference="q0c-SB-ljv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -21,6 +21,4 @@
 
 - (IBAction)btnAtualiza:(id)sender;
 
--(double) calcularDistanciaComLocalizacaoInicial:(CLLocation *)lInicial andLocalizacaoFinal:(CLLocation *) lFinal;
-
 @end

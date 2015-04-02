@@ -14,7 +14,7 @@
 
 @implementation WebViewController
 
-@synthesize progress, urlSite;
+@synthesize urlSite;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,10 +29,6 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-}
-
--(void)webViewDidStartLoad:(UIWebView *)webView{
-    progress.progress = webView.contentScaleFactor;
 }
 
 /*

@@ -13,6 +13,5 @@
 @property (nonatomic, strong) NSURL *urlSite;
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (weak, nonatomic) IBOutlet UIProgressView *progress;
 
 @end
