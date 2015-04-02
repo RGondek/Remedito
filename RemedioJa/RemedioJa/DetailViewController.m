@@ -73,5 +73,9 @@
     
     return cell;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Farmacia *itemF = itemR.farmacias [indexPath.row];
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:itemF.url]];
+}
 
 @end

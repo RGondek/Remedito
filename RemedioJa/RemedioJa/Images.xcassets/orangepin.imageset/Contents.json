@@ -2,16 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "orangepin.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "bluepin.png"
+      "filename" : "orangepin-1.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "orangepin-2.png"
     }
   ],
   "info" : {

@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "ListaTableViewCell.h"
+#import "Farm.h"
 //#import "Annotation.h"
 
 @interface MapViewController ()
@@ -90,13 +91,13 @@
     [_tableView reloadData];
 }
 
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-//    MKAnnotationView *pinView = nil;
-//    if(annotation != mapView.userLocation) {
-//        static NSString *defaultPinID = @"com.invasivecode.pin";
-//        pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
-//        if (pinView == nil)
-//            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKAnnotationView *pinView = nil;
+    if(annotation != mapView.userLocation) {
+        static NSString *defaultPinID = @"com.invasivecode.pin";
+        pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        if (pinView == nil)
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
 //        UIButton *buttonRota = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 //        UIImage *img = [UIImage imageNamed:@"carro.png"];
 //        [buttonRota setImage:img forState:UIControlStateNormal];
@@ -105,16 +106,16 @@
 //        img = [UIImage imageNamed:@"rightarrow"];
 //        [info setImage:img forState:UIControlStateNormal];
 //        pinView.rightCalloutAccessoryView = info;
-//        pinView.canShowCallout = YES;
+        pinView.canShowCallout = YES;
 //        //É adicionada uma imagem para sobrescrever a imagem padrão do pino. Caso existam múltiplas annotations, elas serão vermelhas. Caso exista apenas uma, ela será amarela.
-//        pinView.image = [UIImage imageNamed:@"bluepin.png"];
+        pinView.image = [UIImage imageNamed:@"orangepin.png"];
 //        if (_mapView.annotations.count == 2) {
 //            pinView.image = [UIImage imageNamed:@"greenpin.png"];
 //        }
-//        
-//    }
-//    return pinView;
-//}
+        
+    }
+    return pinView;
+}
 
 #pragma mark - Table View
 
@@ -144,5 +145,9 @@
 - (IBAction)btnAtualiza:(id)sender {
     [self recarregar];
 }
-
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    Farm *f = [itens objectAtIndex:indexPath.row];
+//    NSString *urlRota = [NSString stringWithFormat:@"http://maps.apple.com/maps?saddr=Current+Location&daddr=%f,%f", f.coordenadas.latitude,f.coordenadas.longitude];
+//    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:urlRota]];
+//}
 @end
