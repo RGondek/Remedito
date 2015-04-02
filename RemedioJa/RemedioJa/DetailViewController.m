@@ -74,8 +74,17 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    Farmacia *itemF = itemR.farmacias [indexPath.row];
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:itemF.url]];
+    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Site externo" message:@"Você será redirecionado para o site da farmácia" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Seguir", nil];
+    [alerta show];
+    [alerta setTag:indexPath.row];
 }
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1){
+        Farmacia *itemF = itemR.farmacias[alertView.tag];
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:itemF.url]];
+    }
+}
+
 
 @end
