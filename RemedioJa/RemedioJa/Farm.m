@@ -10,15 +10,20 @@
 
 @implementation Farm
 
-@synthesize nome, coordenadas, endereco, cep;
+@synthesize nome, distancia, coordenada;
 
--(instancetype) initWithNome:(NSString *)newNome andCoordenadas:(CLLocationCoordinate2D)newCoordenadas andEndereco:(NSString *)newEndereco andCep:(NSString *)newCep{
+-(instancetype) initWithMapItem:(MKMapItem *)map eUserLocation:(MKUserLocation *)userLocation{
     
     self = [super init];
-    nome = newNome;
-    coordenadas = newCoordenadas;
-    endereco = newEndereco;
-    cep = newCep;
+    if (self) {
+        nome = map.placemark.name;
+        coordenada = map.placemark.location.coordinate;
+        CLLocation *fim = [[CLLocation alloc]initWithLatitude:map.placemark.location.coordinate.latitude longitude:map.placemark.location.coordinate.longitude];
+        CLLocation *ini = [[CLLocation alloc]initWithLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude];
+        CLLocationDistance dist = [fim distanceFromLocation:ini];
+        distancia = dist;
+
+    }
     return self;
     
 }

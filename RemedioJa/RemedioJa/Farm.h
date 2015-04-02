@@ -8,16 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @interface Farm : NSObject{
     NSString *descricao;
 }
 
 @property NSString* nome;
-@property CLLocationCoordinate2D coordenadas;
-@property NSString *endereco;
-@property NSString *cep;
+@property CLLocationDistance distancia;
+@property CLLocationCoordinate2D coordenada;
 
--(instancetype) initWithNome:(NSString *)newNome andCoordenadas:(CLLocationCoordinate2D)newCoordenadas andEndereco:(NSString *)newEndereco andCep:(NSString *)newCep;
+-(instancetype) initWithMapItem:(MKMapItem *)map eUserLocation:(MKUserLocation *)userLocation;
 
 @end
