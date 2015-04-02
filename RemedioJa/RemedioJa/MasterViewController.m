@@ -28,6 +28,7 @@
     [super awakeFromNib];
 }
 
+
 - (void)loadSite:(NSString*)termo{
     NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=%@", termo]];
     NSData *siteHTML = [NSData dataWithContentsOfURL:site];
