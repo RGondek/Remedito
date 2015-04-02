@@ -10,10 +10,11 @@
 #import "Remedio.h"
 #import "Farmacia.h"
 
-@interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 
 @property (strong, nonatomic) Remedio *itemR;
 
+@property (strong, nonatomic) NSURL *urlSite;
 @property (weak, nonatomic) IBOutlet UIImageView *imgRemedio;
 @property (weak, nonatomic) IBOutlet UILabel *nomeRemedio;
 @property (weak, nonatomic) IBOutlet UILabel *apRemedio;

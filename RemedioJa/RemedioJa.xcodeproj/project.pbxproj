@@ -19,7 +19,6 @@
 		D4A832711AC9B89D00FA5BBE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832701AC9B89D00FA5BBE /* Reachability.m */; };
 		D4A832781AC9B8D600FA5BBE /* SingletonLemb.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832731AC9B8D600FA5BBE /* SingletonLemb.m */; };
 		D4A832791AC9B8D600FA5BBE /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832751AC9B8D600FA5BBE /* TableViewCell.m */; };
-		D4A8327A1AC9B8D600FA5BBE /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A832771AC9B8D600FA5BBE /* WebViewController.m */; };
 		D4C395991AC7746D008D1327 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C395981AC7746D008D1327 /* CoreLocation.framework */; };
 		D4C3959B1AC7747D008D1327 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3959A1AC7747D008D1327 /* AddressBook.framework */; };
 		D4C3959D1AC7748A008D1327 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3959C1AC7748A008D1327 /* MapKit.framework */; };
@@ -79,8 +78,6 @@
 		D4A832731AC9B8D600FA5BBE /* SingletonLemb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonLemb.m; sourceTree = "<group>"; };
 		D4A832741AC9B8D600FA5BBE /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		D4A832751AC9B8D600FA5BBE /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		D4A832761AC9B8D600FA5BBE /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		D4A832771AC9B8D600FA5BBE /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		D4C395981AC7746D008D1327 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D4C3959A1AC7747D008D1327 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		D4C3959C1AC7748A008D1327 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -212,8 +209,6 @@
 				D53852A91AC31CD10015BC19 /* DetailViewController.m */,
 				D534840A1AC9BB8B00440AA6 /* FamaciaCell.h */,
 				D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */,
-				D4A832761AC9B8D600FA5BBE /* WebViewController.h */,
-				D4A832771AC9B8D600FA5BBE /* WebViewController.m */,
 			);
 			name = Detalhes;
 			sourceTree = "<group>";
@@ -432,7 +427,6 @@
 				D4D9D2C81AC75242002C7252 /* MapViewController.m in Sources */,
 				D4A832711AC9B89D00FA5BBE /* Reachability.m in Sources */,
 				D4A832781AC9B8D600FA5BBE /* SingletonLemb.m in Sources */,
-				D4A8327A1AC9B8D600FA5BBE /* WebViewController.m in Sources */,
 				D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */,
 				D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */,
 				D4A832621AC9B7F000FA5BBE /* HorarioTableViewCell.m in Sources */,

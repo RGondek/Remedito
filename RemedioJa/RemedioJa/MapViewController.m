@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "ListaTableViewCell.h"
+#import "Farm.h"
 //#import "Annotation.h"
 
 @interface MapViewController ()
@@ -54,13 +55,9 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"Não foi possível encontrar sua localização.");
 }
-//
-//- (void)viewWillLayoutSubviews {
-//    [super viewWillLayoutSubviews];
-//    self.mapView.frame = self.view.bounds;
-//}
 
 - (void) recarregar {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [_mapView removeAnnotations:[_mapView annotations]];
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     request.naturalLanguageQuery = @"Drugstore";
@@ -70,10 +67,10 @@
     
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     
-    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error){
         if (response.mapItems.count == 0)
             NSLog(@"No Matches");
-        else
+        else{
             for (MKMapItem *item in response.mapItems)
             {
                 [itens addObject:item];
@@ -81,10 +78,11 @@
                 annotation.coordinate = item.placemark.coordinate;
                 annotation.title = item.name;
                 annotation.subtitle = [item.placemark.addressDictionary objectForKeyedSubscript:@"Street"];
-                NSLog(@"%@" , item.name);
                 [_mapView addAnnotation:annotation];
                 [_mapView setNeedsDisplay];
             }
+        }
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     }];
     [_tableView reloadData];
 }
@@ -93,13 +91,13 @@
     [_tableView reloadData];
 }
 
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-//    MKAnnotationView *pinView = nil;
-//    if(annotation != mapView.userLocation) {
-//        static NSString *defaultPinID = @"com.invasivecode.pin";
-//        pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
-//        if (pinView == nil)
-//            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKAnnotationView *pinView = nil;
+    if(annotation != mapView.userLocation) {
+        static NSString *defaultPinID = @"com.invasivecode.pin";
+        pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        if (pinView == nil)
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
 //        UIButton *buttonRota = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 //        UIImage *img = [UIImage imageNamed:@"carro.png"];
 //        [buttonRota setImage:img forState:UIControlStateNormal];
@@ -108,16 +106,16 @@
 //        img = [UIImage imageNamed:@"rightarrow"];
 //        [info setImage:img forState:UIControlStateNormal];
 //        pinView.rightCalloutAccessoryView = info;
-//        pinView.canShowCallout = YES;
+        pinView.canShowCallout = YES;
 //        //É adicionada uma imagem para sobrescrever a imagem padrão do pino. Caso existam múltiplas annotations, elas serão vermelhas. Caso exista apenas uma, ela será amarela.
-//        pinView.image = [UIImage imageNamed:@"bluepin.png"];
+        pinView.image = [UIImage imageNamed:@"orangepin.png"];
 //        if (_mapView.annotations.count == 2) {
 //            pinView.image = [UIImage imageNamed:@"greenpin.png"];
 //        }
-//        
-//    }
-//    return pinView;
-//}
+        
+    }
+    return pinView;
+}
 
 #pragma mark - Table View
 
@@ -140,20 +138,16 @@
     
     [cell.nome setText:it.name];
     [cell.distancia setText:[NSString stringWithFormat:@"%.2f Km", dist/1000]];
-//    cell.nome.text = farm.nome;
-//    UIButton *rota = [[UIButton alloc] init];
-//    rota.frame = CGRectMake(20, 12, 30, 25);
-//    rota.tag = indexPath.row;
-//    [rota setImage:[UIImage imageNamed:@"carro.png"] forState:UIControlStateNormal];
-//    [rota addTarget:self action:@selector(tracarRota:) forControlEvents:UIControlEventTouchUpInside];
-//    [cell.contentView addSubview:rota];
+    
     return cell;
 }
 
 - (IBAction)btnAtualiza:(id)sender {
     [self recarregar];
 }
-
-
-
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    Farm *f = [itens objectAtIndex:indexPath.row];
+//    NSString *urlRota = [NSString stringWithFormat:@"http://maps.apple.com/maps?saddr=Current+Location&daddr=%f,%f", f.coordenadas.latitude,f.coordenadas.longitude];
+//    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:urlRota]];
+//}
 @end
