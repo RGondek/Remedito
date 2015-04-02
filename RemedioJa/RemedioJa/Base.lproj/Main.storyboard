@@ -110,6 +110,7 @@
         <scene sceneID="nvI-Uk-Jen">
             <objects>
                 <tabBarController id="Qwp-Vp-ZaP" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Jgg-DU-b7y">
