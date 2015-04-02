@@ -75,8 +75,6 @@
                 itemR.imagem = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[res objectForKey:@"src"]]]];
             }
             
-            //NSLog(@"Remedio: %@, %@, %@, %@", itemR.nomeRemedio, [res objectForKey:@"src"], itemR.apresentacao, itemR.composto);
-            
             NSArray *resArrayFarm = [elem searchWithXPathQuery:queryFarmBase];
             TFHppleElement *resFarm;
             for (TFHppleElement *farm in resArrayFarm) {
@@ -90,8 +88,6 @@
                 resFarm = [[farm searchWithXPathQuery:FarmQueryPreco]objectAtIndex:0];
                 
                 itemF.preco = [[[[[resFarm firstChild] content] substringFromIndex:2] stringByReplacingOccurrencesOfString:@"," withString:@"."] doubleValue];
-                
-                //NSLog(@"Farmacia: %@, %@, %@, %.2f", itemF.nomeFarmacia, itemF.imagem, itemF.url, itemF.preco);
                 [farmacias addObject:itemF];
             }
             NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"preco" ascending:YES];
@@ -100,9 +96,6 @@
             itemR.farmacias = farmSort;
             [farmacias removeAllObjects];
             [remedios addObject:itemR];
-        }
-        else{
-            //NSLog(@"NULL");
         }
     }
     [self.tableView reloadData];

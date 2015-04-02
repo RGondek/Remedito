@@ -7,7 +7,6 @@
 //
 
 #import "DetailViewController.h"
-#import "WebViewController.h"
 #import "FamaciaCell.h"
 
 @interface DetailViewController ()
@@ -22,6 +21,7 @@
 
 - (void)configureView {
     // Update the user interface for the detail item.
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [nomeRemedio setText:itemR.nomeRemedio];
     [apRemedio setText:itemR.apresentacao];
     [compRemedio setText:itemR.composto];
@@ -61,22 +61,17 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FamaciaCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellF" forIndexPath:indexPath];
     
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
     Farmacia *itemF = itemR.farmacias[indexPath.row];
     
     [cell.img setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:itemF.imagem]]]];
     [cell.nome setText:itemF.nomeFarmacia];
     [cell.preco setText:[NSString stringWithFormat:@"R$ %.2f", itemF.preco]];
     
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    
     return cell;
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"showWeb"]) {
-        NSIndexPath *indexPath = [self.tableViewF indexPathForSelectedRow];
-        Farmacia *itemF = itemR.farmacias[indexPath.row];
-        NSLog(@"%@", itemF.url);
-        [[segue destinationViewController] setUrlSite:[NSURL URLWithString:itemF.url]];
-    }
 }
 
 @end
