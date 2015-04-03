@@ -144,9 +144,19 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // Envia pro Apple Maps com as coordenadas para fazer a rota passo a passo
-    Farm *f = [itens objectAtIndex:indexPath.row];
-    NSString *urlRota = [NSString stringWithFormat:@"http://maps.apple.com/maps?saddr=Current+Location&daddr=%f,%f", f.coordenada.latitude,f.coordenada.longitude];
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:urlRota]];
+    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Aplicativo externo" message:@"Você será redirecionado para o aplicativo Mapas" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Seguir", nil];
+    [alerta show];
+    [alerta setTag:indexPath.row];
 }
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    // Redireciona ao Apple Maps
+    if(buttonIndex == 1){
+        Farm *f = [itens objectAtIndex:alertView.tag];
+        NSString *urlRota = [NSString stringWithFormat:@"http://maps.apple.com/maps?saddr=Current+Location&daddr=%f,%f", f.coordenada.latitude,f.coordenada.longitude];
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:urlRota]];
+    }
+}
+
 
 @end
