@@ -230,7 +230,7 @@
     
     if (![pesquisa.text isEqual: @""]) {
         if (!match) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Termo inválido" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Erro", nil) message:NSLocalizedString(@"Termo inválido", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
             [searchBar setUserInteractionEnabled:YES];
         }
@@ -258,7 +258,7 @@
                     [spinner stopAnimating];
                     [self.tableView reloadData];
                     if ([remedios count] == 0) {
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Remédio não encontrado" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Remédio não encontrado", nil) message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
                         [alert show];
                     }
                     else {

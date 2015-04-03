@@ -32,26 +32,32 @@
 /* Class = "UILabel"; text = "R$ 99,99"; ObjectID = "I11-xQ-6I7"; */
 "I11-xQ-6I7.text" = "R$ 99,99";
 
+/* Class = "UIViewController"; title = "Mapa"; ObjectID = "KGd-Fm-P0V"; */
+"KGd-Fm-P0V.title" = "Map";
+
 /* Class = "UILabel"; text = "R$ 99,99"; ObjectID = "KiF-dO-TSE"; */
 "KiF-dO-TSE.text" = "R$ 99,99";
 
-/* Class = "UINavigationItem"; title = "Title"; ObjectID = "LYz-RA-S9j"; */
-"LYz-RA-S9j.title" = "Title";
+/* Class = "UINavigationItem"; title = "Mapa"; ObjectID = "LYz-RA-S9j"; */
+"LYz-RA-S9j.title" = "Map";
 
 /* Class = "UILabel"; text = "Farmacias"; ObjectID = "Lei-5M-9Gs"; */
 "Lei-5M-9Gs.text" = "Drugstores";
 
+/* Class = "UILabel"; text = "Distância"; ObjectID = "TyD-HG-ew0"; */
+"TyD-HG-ew0.text" = "Distance";
+
 /* Class = "UITextField"; placeholder = "Nome do Remédio"; ObjectID = "Vmd-Vd-kpo"; */
 "Vmd-Vd-kpo.placeholder" = "Medicine";
-
-/* Class = "UILabel"; text = "preco"; ObjectID = "VnT-2h-BH1"; */
-"VnT-2h-BH1.text" = "Price";
 
 /* Class = "UITabBarItem"; title = "Pesquisa"; ObjectID = "XUj-bF-GDe"; */
 "XUj-bF-GDe.title" = "Search";
 
 /* Class = "UILabel"; text = "Nome"; ObjectID = "Zgg-tp-Uq5"; */
 "Zgg-tp-Uq5.text" = "Name";
+
+/* Class = "UINavigationItem"; title = "Lembretes"; ObjectID = "a9z-VJ-dcb"; */
+"a9z-VJ-dcb.title" = "Reminders";
 
 /* Class = "UINavigationItem"; title = "Detalhes"; ObjectID = "cra-N8-TIN"; */
 "cra-N8-TIN.title" = "Details";
@@ -65,17 +71,14 @@
 /* Class = "UILabel"; text = "Farmácia"; ObjectID = "iuM-1U-IBU"; */
 "iuM-1U-IBU.text" = "Drugstore";
 
-/* Class = "UIBarButtonItem"; title = "Editar"; ObjectID = "mmI-bw-Kcf"; */
-"mmI-bw-Kcf.title" = "Edit";
+/* Class = "UINavigationItem"; title = "Lembrete"; ObjectID = "oNQ-Pa-CUF"; */
+"oNQ-Pa-CUF.title" = "Reminder";
 
 /* Class = "UITableViewController"; title = "Pesquisa"; ObjectID = "pGg-6v-bdr"; */
 "pGg-6v-bdr.title" = "Search";
 
 /* Class = "UINavigationController"; title = "Master"; ObjectID = "rS3-R9-Ivy"; */
 "rS3-R9-Ivy.title" = "Master";
-
-/* Class = "UIButton"; normalTitle = "tracarRota"; ObjectID = "rhD-er-ML2"; */
-"rhD-er-ML2.normalTitle" = "Trace route";
 
 /* Class = "UINavigationItem"; title = "Pesquisa"; ObjectID = "tQt-TN-PWz"; */
 "tQt-TN-PWz.title" = "Search";
@@ -87,7 +90,7 @@
 "uiC-EY-Zw5.title" = "Map";
 
 /* Class = "UISearchBar"; placeholder = "Digite o medicamento"; ObjectID = "x2c-Iq-g1s"; */
-"x2c-Iq-g1s.placeholder" = "Type the medicine";
+"x2c-Iq-g1s.placeholder" = "Enter the medicine";
 
 /* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "y3T-Nk-Vn9"; */
 "y3T-Nk-Vn9.title" = "Cancel";

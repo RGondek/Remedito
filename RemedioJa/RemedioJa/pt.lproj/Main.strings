@@ -32,26 +32,32 @@
 /* Class = "UILabel"; text = "R$ 99,99"; ObjectID = "I11-xQ-6I7"; */
 "I11-xQ-6I7.text" = "R$ 99,99";
 
+/* Class = "UIViewController"; title = "Mapa"; ObjectID = "KGd-Fm-P0V"; */
+"KGd-Fm-P0V.title" = "Mapa";
+
 /* Class = "UILabel"; text = "R$ 99,99"; ObjectID = "KiF-dO-TSE"; */
 "KiF-dO-TSE.text" = "R$ 99,99";
 
-/* Class = "UINavigationItem"; title = "Title"; ObjectID = "LYz-RA-S9j"; */
-"LYz-RA-S9j.title" = "Title";
+/* Class = "UINavigationItem"; title = "Mapa"; ObjectID = "LYz-RA-S9j"; */
+"LYz-RA-S9j.title" = "Mapa";
 
-/* Class = "UILabel"; text = "Farmacias"; ObjectID = "Lei-5M-9Gs"; */
+/* Class = "UILabel"; text = "Farmácias"; ObjectID = "Lei-5M-9Gs"; */
 "Lei-5M-9Gs.text" = "Farmácias";
+
+/* Class = "UILabel"; text = "Distância"; ObjectID = "TyD-HG-ew0"; */
+"TyD-HG-ew0.text" = "Distância";
 
 /* Class = "UITextField"; placeholder = "Nome do Remédio"; ObjectID = "Vmd-Vd-kpo"; */
 "Vmd-Vd-kpo.placeholder" = "Nome do Remédio";
-
-/* Class = "UILabel"; text = "preco"; ObjectID = "VnT-2h-BH1"; */
-"VnT-2h-BH1.text" = "Preço";
 
 /* Class = "UITabBarItem"; title = "Pesquisa"; ObjectID = "XUj-bF-GDe"; */
 "XUj-bF-GDe.title" = "Pesquisa";
 
 /* Class = "UILabel"; text = "Nome"; ObjectID = "Zgg-tp-Uq5"; */
 "Zgg-tp-Uq5.text" = "Nome";
+
+/* Class = "UINavigationItem"; title = "Lembretes"; ObjectID = "a9z-VJ-dcb"; */
+"a9z-VJ-dcb.title" = "Lembretes";
 
 /* Class = "UINavigationItem"; title = "Detalhes"; ObjectID = "cra-N8-TIN"; */
 "cra-N8-TIN.title" = "Detalhes";
@@ -65,17 +71,14 @@
 /* Class = "UILabel"; text = "Farmácia"; ObjectID = "iuM-1U-IBU"; */
 "iuM-1U-IBU.text" = "Farmácia";
 
-/* Class = "UIBarButtonItem"; title = "Editar"; ObjectID = "mmI-bw-Kcf"; */
-"mmI-bw-Kcf.title" = "Editar";
+/* Class = "UINavigationItem"; title = "Lembrete"; ObjectID = "oNQ-Pa-CUF"; */
+"oNQ-Pa-CUF.title" = "Lembrete";
 
 /* Class = "UITableViewController"; title = "Pesquisa"; ObjectID = "pGg-6v-bdr"; */
 "pGg-6v-bdr.title" = "Pesquisa";
 
 /* Class = "UINavigationController"; title = "Master"; ObjectID = "rS3-R9-Ivy"; */
 "rS3-R9-Ivy.title" = "Master";
-
-/* Class = "UIButton"; normalTitle = "tracarRota"; ObjectID = "rhD-er-ML2"; */
-"rhD-er-ML2.normalTitle" = "tracarRota";
 
 /* Class = "UINavigationItem"; title = "Pesquisa"; ObjectID = "tQt-TN-PWz"; */
 "tQt-TN-PWz.title" = "Pesquisa";

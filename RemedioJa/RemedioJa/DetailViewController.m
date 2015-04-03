@@ -70,7 +70,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // Mensagem de redirecionamento
-    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Site externo" message:@"Você será redirecionado para o site da farmácia" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Seguir", nil];
+    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Redirecionamento", nil) message:NSLocalizedString(@"Deseja prosseguir?", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", nil) otherButtonTitles:@"OK", nil];
     [alerta show];
     [alerta setTag:indexPath.row];
 }

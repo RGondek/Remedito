@@ -27,10 +27,11 @@
         [locationManager requestWhenInUseAuthorization];
     }
     [locationManager startUpdatingLocation];
-    [_mapView.userLocation setTitle:@"Você"];
+    [_mapView.userLocation setTitle:NSLocalizedString(@"Você", nil)];
     [_mapView userTrackingMode];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
+    [self recarregar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -144,7 +145,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // Envia pro Apple Maps com as coordenadas para fazer a rota passo a passo
-    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Aplicativo externo" message:@"Você será redirecionado para o aplicativo Mapas" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Seguir", nil];
+    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Redirecionamento", nil) message:NSLocalizedString(@"Deseja prosseguir para o aplicativo Mapas?", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancelar", nil) otherButtonTitles:@"OK", nil];
     [alerta show];
     [alerta setTag:indexPath.row];
 }

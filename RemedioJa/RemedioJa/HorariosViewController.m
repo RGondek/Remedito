@@ -103,7 +103,6 @@
 // Mudar estado da notificação
 -(IBAction) mudarEstado:(id)sender{
     theSwitch = sender;
-    NSLog(@"%lu", theSwitch.tag);
     lemb = [itens objectAtIndex:theSwitch.tag];
     [sL alterarEstado:theSwitch.on Index:lemb.index];
     if(theSwitch.on){

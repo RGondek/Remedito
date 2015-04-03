@@ -261,6 +261,9 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP5-WE-Pqd">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="barTintColor" red="0.2627450980392157" green="0.85882352941176465" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Lembrete" id="oNQ-Pa-CUF">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="y3T-Nk-Vn9">
@@ -516,7 +519,7 @@
                         <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MMQ-IT-qOo">
-                        <rect key="frame" x="0.0" y="-1" width="667" height="262"/>
+                        <rect key="frame" x="0.0" y="-1" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oY-HR-KhY">
@@ -623,7 +626,7 @@
                                                         <constraint firstAttribute="width" constant="125" id="Upw-mC-aIA"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 99,99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiF-dO-TSE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="R$ 99,99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiF-dO-TSE">
                                                     <rect key="frame" x="277" y="8" width="90" height="64.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="9fh-uL-fA1"/>
@@ -632,7 +635,7 @@
                                                     <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farmacia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d93-mv-b9V">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Farmacia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d93-mv-b9V">
                                                     <rect key="frame" x="143" y="8" width="124" height="64.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -790,6 +793,18 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="0yg-1G-8Gt"/>
+                                <exclude reference="5hH-L7-ptL"/>
+                                <exclude reference="Cog-UR-CYp"/>
+                                <exclude reference="DB4-Q1-BIu"/>
+                                <exclude reference="Ghk-d2-MuR"/>
+                                <exclude reference="LSJ-El-aEg"/>
+                                <exclude reference="MRy-xq-RoU"/>
+                                <exclude reference="T1h-LR-UUS"/>
+                                <exclude reference="XIc-0K-i2D"/>
+                                <exclude reference="aey-3d-FK9"/>
+                                <exclude reference="j6D-rA-Byq"/>
+                                <exclude reference="nrx-pp-3LG"/>
                                 <exclude reference="02b-IL-6J0"/>
                                 <exclude reference="4Eb-No-J0N"/>
                                 <exclude reference="IcO-UD-y2Q"/>
@@ -835,18 +850,6 @@
                                 <exclude reference="Fa0-t2-9Lz"/>
                                 <exclude reference="GgB-Mc-rYT"/>
                                 <exclude reference="QjK-4N-vgh"/>
-                                <exclude reference="0yg-1G-8Gt"/>
-                                <exclude reference="5hH-L7-ptL"/>
-                                <exclude reference="Cog-UR-CYp"/>
-                                <exclude reference="DB4-Q1-BIu"/>
-                                <exclude reference="Ghk-d2-MuR"/>
-                                <exclude reference="LSJ-El-aEg"/>
-                                <exclude reference="MRy-xq-RoU"/>
-                                <exclude reference="T1h-LR-UUS"/>
-                                <exclude reference="XIc-0K-i2D"/>
-                                <exclude reference="aey-3d-FK9"/>
-                                <exclude reference="j6D-rA-Byq"/>
-                                <exclude reference="nrx-pp-3LG"/>
                                 <exclude reference="0Lh-4B-jb5"/>
                                 <exclude reference="Jx0-Sk-eLg"/>
                                 <exclude reference="KGC-aW-A04"/>
@@ -863,6 +866,14 @@
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
+                                <include reference="0yg-1G-8Gt"/>
+                                <include reference="Cog-UR-CYp"/>
+                                <include reference="DB4-Q1-BIu"/>
+                                <exclude reference="Ghk-d2-MuR"/>
+                                <include reference="T1h-LR-UUS"/>
+                                <include reference="XIc-0K-i2D"/>
+                                <include reference="j6D-rA-Byq"/>
+                                <include reference="nrx-pp-3LG"/>
                                 <include reference="ipt-Ia-rYs"/>
                                 <include reference="xSt-3B-fuA"/>
                                 <include reference="O5C-W8-CnG"/>
@@ -887,14 +898,6 @@
                                 <exclude reference="5In-5x-dPP"/>
                                 <exclude reference="Fa0-t2-9Lz"/>
                                 <include reference="GgB-Mc-rYT"/>
-                                <include reference="0yg-1G-8Gt"/>
-                                <include reference="Cog-UR-CYp"/>
-                                <include reference="DB4-Q1-BIu"/>
-                                <exclude reference="Ghk-d2-MuR"/>
-                                <include reference="T1h-LR-UUS"/>
-                                <include reference="XIc-0K-i2D"/>
-                                <include reference="j6D-rA-Byq"/>
-                                <include reference="nrx-pp-3LG"/>
                                 <include reference="0Lh-4B-jb5"/>
                                 <include reference="Jx0-Sk-eLg"/>
                                 <include reference="ncb-eb-CmM"/>
@@ -905,6 +908,10 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="5hH-L7-ptL"/>
+                                <include reference="LSJ-El-aEg"/>
+                                <include reference="MRy-xq-RoU"/>
+                                <include reference="aey-3d-FK9"/>
                                 <include reference="02b-IL-6J0"/>
                                 <include reference="4Eb-No-J0N"/>
                                 <include reference="IcO-UD-y2Q"/>
@@ -926,10 +933,6 @@
                                 <include reference="uVP-j1-UEc"/>
                                 <include reference="EKn-C2-Kjx"/>
                                 <include reference="QjK-4N-vgh"/>
-                                <include reference="5hH-L7-ptL"/>
-                                <include reference="LSJ-El-aEg"/>
-                                <include reference="MRy-xq-RoU"/>
-                                <include reference="aey-3d-FK9"/>
                                 <include reference="KGC-aW-A04"/>
                                 <include reference="fGq-e5-8ez"/>
                                 <include reference="Zaz-X0-y1s"/>
