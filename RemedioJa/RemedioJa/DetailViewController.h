@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "FarmaciaCell.h"
 #import "Remedio.h"
 #import "Farmacia.h"
 

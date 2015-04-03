@@ -10,9 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface Farm : NSObject{
-    NSString *descricao;
-}
+@interface Farm : NSObject
 
 @property NSString* nome;
 @property CLLocationDistance distancia;

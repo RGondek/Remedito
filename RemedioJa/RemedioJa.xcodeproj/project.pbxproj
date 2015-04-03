@@ -25,7 +25,7 @@
 		D4D9D2C81AC75242002C7252 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2C71AC75242002C7252 /* MapViewController.m */; };
 		D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2CA1AC75309002C7252 /* Farm.m */; };
 		D4D9D2D71AC764C9002C7252 /* ListaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */; };
-		D534840C1AC9BB8B00440AA6 /* FamaciaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */; };
+		D534840C1AC9BB8B00440AA6 /* FarmaciaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D534840B1AC9BB8B00440AA6 /* FarmaciaCell.m */; };
 		D53852A11AC31CD10015BC19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A01AC31CD10015BC19 /* main.m */; };
 		D53852A41AC31CD10015BC19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A31AC31CD10015BC19 /* AppDelegate.m */; };
 		D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D53852A91AC31CD10015BC19 /* DetailViewController.m */; };
@@ -87,8 +87,8 @@
 		D4D9D2CA1AC75309002C7252 /* Farm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Farm.m; sourceTree = "<group>"; };
 		D4D9D2D51AC764C9002C7252 /* ListaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaTableViewCell.h; sourceTree = "<group>"; };
 		D4D9D2D61AC764C9002C7252 /* ListaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaTableViewCell.m; sourceTree = "<group>"; };
-		D534840A1AC9BB8B00440AA6 /* FamaciaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamaciaCell.h; sourceTree = "<group>"; };
-		D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamaciaCell.m; sourceTree = "<group>"; };
+		D534840A1AC9BB8B00440AA6 /* FarmaciaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FarmaciaCell.h; sourceTree = "<group>"; };
+		D534840B1AC9BB8B00440AA6 /* FarmaciaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FarmaciaCell.m; sourceTree = "<group>"; };
 		D538529B1AC31CD10015BC19 /* RemedioJa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemedioJa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D538529F1AC31CD10015BC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D53852A01AC31CD10015BC19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -207,8 +207,8 @@
 			children = (
 				D53852A81AC31CD10015BC19 /* DetailViewController.h */,
 				D53852A91AC31CD10015BC19 /* DetailViewController.m */,
-				D534840A1AC9BB8B00440AA6 /* FamaciaCell.h */,
-				D534840B1AC9BB8B00440AA6 /* FamaciaCell.m */,
+				D534840A1AC9BB8B00440AA6 /* FarmaciaCell.h */,
+				D534840B1AC9BB8B00440AA6 /* FarmaciaCell.m */,
 			);
 			name = Detalhes;
 			sourceTree = "<group>";
@@ -430,7 +430,7 @@
 				D53852AA1AC31CD10015BC19 /* DetailViewController.m in Sources */,
 				D4D9D2CB1AC75309002C7252 /* Farm.m in Sources */,
 				D4A832621AC9B7F000FA5BBE /* HorarioTableViewCell.m in Sources */,
-				D534840C1AC9BB8B00440AA6 /* FamaciaCell.m in Sources */,
+				D534840C1AC9BB8B00440AA6 /* FarmaciaCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

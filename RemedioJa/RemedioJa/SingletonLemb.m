@@ -7,14 +7,15 @@
 //
 
 #import "SingletonLemb.h"
+#import "Lembrete.h"
 
 @implementation SingletonLemb
 
-@synthesize meuRealm;
+@synthesize meuRealm, lembretes;
 
 static SingletonLemb *inst = nil;
 
-#pragma mark - Public Method
+#pragma mark - Singleton
 
 +(SingletonLemb*) instance{
     if (inst == nil) {
@@ -23,17 +24,19 @@ static SingletonLemb *inst = nil;
     return inst;
 }
 
--(id)init {
+-(id) init {
     self = [super init];
     if (self) {
-        _lembretes = [[NSMutableArray alloc] init];
-        meuRealm=[RLMRealm defaultRealm];
+        lembretes = [[NSMutableArray alloc] init];
+        meuRealm = [RLMRealm defaultRealm];
     }
     return self;
 }
 
+#pragma mark - REALM
+
 -(void) salvarLembrete:(NSString *)nome andData:(NSDate *)data{
-    Lembrete *l=[[Lembrete alloc]initWithNome:nome andData:data];
+    Lembrete *l = [[Lembrete alloc] initWithNome:nome andData:data];
     [meuRealm beginWriteTransaction];
     [meuRealm addObject:l];
     [meuRealm commitWriteTransaction];
@@ -41,9 +44,9 @@ static SingletonLemb *inst = nil;
 }
 
 -(NSArray *) obterTodosLembretes{
-    RLMResults *resultado=[Lembrete allObjects];
+    RLMResults *resultado = [Lembrete allObjects];
     resultado = [resultado sortedResultsUsingProperty:@"data" ascending:YES];
-    NSMutableArray *itens=[[NSMutableArray alloc]init];
+    NSMutableArray *itens = [[NSMutableArray alloc] init];
     for(Lembrete *l in resultado){
         [itens addObject:l];
     }
@@ -60,7 +63,7 @@ static SingletonLemb *inst = nil;
     return nil;
 }
 
--(void)alterarLembreteNome:(NSString *)n eData:(NSDate*)d Index:(int)i{
+-(void) alterarLembreteNome:(NSString *)n eData:(NSDate*)d Index:(int)i{
     Lembrete *l = [self obterObjIndex:i];
     [meuRealm beginWriteTransaction];
     l.nome = n;
@@ -68,7 +71,7 @@ static SingletonLemb *inst = nil;
     [meuRealm commitWriteTransaction];
 }
 
--(void)alterarEstado:(BOOL)status Index:(int)i{
+-(void) alterarEstado:(BOOL)status Index:(int)i{
     Lembrete *l = [self obterObjIndex:i];
     [meuRealm beginWriteTransaction];
     l.ativo = status;

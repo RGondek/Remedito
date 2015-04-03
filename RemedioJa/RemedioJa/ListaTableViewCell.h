@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ListaTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *nome;
 @property (weak, nonatomic) IBOutlet UILabel *distancia;
 

@@ -7,19 +7,15 @@
 //
 
 #import "HorariosViewController.h"
-#import "HorarioTableViewCell.h"
-#import "SingletonLemb.h"
-#import "Lembrete.h"
-#import "LembreteViewController.h"
 
 @interface HorariosViewController ()
-
 @end
 
 @implementation HorariosViewController{
     Lembrete *lemb;
     SingletonLemb *sL;
     NSMutableArray *itens;
+    UISwitch *theSwitch;
 }
 
 @synthesize tb;
@@ -31,29 +27,24 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     itens = [[NSMutableArray alloc] initWithArray:[sL obterTodosLembretes]];
     [tb reloadData];
 }
+
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [itens count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     HorarioTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     lemb = [itens objectAtIndex:indexPath.row];
     
@@ -72,37 +63,6 @@
     return cell;
 }
 
--(IBAction)mudarEstado:(id)sender{
-    theSwitch = sender;
-    NSLog(@"%lu", theSwitch.tag);
-    lemb = [itens objectAtIndex:theSwitch.tag];
-    [sL alterarEstado:theSwitch.on Index:lemb.index];
-    if(theSwitch.on){
-        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
-        notificacao.fireDate = lemb.data;
-        notificacao.alertBody = lemb.nome;
-        notificacao.soundName = UILocalNotificationDefaultSoundName;
-        notificacao.timeZone = [NSTimeZone defaultTimeZone];
-        
-        notificacao.repeatInterval = NSCalendarUnitDay;
-        
-        notificacao.applicationIconBadgeNumber = 1;
-        [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
-    }
-    else {
-        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
-        notificacao.fireDate = lemb.data;
-        notificacao.alertBody = lemb.nome;
-        notificacao.soundName = UILocalNotificationDefaultSoundName;
-        notificacao.timeZone = [NSTimeZone defaultTimeZone];
-        
-        notificacao.repeatInterval = NSCalendarUnitDay;
-        
-        notificacao.applicationIconBadgeNumber = 1;
-        [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
-    }
-}
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
@@ -116,19 +76,17 @@
         notificacao.alertBody = lemb.nome;
         notificacao.soundName = UILocalNotificationDefaultSoundName;
         notificacao.timeZone = [NSTimeZone defaultTimeZone];
-        
         notificacao.repeatInterval = NSCalendarUnitDay;
-        
         notificacao.applicationIconBadgeNumber = 1;
         [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
 
         [sL removeLembreteIndex:lemb.index];
         [itens removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        
-        
     }
 }
+
+#pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"mostrarLembrete"]) {
@@ -140,5 +98,34 @@
     }
 }
 
+#pragma mark - Métodos
+
+// Mudar estado da notificação
+-(IBAction) mudarEstado:(id)sender{
+    theSwitch = sender;
+    NSLog(@"%lu", theSwitch.tag);
+    lemb = [itens objectAtIndex:theSwitch.tag];
+    [sL alterarEstado:theSwitch.on Index:lemb.index];
+    if(theSwitch.on){
+        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
+        notificacao.fireDate = lemb.data;
+        notificacao.alertBody = lemb.nome;
+        notificacao.soundName = UILocalNotificationDefaultSoundName;
+        notificacao.timeZone = [NSTimeZone defaultTimeZone];
+        notificacao.repeatInterval = NSCalendarUnitDay;
+        notificacao.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+    }
+    else {
+        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
+        notificacao.fireDate = lemb.data;
+        notificacao.alertBody = lemb.nome;
+        notificacao.soundName = UILocalNotificationDefaultSoundName;
+        notificacao.timeZone = [NSTimeZone defaultTimeZone];
+        notificacao.repeatInterval = NSCalendarUnitDay;
+        notificacao.applicationIconBadgeNumber = 1;
+        [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
+    }
+}
 
 @end

@@ -7,9 +7,9 @@
 //
 
 #import "HorarioTableViewCell.h"
-#import "Lembrete.h"
 
 @implementation HorarioTableViewCell
+
 @synthesize horario, nomedoRemedio, btnAtivo;
 
 - (void)awakeFromNib {
@@ -18,7 +18,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 

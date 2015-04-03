@@ -11,12 +11,11 @@
 
 @interface Lembrete : RLMObject
 
-
 @property (nonatomic,strong) NSString *nome;
 @property (nonatomic,strong) NSDate *data;
 @property (nonatomic) BOOL ativo;
 @property int index;
 
--(instancetype)initWithNome:(NSString*)n andData:(NSDate*)d;
+-(instancetype) initWithNome:(NSString*)n andData:(NSDate*)d;
 
 @end

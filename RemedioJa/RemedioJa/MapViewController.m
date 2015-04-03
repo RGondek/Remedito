@@ -7,12 +7,8 @@
 //
 
 #import "MapViewController.h"
-#import "ListaTableViewCell.h"
-#import "Farm.h"
-//#import "Annotation.h"
 
 @interface MapViewController ()
-
 @end
 
 @implementation MapViewController{
@@ -39,34 +35,30 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Map View
+#pragma mark - Métodos
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    NSLog(@"%@", [locations lastObject]);
-    CLLocationCoordinate2D loc = [[locations lastObject] coordinate];
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1000, 1000);
-    [_mapView setRegion:region animated:YES];
-    [locationManager stopUpdatingLocation];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"Não foi possível encontrar sua localização.");
+- (IBAction)btnAtualiza:(id)sender {
+    [_mapView setCenterCoordinate:_mapView.userLocation.location.coordinate animated:YES];
+    [self recarregar];
 }
 
 - (void) recarregar {
+    // Mostra Network indicator
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    // Remove todas as anotações
     [_mapView removeAnnotations:[_mapView annotations]];
+    
+    // Cria LocalSearch
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     request.naturalLanguageQuery = @"Drugstore";
     request.region = _mapView.region;
     
     itens = [[NSMutableArray alloc] init];
     
+    // Realiza a Busca
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
-    
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error){
         if (response.mapItems.count == 0)
             NSLog(@"No Matches");
@@ -75,45 +67,57 @@
             {
                 Farm *f = [[Farm alloc]initWithMapItem:item eUserLocation:_mapView.userLocation];
                 [itens addObject:f];
+                
+                // Cria Annotation
                 MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
                 annotation.coordinate = item.placemark.coordinate;
                 annotation.title = item.name;
                 annotation.subtitle = [item.placemark.addressDictionary objectForKeyedSubscript:@"Street"];
                 [_mapView addAnnotation:annotation];
+                
                 [_mapView setNeedsDisplay];
             }
+            // Ordena os resultados por distância até Usuário
+            NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"distancia" ascending:YES];
+            NSArray *sa = [NSArray arrayWithObject:sd];
+            NSArray *farmSort = [itens sortedArrayUsingDescriptors:sa];
+            itens = [NSMutableArray arrayWithArray:farmSort];
         }
+        // Oculta Network indicator
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     }];
     [_tableView reloadData];
+}
+
+#pragma mark - Map View
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"%@", [locations lastObject]);
+    CLLocationCoordinate2D loc = [[locations lastObject] coordinate];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 1500, 1500);
+    [_mapView setRegion:region animated:YES];
+    [locationManager stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"Não foi possível encontrar sua localização.");
 }
 
 -(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views{
     [_tableView reloadData];
 }
 
+// Pino customizado
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     MKAnnotationView *pinView = nil;
     if(annotation != mapView.userLocation) {
         static NSString *defaultPinID = @"com.invasivecode.pin";
         pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
-        if (pinView == nil)
+        if (pinView == nil){
             pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
-//        UIButton *buttonRota = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//        UIImage *img = [UIImage imageNamed:@"carro.png"];
-//        [buttonRota setImage:img forState:UIControlStateNormal];
-//        pinView.leftCalloutAccessoryView = buttonRota;
-//        UIButton *info = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//        img = [UIImage imageNamed:@"rightarrow"];
-//        [info setImage:img forState:UIControlStateNormal];
-//        pinView.rightCalloutAccessoryView = info;
+        }
         pinView.canShowCallout = YES;
-//        //É adicionada uma imagem para sobrescrever a imagem padrão do pino. Caso existam múltiplas annotations, elas serão vermelhas. Caso exista apenas uma, ela será amarela.
         pinView.image = [UIImage imageNamed:@"orangepin.png"];
-//        if (_mapView.annotations.count == 2) {
-//            pinView.image = [UIImage imageNamed:@"greenpin.png"];
-//        }
-        
     }
     return pinView;
 }
@@ -121,12 +125,10 @@
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return itens.count;
 }
 
@@ -140,13 +142,11 @@
     return cell;
 }
 
-- (IBAction)btnAtualiza:(id)sender {
-    [self recarregar];
-}
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // Envia pro Apple Maps com as coordenadas para fazer a rota passo a passo
     Farm *f = [itens objectAtIndex:indexPath.row];
     NSString *urlRota = [NSString stringWithFormat:@"http://maps.apple.com/maps?saddr=Current+Location&daddr=%f,%f", f.coordenada.latitude,f.coordenada.longitude];
     [[UIApplication sharedApplication]openURL:[NSURL URLWithString:urlRota]];
 }
+
 @end

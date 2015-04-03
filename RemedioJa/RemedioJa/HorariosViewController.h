@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "LembreteViewController.h"
+#import "HorarioTableViewCell.h"
+
+#import "SingletonLemb.h"
+#import "Lembrete.h"
+
 @interface HorariosViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-{
-    UISwitch    *theSwitch;
-}
 
 @property (weak, nonatomic) IBOutlet UITableView *tb;
 
--(IBAction)mudarEstado:(id)sender;
+-(IBAction) mudarEstado:(id)sender;
 
 @end

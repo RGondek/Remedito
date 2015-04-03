@@ -6,12 +6,18 @@
 //  Copyright (c) 2015 Remedito. All rights reserved.
 //
 
+#import <SystemConfiguration/SystemConfiguration.h>
 #import <UIKit/UIKit.h>
+
 #import "DetailViewController.h"
 #import "TableViewCell.h"
-#import "Remedio.h"
 #import "Reachability.h"
-#import <SystemConfiguration/SystemConfiguration.h>
+
+#import "TFHpple.h"
+#import "TFHppleElement.h"
+
+#import "Remedio.h"
+#import "Farmacia.h"
 
 @interface MasterViewController : UITableViewController <UISearchBarDelegate>
 

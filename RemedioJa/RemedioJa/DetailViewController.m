@@ -7,21 +7,18 @@
 //
 
 #import "DetailViewController.h"
-#import "FamaciaCell.h"
 
 @interface DetailViewController ()
-
 @end
 
 @implementation DetailViewController
 
 @synthesize apRemedio, compRemedio, imgRemedio, nomeRemedio, pAteRemedio, pDeRemedio, tableViewF, itemR;
 
-#pragma mark - Managing the detail item
+#pragma mark - Configurando detalhes do item
 
 - (void)configureView {
-    // Update the user interface for the detail item.
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    // Define os campos do Remédio
     [nomeRemedio setText:itemR.nomeRemedio];
     [apRemedio setText:itemR.apresentacao];
     [compRemedio setText:itemR.composto];
@@ -36,7 +33,6 @@
     [super viewDidLoad];
     [tableViewF setDelegate:self];
     [tableViewF setDataSource:self];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -45,10 +41,9 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-#pragma mark Table View
+#pragma mark - Table View
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -59,7 +54,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    FamaciaCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellF" forIndexPath:indexPath];
+    FarmaciaCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellF" forIndexPath:indexPath];
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
@@ -74,12 +69,14 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // Mensagem de redirecionamento
     UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Site externo" message:@"Você será redirecionado para o site da farmácia" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Seguir", nil];
     [alerta show];
     [alerta setTag:indexPath.row];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    // Redireciona ao Safari
     if(buttonIndex == 1){
         Farmacia *itemF = itemR.farmacias[alertView.tag];
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:itemF.url]];

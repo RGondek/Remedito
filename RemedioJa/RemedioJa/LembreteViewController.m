@@ -7,16 +7,14 @@
 //
 
 #import "LembreteViewController.h"
-#import "SingletonLemb.h"
-#import "Lembrete.h"
 
 @interface LembreteViewController ()
-
 @end
 
 @implementation LembreteViewController {
     SingletonLemb *sL;
 }
+
 @synthesize dataPicker, campoTexto, lemb, index;
 
 - (void)viewDidLoad {
@@ -24,12 +22,10 @@
     sL = [SingletonLemb instance];
     campoTexto.delegate = self;
     [campoTexto setReturnKeyType:UIReturnKeyDone];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -39,20 +35,12 @@
     }
 }
 
+#pragma mark - Actions
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [campoTexto resignFirstResponder];
     return YES;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)botaoSalvar:(id)sender {
     if ([campoTexto.text isEqualToString:@""]) {
@@ -75,8 +63,9 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - Métodos
+
 -(void)salvar{
-    
     UIApplication *application = [UIApplication sharedApplication];
     NSDate *dataP = [dataPicker date];
     NSTimeInterval time = floor([dataP timeIntervalSinceReferenceDate] / 60.0) * 60.0;
@@ -92,26 +81,23 @@
         notificacao.alertBody = lemb.nome;
         notificacao.soundName = UILocalNotificationDefaultSoundName;
         notificacao.timeZone = [NSTimeZone defaultTimeZone];
-        
         notificacao.repeatInterval = NSCalendarUnitDay;
-        
         notificacao.applicationIconBadgeNumber = 1;
-        [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
+        [application cancelLocalNotification:notificacao];
 
         [sL alterarLembreteNome:campoTexto.text eData:horario Index:lemb.index];
         
     }
+    // Cria notificação
     UILocalNotification *notificacao = [[UILocalNotification alloc] init];
     notificacao.fireDate = horario;
     notificacao.alertBody = campoTexto.text;
     notificacao.soundName = UILocalNotificationDefaultSoundName;
     notificacao.timeZone = [NSTimeZone defaultTimeZone];
-    
     notificacao.repeatInterval = NSCalendarUnitDay;
-    
     notificacao.applicationIconBadgeNumber = 1;
-    
     [application scheduleLocalNotification:notificacao];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

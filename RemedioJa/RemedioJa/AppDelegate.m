@@ -7,48 +7,36 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
-#import "MasterViewController.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
     {
-        
-        UIUserNotificationSettings *settings =
-        [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert |
-         UIUserNotificationTypeBadge |
-         UIUserNotificationTypeSound
-                                          categories:nil];
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert |UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
-        
     }
-    // Set icon badge number to zero
+    // Define o ícone de notificações pra 0
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
+    // Define cor da TabBar
     self.window.tintColor=[UIColor colorWithRed:20/225.0 green:154/225.0  blue:113/225.0 alpha:1];
     
-
-//    [[UIApplication sharedApplication] statusBarStyle:UIStatusBarStyleLightContent];
+    // Define StatusBar com texto branco
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     
-    
-    
-    
     return YES;
 }
 
+// Recebe notificação
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     UIApplicationState state = [application applicationState];

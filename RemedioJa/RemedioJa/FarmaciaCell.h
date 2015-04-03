@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FamaciaCell : UITableViewCell
+@interface FarmaciaCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *nome;

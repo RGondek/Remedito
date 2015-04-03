@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DetailViewController.h"
+#import "MasterViewController.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 
 @end
 

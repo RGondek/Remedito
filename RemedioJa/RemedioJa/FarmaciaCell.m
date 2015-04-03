@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Remedito. All rights reserved.
 //
 
-#import "FamaciaCell.h"
+#import "FarmaciaCell.h"
 
-@implementation FamaciaCell
+@implementation FarmaciaCell
 
 - (void)awakeFromNib {
     // Initialization code

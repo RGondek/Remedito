@@ -7,12 +7,8 @@
 //
 
 #import "MasterViewController.h"
-#import "TFHpple.h"
-#import "TFHppleElement.h"
-#import "Farmacia.h"
 
 @interface MasterViewController ()
-
 @end
 
 @implementation MasterViewController{
@@ -22,37 +18,70 @@
     NSMutableArray *palavras;
     BOOL clicou;
 }
+
 @synthesize pesquisa;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    pesquisa.delegate = self;
+    userDef = [NSUserDefaults standardUserDefaults];
+    palavras = [[NSMutableArray alloc] init];
+    clicou = NO;
+}
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Métodos
+
+// Método para verificar conectividade com a internet
+-(BOOL)conectado{
+    Reachability *reach = [Reachability reachabilityForInternetConnection];
+    NetworkStatus net = [reach currentReachabilityStatus];
+    return (net != NotReachable);
+}
+
+// ----- Busca remédios
 - (void)loadSite:(NSString*)termo{
     NSURL *site = [NSURL URLWithString:[NSString stringWithFormat:@"http://consultaremedios.com.br/busca?termo=%@", termo]];
     NSData *siteHTML = [NSData dataWithContentsOfURL:site];
     TFHpple *siteParser = [TFHpple hppleWithHTMLData:siteHTML];
+    
+    // ----- Query Base (Acima de outras informações)
     NSString *queryBase = @"//ul[@class='container product-section clearfix']";
     
-    // Query Remédios
-    NSString *RemQueryImg = @"//li[@class='title clearfix']/figure[@class='medicine-thumb']/img"; // Src
-    NSString *RemQueryNome = @"//li[@class='title clearfix']/div[@class='medicine-data']/h3/a"; // FirstChild
-    NSString *RemQueryAp = @"//li[@class='title clearfix']/div[@class='medicine-data']/div[@class='medicine-info clearfix']/div[@class='pull-left']/strong"; // FirstChild
-    NSString *RemQueryComp = @"//li[@class='title clearfix']/div[@class='medicine-data']/p[@class='medicine-active-ingredient clearfix']/a"; // FirstChild
+    // ----- Query Remédios
+    // Imagem = objectForKey:@"src"
+    NSString *RemQueryImg = @"//li[@class='title clearfix']/figure[@class='medicine-thumb']/img";
+    // Nome = firstChild > content
+    NSString *RemQueryNome = @"//li[@class='title clearfix']/div[@class='medicine-data']/h3/a";
+    // Apresentação = firstChild > content
+    NSString *RemQueryAp = @"//li[@class='title clearfix']/div[@class='medicine-data']/div[@class='medicine-info clearfix']/div[@class='pull-left']/strong";
+    // Composto = firstChild > content
+    NSString *RemQueryComp = @"//li[@class='title clearfix']/div[@class='medicine-data']/p[@class='medicine-active-ingredient clearfix']/a";
     
-    // Query Farmácias
+    // ----- Query Farmácias Base
     NSString *queryFarmBase = @"//li[@class='item']";
     
-    NSString *FarmQueryUrl_Img_Nome = @"//div[@class='item-pharmacy']/div[@class='item-pharmacy-logo']/a"; // Img: /img@src | URL: href | Nome: /img@alt
-    NSString *FarmQueryPreco = @"//div[@class='item-price']/a/p"; // FirstChild
-    
-    NSArray *resBase = [siteParser searchWithXPathQuery:queryBase];
+    // ----- Query Farmácias
+    // URL = objectForKey:@"href" | Imagem = firstChild > objectForKey:@"src" | Nome = firstChild > objectForKey:@"alt"
+    NSString *FarmQueryUrl_Img_Nome = @"//div[@class='item-pharmacy']/div[@class='item-pharmacy-logo']/a";
+    // Preço = firstChild > content
+    NSString *FarmQueryPreco = @"//div[@class='item-price']/a/p";
     
     remedios = [[NSMutableArray alloc] initWithCapacity:0];
     NSMutableArray *farmacias = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    NSArray *resBase = [siteParser searchWithXPathQuery:queryBase];
+    // Verifica resultados Base
     for (TFHppleElement *elem in resBase) {
         Remedio *itemR = [[Remedio alloc] init];
+        // Busca os remédios dentro da Query Base
         NSArray *resArray = [elem searchWithXPathQuery:RemQueryNome];
         TFHppleElement *res;
         if (resArray.count != 0) {
@@ -75,8 +104,10 @@
                 itemR.imagem = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[res objectForKey:@"src"]]]];
             }
             
+            // Busca as farmácias a partir da Query Base
             NSArray *resArrayFarm = [elem searchWithXPathQuery:queryFarmBase];
             TFHppleElement *resFarm;
+            // Verifica resultados da busca
             for (TFHppleElement *farm in resArrayFarm) {
                 Farmacia *itemF = [[Farmacia alloc] init];
                 
@@ -90,34 +121,28 @@
                 itemF.preco = [[[[[resFarm firstChild] content] substringFromIndex:2] stringByReplacingOccurrencesOfString:@"," withString:@"."] doubleValue];
                 [farmacias addObject:itemF];
             }
+            
+            // Ordena o vetor de farmácias pelo preço
             NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"preco" ascending:YES];
             NSArray *sa = [NSArray arrayWithObject:sd];
             NSArray *farmSort = [farmacias sortedArrayUsingDescriptors:sa];
+            
             itemR.farmacias = farmSort;
             [farmacias removeAllObjects];
             [remedios addObject:itemR];
         }
     }
     [self.tableView reloadData];
+    
+    // Oculta o Network Indicator
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    pesquisa.delegate = self;
-    userDef = [NSUserDefaults standardUserDefaults];
-    palavras = [[NSMutableArray alloc] init];
-    clicou = NO;
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Segues
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Clicar na busca recente
     if (clicou) {
         pesquisa.text = palavras[indexPath.row];
         [self searchBarSearchButtonClicked:pesquisa];
@@ -125,9 +150,9 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    
+    // Segue para tela de detalhes
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Remedio *objRemedio = remedios[indexPath.row];
         [[segue destinationViewController] setItemR:objRemedio];
     }
@@ -140,12 +165,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Verifica se vai mostrar as buscas recentes ou os resultados da busca atual
     if (clicou) {
         palavras  = [NSMutableArray arrayWithArray:[userDef arrayForKey:@"salvando"]];
         return palavras.count;
     }
-    else
-        return remedios.count;
+    else { return remedios.count; }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -160,22 +185,16 @@
     else {
         TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
         Remedio *objR = remedios[indexPath.row];
-        Farmacia *objF = objR.farmacias[0];
         [cell.nome setText:objR.nomeRemedio];
         [cell.ap setText:objR.apresentacao];
-        [cell.preco setText:[NSString stringWithFormat:@"R$ %.2f", objF.preco]];
         [cell.img setImage:objR.imagem];
         return cell;
     }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (clicou) {
-    return 40;
-    }
-    else {
-        return 70;
-    }
+    if (clicou) { return 40; }
+    else { return 70; }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -197,18 +216,19 @@
     clicou = NO;
     [searchBar setUserInteractionEnabled:NO];
     
+    // Verifica conexão com internet
     if (![self conectado]) {
         UIAlertView *alertaNet = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Aviso", nil) message:NSLocalizedString(@"Sem conexão com a internet", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertaNet show];
         [searchBar setUserInteractionEnabled:YES];
     }
     
+    // Regex para termos inválidos
     NSError *error;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^[ A-Z0-9a-z._%+-]{2,100}$" options:NSRegularExpressionCaseInsensitive error:&error];
-    
     NSTextCheckingResult *match = [regex firstMatchInString:pesquisa.text options:0 range:NSMakeRange(0, [pesquisa.text length])];
-    if (![pesquisa.text  isEqual: @""]) {
-        
+    
+    if (![pesquisa.text isEqual: @""]) {
         if (!match) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Termo inválido" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
@@ -216,10 +236,12 @@
         }
         
         else {
+            // Mostra Network indicator
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
             [remedios removeAllObjects];
             [self.tableView reloadData];
             
+            // Mostra Activity indicator
             spinner = [[UIActivityIndicatorView alloc]
                        initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             spinner.center = CGPointMake(self.view.bounds.size.width /2, self.view.bounds.size.height / 2 + 15);
@@ -228,6 +250,7 @@
             [self.view addSubview:spinner];
             [spinner startAnimating];
             
+            // Download das informações de modo assíncrono
             dispatch_queue_t downloadQueue = dispatch_queue_create("downloader", NULL);
             dispatch_async(downloadQueue, ^{
                 [self loadSite:[searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
@@ -254,12 +277,5 @@
         }
     }
 }
-
--(BOOL)conectado{
-    Reachability *reach = [Reachability reachabilityForInternetConnection];
-    NetworkStatus net = [reach currentReachabilityStatus];
-    return (net != NotReachable);
-}
-
 
 @end

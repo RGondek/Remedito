@@ -10,6 +10,4 @@
 
 @implementation Farmacia
 
-@synthesize nomeFarmacia, preco, imagem, url;
-
 @end
