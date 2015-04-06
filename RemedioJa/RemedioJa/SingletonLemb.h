@@ -21,8 +21,8 @@
 -(NSArray *) obterTodosLembretes;
 -(Lembrete *) obterObjIndex:(int)i;
 
--(void) salvarLembrete:(NSString *)nome andData:(NSDate *)data;
--(void) alterarLembreteNome:(NSString *)n eData:(NSDate*)d Index:(int)i;
+-(void) salvarLembrete:(NSString *)nome andData:(NSDate *)data andIntervalo:(int)i;
+-(void) alterarLembreteNome:(NSString *)n eData:(NSDate*)d Index:(int)i eIntervalo:(int)inter;
 -(void) alterarEstado:(BOOL)status Index:(int)i;
 -(void) removeLembreteIndex:(int)i;
 

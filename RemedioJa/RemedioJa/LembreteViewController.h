@@ -15,6 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *dataPicker;
 @property (weak, nonatomic) IBOutlet UITextField *campoTexto;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *btnIntervalo;
+@property (weak, nonatomic) IBOutlet UILabel *lblIntervalo;
 
 @property Lembrete *lemb;
 @property int index;

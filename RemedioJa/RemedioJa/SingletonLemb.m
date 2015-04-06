@@ -35,12 +35,12 @@ static SingletonLemb *inst = nil;
 
 #pragma mark - REALM
 
--(void) salvarLembrete:(NSString *)nome andData:(NSDate *)data{
-    Lembrete *l = [[Lembrete alloc] initWithNome:nome andData:data];
+-(void) salvarLembrete:(NSString *)nome andData:(NSDate *)data andIntervalo:(int)i{
+    Lembrete *l = [[Lembrete alloc] initWithNome:nome andData:data andIntervalo:i];
     [meuRealm beginWriteTransaction];
     [meuRealm addObject:l];
     [meuRealm commitWriteTransaction];
-    
+    [l criarNotificacao];
 }
 
 -(NSArray *) obterTodosLembretes{
@@ -63,12 +63,15 @@ static SingletonLemb *inst = nil;
     return nil;
 }
 
--(void) alterarLembreteNome:(NSString *)n eData:(NSDate*)d Index:(int)i{
+-(void) alterarLembreteNome:(NSString *)n eData:(NSDate*)d Index:(int)i eIntervalo:(int)inter{
     Lembrete *l = [self obterObjIndex:i];
+    [l deletarNotificacao];
     [meuRealm beginWriteTransaction];
     l.nome = n;
     l.data = d;
+    l.intervalo = inter;
     [meuRealm commitWriteTransaction];
+    [l criarNotificacao];
 }
 
 -(void) alterarEstado:(BOOL)status Index:(int)i{
@@ -76,10 +79,17 @@ static SingletonLemb *inst = nil;
     [meuRealm beginWriteTransaction];
     l.ativo = status;
     [meuRealm commitWriteTransaction];
+    if (status) {
+        [l criarNotificacao];
+    }
+    else{
+        [l deletarNotificacao];
+    }
 }
 
 -(void) removeLembreteIndex:(int)i{
     Lembrete *l = [self obterObjIndex:i];
+    [l deletarNotificacao];
     [meuRealm beginWriteTransaction];
     [meuRealm deleteObject:l];
     [meuRealm commitWriteTransaction];

@@ -338,8 +338,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="btnIntervalo" destination="1g5-z5-MFt" id="Egd-Z8-jN3"/>
                         <outlet property="campoTexto" destination="Vmd-Vd-kpo" id="b1a-fW-1Uz"/>
                         <outlet property="dataPicker" destination="NsB-vo-Wha" id="HV2-iz-9e1"/>
+                        <outlet property="lblIntervalo" destination="AjQ-kG-Gvt" id="aJd-n4-h2F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4S-4q-cuS" userLabel="First Responder" sceneMemberID="firstResponder"/>

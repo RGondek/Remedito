@@ -71,14 +71,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         lemb = [itens objectAtIndex:indexPath.row];
         
-        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
-        notificacao.fireDate = lemb.data;
-        notificacao.alertBody = lemb.nome;
-        notificacao.soundName = UILocalNotificationDefaultSoundName;
-        notificacao.timeZone = [NSTimeZone defaultTimeZone];
-        notificacao.repeatInterval = NSCalendarUnitDay;
-        notificacao.applicationIconBadgeNumber = 1;
-        [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
+        [lemb deletarNotificacao];
 
         [sL removeLembreteIndex:lemb.index];
         [itens removeObjectAtIndex:indexPath.row];
@@ -106,24 +99,10 @@
     lemb = [itens objectAtIndex:theSwitch.tag];
     [sL alterarEstado:theSwitch.on Index:lemb.index];
     if(theSwitch.on){
-        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
-        notificacao.fireDate = lemb.data;
-        notificacao.alertBody = lemb.nome;
-        notificacao.soundName = UILocalNotificationDefaultSoundName;
-        notificacao.timeZone = [NSTimeZone defaultTimeZone];
-        notificacao.repeatInterval = NSCalendarUnitDay;
-        notificacao.applicationIconBadgeNumber = 1;
-        [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+        [lemb criarNotificacao];
     }
     else {
-        UILocalNotification *notificacao = [[UILocalNotification alloc] init];
-        notificacao.fireDate = lemb.data;
-        notificacao.alertBody = lemb.nome;
-        notificacao.soundName = UILocalNotificationDefaultSoundName;
-        notificacao.timeZone = [NSTimeZone defaultTimeZone];
-        notificacao.repeatInterval = NSCalendarUnitDay;
-        notificacao.applicationIconBadgeNumber = 1;
-        [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
+        [lemb deletarNotificacao];
     }
 }
 
