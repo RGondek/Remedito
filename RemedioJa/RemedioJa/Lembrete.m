@@ -35,32 +35,32 @@
 }
 
 -(void) criarNotificacao{
-    NSDate *novaData = data;
-    for (int i = 0; i < (24/intervalo); i++) {
+    NSDate *novaData = self.data;
+    for (int i = 0; i < (24/self.intervalo); i++) {
         UILocalNotification *notificacao = [[UILocalNotification alloc] init];
         notificacao.fireDate = novaData;
-        notificacao.alertBody = nome;
+        notificacao.alertBody = self.nome;
         notificacao.soundName = UILocalNotificationDefaultSoundName;
         notificacao.timeZone = [NSTimeZone defaultTimeZone];
         notificacao.repeatInterval = NSCalendarUnitDay;
         notificacao.applicationIconBadgeNumber = 1;
         [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
-        novaData = [NSDate dateWithTimeInterval:(intervalo*3600) sinceDate:novaData];
+        novaData = [NSDate dateWithTimeInterval:(self.intervalo*3600) sinceDate:novaData];
     }
 }
 
 -(void) deletarNotificacao{
-    NSDate *novaData = data;
-    for (int i = 0; i < (24/intervalo); i++) {
+    NSDate *novaData = self.data;
+    for (int i = 0; i < (24/self.intervalo); i++) {
         UILocalNotification *notificacao = [[UILocalNotification alloc] init];
         notificacao.fireDate = novaData;
-        notificacao.alertBody = nome;
+        notificacao.alertBody = self.nome;
         notificacao.soundName = UILocalNotificationDefaultSoundName;
         notificacao.timeZone = [NSTimeZone defaultTimeZone];
         notificacao.repeatInterval = NSCalendarUnitDay;
         notificacao.applicationIconBadgeNumber = 1;
         [[UIApplication sharedApplication] cancelLocalNotification:notificacao];
-        novaData = [NSDate dateWithTimeInterval:(intervalo*3600) sinceDate:novaData];
+        novaData = [NSDate dateWithTimeInterval:(self.intervalo*3600) sinceDate:novaData];
     }
 }
 
