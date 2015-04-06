@@ -252,8 +252,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lPd-Qg-jwy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.85882352941176465" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NsB-vo-Wha">
-                                <rect key="frame" x="0.0" y="134" width="375" height="162"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="449081656.499062">
                                     <!--2015-03-26 16:54:16 +0000-->
                                 </date>
@@ -279,25 +283,49 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lPd-Qg-jwy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                <color key="backgroundColor" red="0.2627450980392157" green="0.85882352941176465" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do Remédio" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vmd-Vd-kpo">
                                 <rect key="frame" x="41" y="84" width="293" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="1g5-z5-MFt">
+                                <rect key="frame" x="16" y="276" width="343" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="muZ-bd-dNI"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="1h"/>
+                                    <segment title="2h"/>
+                                    <segment title="4h"/>
+                                    <segment title="6h"/>
+                                    <segment title="8h"/>
+                                    <segment title="12h"/>
+                                    <segment title="24h"/>
+                                </segments>
+                                <color key="tintColor" red="0.21176470589999999" green="0.81568627449999997" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intervalo de repetição" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjQ-kG-Gvt">
+                                <rect key="frame" x="16" y="325" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" red="0.062745101749897003" green="0.078431375324726105" blue="0.023529414087533951" alpha="1" colorSpace="deviceRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Vmd-Vd-kpo" secondAttribute="trailing" constant="25" id="0IE-2p-9tJ"/>
-                            <constraint firstItem="NsB-vo-Wha" firstAttribute="top" secondItem="Vmd-Vd-kpo" secondAttribute="bottom" constant="20" id="1Mf-Zy-VYU"/>
+                            <constraint firstItem="NsB-vo-Wha" firstAttribute="top" secondItem="Vmd-Vd-kpo" secondAttribute="bottom" id="1Mf-Zy-VYU"/>
                             <constraint firstItem="Vmd-Vd-kpo" firstAttribute="top" secondItem="ZP5-WE-Pqd" secondAttribute="bottom" constant="20" id="24L-G8-rGZ"/>
+                            <constraint firstItem="1g5-z5-MFt" firstAttribute="trailing" secondItem="yby-Gu-77I" secondAttribute="trailingMargin" id="7O1-u6-huc"/>
+                            <constraint firstItem="1g5-z5-MFt" firstAttribute="top" secondItem="NsB-vo-Wha" secondAttribute="bottom" id="APf-Rh-8Nu"/>
+                            <constraint firstItem="AjQ-kG-Gvt" firstAttribute="top" secondItem="1g5-z5-MFt" secondAttribute="bottom" constant="5" id="CPh-35-l55"/>
                             <constraint firstItem="ZP5-WE-Pqd" firstAttribute="leading" secondItem="yby-Gu-77I" secondAttribute="leadingMargin" constant="-16" id="N6a-UI-A7Q"/>
                             <constraint firstItem="NsB-vo-Wha" firstAttribute="leading" secondItem="yby-Gu-77I" secondAttribute="leadingMargin" constant="-16" id="SdE-hn-DX1"/>
                             <constraint firstItem="Vmd-Vd-kpo" firstAttribute="leading" secondItem="yby-Gu-77I" secondAttribute="leadingMargin" constant="25" id="bSk-0j-Xrv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZP5-WE-Pqd" secondAttribute="trailing" constant="-16" id="c47-B7-699"/>
+                            <constraint firstItem="AjQ-kG-Gvt" firstAttribute="trailing" secondItem="yby-Gu-77I" secondAttribute="trailingMargin" id="h4P-kI-GIj"/>
+                            <constraint firstItem="1g5-z5-MFt" firstAttribute="leading" secondItem="yby-Gu-77I" secondAttribute="leadingMargin" id="hX4-bo-7xU"/>
+                            <constraint firstItem="AjQ-kG-Gvt" firstAttribute="leading" secondItem="yby-Gu-77I" secondAttribute="leadingMargin" id="hZE-fn-hsN"/>
                             <constraint firstItem="Vmd-Vd-kpo" firstAttribute="top" secondItem="ZP5-WE-Pqd" secondAttribute="bottom" constant="20" id="jLc-7b-wTz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NsB-vo-Wha" secondAttribute="trailing" constant="-16" id="mgb-kV-27D"/>
                             <constraint firstItem="ZP5-WE-Pqd" firstAttribute="top" secondItem="Cnd-aQ-epi" secondAttribute="bottom" id="rmW-PL-fQx"/>
@@ -316,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4S-4q-cuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305.25" y="779.625"/>
+            <point key="canvasLocation" x="304.5" y="779.5"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="5az-tU-oRz">
