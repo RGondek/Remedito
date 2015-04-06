@@ -31,7 +31,6 @@
     [_mapView userTrackingMode];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
-    [self recarregar];
 }
 
 - (void)didReceiveMemoryWarning {
