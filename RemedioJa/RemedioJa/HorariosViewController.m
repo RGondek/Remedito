@@ -57,7 +57,7 @@
     
     [cell.btnAtivo setTag:indexPath.row];
     [cell.nomedoRemedio setText:lemb.nome];
-    [cell.horario setText:[dtForm stringFromDate:lemb.data]];
+    [cell.horario setText:[NSString stringWithFormat:NSLocalizedString(@"%@ - repete a cada %dh", nil),[dtForm stringFromDate:lemb.data], lemb.intervalo]];
     [cell.btnAtivo setOn:lemb.ativo];
     
     return cell;
